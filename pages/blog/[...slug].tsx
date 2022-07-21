@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { formatSlug, getFiles } from '@/lib/files'
+import { formatSlug, getAllFilesFrontMatter, getFiles } from '@/lib/files'
 
 export default function PostPage({ post }: { post: any }) {
   return (
@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
+  const allPosts = await getAllFilesFrontMatter('blog')
+  console.log('all psts front matter', allPosts)
   // MDX text - can be from a local file, database, anywhere
   console.log('context', context)
   const source = 'Some **mdx** text, with a component'

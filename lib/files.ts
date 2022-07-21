@@ -2,6 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { dateSortDesc } from '@/lib/utils'
+import { GrayMatter } from '@/lib/types'
 
 const root = process.cwd();
 
@@ -57,7 +58,7 @@ export async function getAllFilesFrontMatter(subdirectory: string) {
 
   const files = getAllFilesRecursively(prefixPaths)
 
-  const allFrontMatter = []
+  const allFrontMatter: GrayMatter[] = []
 
   files.forEach((file) => {
     // Replace is needed to work on Windows
