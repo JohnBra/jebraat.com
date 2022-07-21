@@ -1,5 +1,7 @@
 import path from 'path'
 import fs from 'fs'
+import matter from 'gray-matter'
+import { dateSortDesc } from '@/lib/utils'
 
 const root = process.cwd();
 
@@ -34,4 +36,46 @@ export function getFiles(subdirectory: string): string[] {
   const files = getAllFilesRecursively(prefixPaths)
   // Only want to return blog/path and ignore root, replace is needed to work on Windows
   return files.map((file) => file.slice(prefixPaths.length + 1).replace(/\\/g, '/'))
+}
+
+
+/**
+ * Removes md and mdx from the slug
+ * @param slug
+ */
+export function formatSlug(slug: string): string {
+  return slug.replace(/\.(mdx|md)/, '')
+}
+
+
+/**
+ * Retrieves front matter for all files in the provided subdirectory of the data directory
+ * @param subdirectory
+ */
+export async function getAllFilesFrontMatter(subdirectory: string) {
+  const prefixPaths = path.join(root, 'data', subdirectory)
+
+  const files = getAllFilesRecursively(prefixPaths)
+
+  const allFrontMatter = []
+
+  files.forEach((file) => {
+    // Replace is needed to work on Windows
+    const fileName = file.slice(prefixPaths.length + 1).replace(/\\/g, '/')
+    // Remove Unexpected File
+    if (path.extname(fileName) !== '.md' && path.extname(fileName) !== '.mdx') {
+      return
+    }
+    const source = fs.readFileSync(file, 'utf8')
+    const { data: frontmatter } = matter(source)
+    if (frontmatter.draft !== true) {
+      allFrontMatter.push({
+        ...frontmatter,
+        slug: formatSlug(fileName),
+        date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
+      })
+    }
+  })
+
+  return allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
 }

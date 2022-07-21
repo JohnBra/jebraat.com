@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { getFiles } from '@/lib/files'
+import { formatSlug, getFiles } from '@/lib/files'
 
 export default function PostPage({ post }: { post: any }) {
   return (
@@ -11,26 +11,20 @@ export default function PostPage({ post }: { post: any }) {
 }
 
 export async function getStaticPaths() {
-  const files = getFiles('blog')
-  console.log('files', files)
-  //const posts = getFiles('blog')
-  //return {
-  //  paths: posts.map((p) => ({
-  //    params: {
-  //      slug: formatSlug(p).split('/'),
-  //    },
-  //  })),
-  //  fallback: false,
-  //}
-  const paths = ['/test']
+  const posts = getFiles('blog')
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
-  };
+    paths: posts.map((p) => ({
+      params: {
+        slug: formatSlug(p).split('/'),
+      },
+    })),
+    fallback: false,
+  }
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context: any) {
   // MDX text - can be from a local file, database, anywhere
+  console.log('context', context)
   const source = 'Some **mdx** text, with a component'
   const mdxSource = await serialize(source)
   return {
