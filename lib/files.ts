@@ -5,6 +5,14 @@ import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
 import { dateSortDesc } from '@/lib/utils'
 import { GrayMatter, Post } from '@/lib/types'
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import remarkFootnotes from 'remark-footnotes'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCitation from 'rehype-citation'
+import rehypeKatex from 'rehype-katex'
+import rehypePresetMinify from 'rehype-preset-minify'
+import rehypePrismPlus from 'rehype-prism-plus'
 
 const root = process.cwd();
 
@@ -41,6 +49,11 @@ export function getFiles(subdirectory: string): string[] {
   return files.map((file) => file.slice(prefixPaths.length + 1).replace(/\\/g, '/'))
 }
 
+/**
+ * Returns a serialized md[x] file from the data subdirectory
+ * @param subdirectory
+ * @param slug
+ */
 export async function getFileBySlug(subdirectory: string, slug: string): Promise<Post> {
   const mdxPath = path.join(root, 'data', subdirectory, `${slug}.mdx`)
   const mdPath = path.join(root, 'data', subdirectory, `${slug}.md`)
@@ -52,8 +65,18 @@ export async function getFileBySlug(subdirectory: string, slug: string): Promise
   const mdxSource = await serialize(source, {
     parseFrontmatter: true,
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
+      remarkPlugins: [
+        remarkGfm,
+        remarkMath,
+        remarkFootnotes
+      ],
+      rehypePlugins: [
+        rehypeAutolinkHeadings,
+        rehypeCitation,
+        rehypeKatex,
+        rehypePresetMinify,
+        rehypePrismPlus
+      ],
       format: 'mdx'
     },
   })
