@@ -1,8 +1,10 @@
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
+import readingTime from 'reading-time'
+import { serialize } from 'next-mdx-remote/serialize'
 import { dateSortDesc } from '@/lib/utils'
-import { GrayMatter } from '@/lib/types'
+import { GrayMatter, Post } from '@/lib/types'
 
 const root = process.cwd();
 
@@ -37,6 +39,39 @@ export function getFiles(subdirectory: string): string[] {
   const files = getAllFilesRecursively(prefixPaths)
   // Only want to return blog/path and ignore root, replace is needed to work on Windows
   return files.map((file) => file.slice(prefixPaths.length + 1).replace(/\\/g, '/'))
+}
+
+export async function getFileBySlug(subdirectory: string, slug: string): Promise<Post> {
+  const mdxPath = path.join(root, 'data', subdirectory, `${slug}.mdx`)
+  const mdPath = path.join(root, 'data', subdirectory, `${slug}.md`)
+  const source = fs.existsSync(mdxPath)
+    ? fs.readFileSync(mdxPath, 'utf8')
+    : fs.readFileSync(mdPath, 'utf8')
+
+  const { data: frontmatter } = matter(source)
+  const mdxSource = await serialize(source, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+      format: 'mdx'
+    },
+  })
+
+  let toc: any[] = []
+
+
+  return {
+    mdxSource,
+    toc,
+    frontMatter: {
+      ...frontmatter,
+      readingTime: readingTime(JSON.stringify(mdxSource)),
+      slug,
+      fileName: fs.existsSync(mdxPath) ? `${slug}.mdx` : `${slug}.md`,
+      date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
+    },
+  }
 }
 
 

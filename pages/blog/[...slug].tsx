@@ -1,6 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
-import { formatSlug, getAllFilesFrontMatter, getFiles } from '@/lib/files'
+import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/files'
 
 export default function PostPage({ post }: { post: any }) {
   return (
@@ -24,15 +23,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const allPosts = await getAllFilesFrontMatter('blog')
-  console.log('all psts front matter', allPosts)
-  // MDX text - can be from a local file, database, anywhere
-  console.log('context', context)
-  const source = 'Some **mdx** text, with a component'
-  const mdxSource = await serialize(source)
+  const slug = context.params?.slug?.join('/')
+  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slug)
+  const prev = allPosts?.[postIndex + 1] ?? null
+  const next = allPosts?.[postIndex - 1] ?? null
+  const post = await getFileBySlug('blog', slug)
+  const authorList = post.frontMatter?.authors ?? ['default']
+
   return {
     props: {
       post: {
-        content: mdxSource
+        content: post.mdxSource
       }
     }
   }
