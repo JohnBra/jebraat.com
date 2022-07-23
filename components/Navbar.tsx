@@ -1,6 +1,7 @@
 import ThemeSwitch from '@/components/ThemeSwitch'
 import { navLinks } from '@/lib/constants'
 import Link from '@/components/Link'
+import MobileNav from '@/components/MobileNav'
 
 export default function Navbar() {
 
@@ -24,6 +25,7 @@ export default function Navbar() {
           ))}
         </div>
         <ThemeSwitch />
+        <MobileNav />
       </div>
     </div>
   )
