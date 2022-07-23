@@ -18,7 +18,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               prefetch={link.prefetch}
-              className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+              className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4 hover:text-primary-500"
             >
               {link.name}
             </Link>
