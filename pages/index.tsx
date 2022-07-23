@@ -1,10 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useTheme } from 'next-themes'
 import LayoutWrapper from '@/components/LayoutWrapper'
 
 const Home: NextPage = () => {
-
   return (
     <LayoutWrapper>
       <div className="h-full">
@@ -14,6 +12,30 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
+        <header className="flex gap-3">
+          <div className="flex-1 border border-red-600 py-36">
+            Intro
+          </div>
+          <div className="border border-blue-500 p-36">
+            Image
+          </div>
+        </header>
+
+        <section className="mt-14 border border-green-500">
+          <div className="flex gap-3 justify-between">
+            {[{ title: 'abc' }, { title: 'def' }, { title: 'ghi' }].map((item, index) =>
+              <div key={index} className="py-32">
+                {item.title}
+              </div>
+            )}
+          </div>
+        </section>
+
+        <section className="my-14 border border-purple-500 py-24">
+          <div>
+            Newsletter sign up
+          </div>
+        </section>
       </div>
     </LayoutWrapper>
   )

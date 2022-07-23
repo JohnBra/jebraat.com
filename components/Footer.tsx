@@ -25,7 +25,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-500 dark:text-gray-400">
-          &copy; {` ${new Date().getFullYear()} `} Jonathan Braat
+          &copy; {` ${new Date().getFullYear()} `} Spryse Limited&trade;. All rights reserved.
         </p>
       </div>
     </footer>
