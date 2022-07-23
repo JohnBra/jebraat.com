@@ -11,3 +11,5 @@ export type Post = {
   toc: any;
   frontMatter: GrayMatter;
 }
+
+export type SocialIconKind = 'email' | 'github' | 'youtube' | 'twitter' | 'instagram';
