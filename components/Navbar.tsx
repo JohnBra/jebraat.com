@@ -7,10 +7,6 @@ export default function Navbar() {
 
   return (
     <div className="flex justify-between items-center py-10">
-      <div className="flex">
-        <div>logo</div>
-        <div>Jonathan Braat</div>
-      </div>
       <div className="flex items-center">
         <div className="hidden sm:block">
           {navLinks.map((link) => (
@@ -18,15 +14,15 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               prefetch={link.prefetch}
-              className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4 hover:text-primary-500"
+              className="py-1 pr-2 font-medium text-gray-900 dark:text-gray-100 sm:py-4 pr-8 hover:text-primary-500 hover:dark:text-primary-500"
             >
               {link.name}
             </Link>
           ))}
         </div>
-        <ThemeSwitch />
         <MobileNav />
       </div>
+      <ThemeSwitch />
     </div>
   )
 }
