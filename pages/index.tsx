@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import LayoutWrapper from '@/components/LayoutWrapper'
+import BlogPostCard from '@/components/BlogPostCard'
 
 const Home: NextPage = () => {
   return (
@@ -21,13 +22,26 @@ const Home: NextPage = () => {
           </div>
         </header>
 
-        <section className="mt-14 border border-green-500">
-          <div className="flex gap-3 justify-between">
-            {[{ title: 'abc' }, { title: 'def' }, { title: 'ghi' }].map((item, index) =>
-              <div key={index} className="py-32">
-                {item.title}
-              </div>
-            )}
+        <section className="mt-14">
+          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+            Featured Posts
+          </h3>
+          <div className="flex gap-5 justify-between">
+            <BlogPostCard
+              title="A really cool post about something I care about"
+              slug="style-guides-component-libraries-design-systems"
+              gradient="from-[#D8B4FE] to-[#818CF8]"
+            />
+            <BlogPostCard
+              title="A really cool post about something I care about"
+              slug="rust"
+              gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+            />
+            <BlogPostCard
+              title="A really cool post about something I care about"
+              slug="react-state-management"
+              gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
+            />
           </div>
         </section>
 
