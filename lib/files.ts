@@ -13,6 +13,7 @@ import rehypeCitation from 'rehype-citation'
 import rehypeKatex from 'rehype-katex'
 import rehypePresetMinify from 'rehype-preset-minify'
 import rehypePrismPlus from 'rehype-prism-plus'
+import { mdxToHtml } from '@/lib/mdx'
 
 const root = process.cwd();
 
@@ -62,34 +63,18 @@ export async function getFileBySlug(subdirectory: string, slug: string): Promise
     : fs.readFileSync(mdPath, 'utf8')
 
   const { data: frontmatter } = matter(source)
-  const mdxSource = await serialize(source, {
-    parseFrontmatter: true,
-    mdxOptions: {
-      remarkPlugins: [
-        remarkGfm,
-        remarkMath,
-        remarkFootnotes
-      ],
-      rehypePlugins: [
-        rehypeAutolinkHeadings,
-        rehypeCitation,
-        rehypeKatex,
-        rehypePresetMinify,
-        rehypePrismPlus
-      ],
-      format: 'mdx'
-    },
-  })
+  const mdx = await mdxToHtml(source)
 
   let toc: any[] = []
 
 
   return {
-    mdxSource,
+    html: mdx.html,
     toc,
     frontMatter: {
       ...frontmatter,
-      readingTime: readingTime(JSON.stringify(mdxSource)),
+      readingTime: mdx.readingTime,
+      wordCount: mdx.wordCount,
       slug,
       fileName: fs.existsSync(mdxPath) ? `${slug}.mdx` : `${slug}.md`,
       date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,

@@ -7,7 +7,7 @@ export type GrayMatter = {
 }
 
 export type Post = {
-  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  html: MDXRemoteSerializeResult<Record<string, unknown>>;
   toc: any;
   frontMatter: GrayMatter;
 }

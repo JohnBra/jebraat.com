@@ -4,6 +4,14 @@
  */
 
 /* Code title styles */
+.rehype-code-title {
+    @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 border border-b-0 border-gray-700 rounded-t-lg dark:text-gray-200 dark:border-gray-700 dark:bg-gray-700;
+}
+
+.rehype-code-title + pre {
+    @apply mt-0 rounded-t-none;
+}
+
 .remark-code-title {
     @apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200;
 }

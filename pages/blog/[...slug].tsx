@@ -1,11 +1,17 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/files'
+import PostLayout from '@/layouts/PostLayout'
 
 export default function PostPage({ post }: { post: any }) {
   return (
-    <>
+    <PostLayout
+      authorDetails={[]}
+      next={'/nex'}
+      prev={'/prev'}
+      frontMatter={post.frontMatter}
+    >
       <MDXRemote {...post.content} />
-    </>
+    </PostLayout>
   )
 }
 
@@ -33,7 +39,12 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       post: {
-        content: post.mdxSource
+        content: post.html,
+        prev,
+        next,
+        authorList,
+        frontMatter: post.frontMatter,
+        toc: post.toc
       }
     }
   }
