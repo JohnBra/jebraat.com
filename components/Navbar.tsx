@@ -6,7 +6,7 @@ import MobileNav from '@/components/MobileNav'
 export default function Navbar() {
 
   return (
-    <div className="flex justify-between items-center py-10">
+    <nav className="flex justify-between items-center py-10">
       <div className="flex items-center">
         <div className="hidden sm:block">
           {navLinks.map((link) => (
@@ -23,6 +23,6 @@ export default function Navbar() {
         <MobileNav />
       </div>
       <ThemeSwitch />
-    </div>
+    </nav>
   )
 }
