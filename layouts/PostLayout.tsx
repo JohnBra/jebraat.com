@@ -24,29 +24,12 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
 
   return (
     <SectionContainer>
-      <article>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-          <header className="pt-6 xl:pb-6">
-            <div className="space-y-1">
-              <PageTitle>{title}</PageTitle>
-              <dl className="space-y-10">
-                <div>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toISOString()}
-                    </time>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </header>
-          <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
+      <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div className="relative xl:flex xl:justify-between">
+          <div className="hidden xl:block sticky top-0 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 w-52 h-0 mt-32">
             <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
+              <dd>like, share</dd>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                   {authorDetails.map((author) => (
@@ -80,10 +63,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </ul>
               </dd>
             </dl>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-            </div>
-            <footer>
+            <div>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
@@ -130,7 +110,26 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   &larr; Back to the blog
                 </Link>
               </div>
-            </footer>
+            </div>
+          </div>
+          <div>
+            <header className="pt-6 xl:pb-6 space-y-1">
+              <PageTitle>{title}</PageTitle>
+              <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+                <div className="flex items-center">
+                  <div>IMG</div>
+                  <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                    Jonathan Braat / {new Date(date).toISOString()}
+                  </p>
+                </div>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+                  {frontMatter.readingTime}
+                </p>
+              </div>
+            </header>
+            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+              <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
+            </div>
           </div>
         </div>
       </article>
