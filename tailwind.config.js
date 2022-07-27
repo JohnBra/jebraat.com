@@ -10,6 +10,12 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'animated-heart': "url('/img/animated-heart.png')",
+      },
+      transitionProperty: {
+        'bg-position': 'background-position',
+      },
       colors: {
         primary: colors.sky
       },

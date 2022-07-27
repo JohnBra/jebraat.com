@@ -1,7 +1,7 @@
 import { SocialIconKind } from '@/lib/types'
 
 export const navLinks = [
-  { href: '/home', prefetch: false, name: 'Home' },
+  { href: '/', prefetch: false, name: 'Home' },
   { href: '/blog', prefetch: false, name: 'Blog' },
   { href: '/projects', prefetch: false, name: 'Projects' },
   //{ href: '/books', prefetch: false, name: 'Books' },
