@@ -27,6 +27,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="relative">
           {/* Sidebar */}
+          {/*
           <div className="hidden xl:block fixed top-1/3 -mx-32 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 w-18 h-0">
             <div>
               <div className="pt-4 xl:pt-8">
@@ -39,6 +40,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             </div>
           </div>
+          */}
           {/* Blog post with title and author */}
           <div className="relative">
             <header className="pt-6 xl:pb-6 space-y-1">
@@ -54,12 +56,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   {frontMatter.readingTime}
                 </p>
               </div>
-            </header>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
-            </div>
-
-            <div>
+              {/*
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
@@ -74,29 +71,44 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </div>
                 )}
               </div>
+              */}
+            </header>
+            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+              <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
+            </div>
+
+            <div>
               {(next || prev) && (
-                <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                <nav className="grid grid-cols-2 py-4 gap-3">
                   {prev && (
-                    <div>
-                      <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                        Previous Article
-                      </h2>
-                      <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                        <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
-                      </div>
+                    <div className="col-span-1 group">
+                      <Link href={`/blog/${prev.slug}`}>
+                        <div className="text-left p-3 flex flex-col border border-gray-400 dark:border-gray-700 rounded-md group-hover:border-primary-600 cursor-pointer transition-all ease-in-out">
+                          <div className="text-sm text-bold tracking-wide text-gray-700 dark:text-gray-200">
+                            Previous
+                          </div>
+                          <div className="text-primary-500">
+                            &larr; {prev.title}
+                          </div>
+                        </div>
+                      </Link>
                     </div>
                   )}
                   {next && (
-                    <div>
-                      <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                        Next Article
-                      </h2>
-                      <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                        <Link href={`/blog/${next.slug}`}>{next.title}</Link>
-                      </div>
+                    <div className="col-start-2 col-span-1 group">
+                      <Link href={`/blog/${next.slug}`}>
+                        <div className="text-right p-3 flex flex-col border border-gray-400 dark:border-gray-700 rounded-md group-hover:border-primary-600 cursor-pointer transition-all ease-in-out">
+                          <div className="text-sm tracking-wide text-gray-700 dark:text-gray-200">
+                            Next
+                          </div>
+                          <div className="text-primary-500">
+                            {next.title} &rarr;
+                          </div>
+                        </div>
+                      </Link>
                     </div>
                   )}
-                </div>
+                </nav>
               )}
             </div>
           </div>

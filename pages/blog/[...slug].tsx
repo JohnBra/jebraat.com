@@ -6,8 +6,8 @@ export default function PostPage({ post }: { post: any }) {
   return (
     <PostLayout
       authorDetails={[]}
-      next={'/nex'}
-      prev={'/prev'}
+      next={post?.next}
+      prev={post?.prev}
       frontMatter={post.frontMatter}
     >
       <MDXRemote {...post.content} />
