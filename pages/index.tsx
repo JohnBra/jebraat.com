@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <div className="flex-1 border border-red-600 py-36">
           Intro
         </div>
-        <div className="border border-blue-500 p-36">
+        <div className="border border-blue-500 p-20">
           Image
         </div>
       </header>
