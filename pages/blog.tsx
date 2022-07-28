@@ -7,7 +7,6 @@ type Props = {
 }
 
 export default function Blog({ posts }: Props) {
-  console.log('posts', posts)
   return (
     <>
       <ListLayout posts={posts} title="All Posts" />
