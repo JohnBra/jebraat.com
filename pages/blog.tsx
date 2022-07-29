@@ -1,6 +1,6 @@
+import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesFrontMatter } from '@/lib/files'
 import { GrayMatter } from '@/lib/types'
-import ListLayout from '@/layouts/ListLayout'
 
 type Props = {
   posts: GrayMatter[]

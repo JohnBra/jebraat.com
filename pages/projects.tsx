@@ -2,6 +2,7 @@ import CustomLink from '@/components/Link'
 import Image from 'next/future/image'
 import React from 'react'
 
+// TODO move to site data
 const projects: any[] = [
   { title: 'Supatabs', summary: 'bla bla bla', image: '' },
   { title: 'ChronoShift', summary: 'bla bla bla', image: '' },
