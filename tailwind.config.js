@@ -10,6 +10,13 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      minHeight: {
+        '50': '50vh',
+        '60': '60vh',
+        '70': '70vh',
+        '80': '80vh',
+        '90': '90vh',
+      },
       backgroundImage: {
         'animated-heart': "url('/img/animated-heart.png')",
       },
