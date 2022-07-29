@@ -1,4 +1,3 @@
-import { GrayMatter } from '@/lib/types'
 import CustomLink from '@/components/Link'
 import Image from 'next/future/image'
 import React from 'react'
