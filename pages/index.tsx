@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import BlogPostCard from '@/components/BlogPostCard'
+import Image from 'next/future/image'
 
 const Home: NextPage = () => {
   return (
@@ -12,11 +13,29 @@ const Home: NextPage = () => {
       </Head>
 
       <header className="flex gap-3">
-        <div className="flex-1 border border-red-600 py-36">
-          Intro
+        <div className="flex-1">
+          <div className="flex flex-col pr-8">
+            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
+              John Braat
+            </h1>
+            <h2 className="text-gray-700 dark:text-gray-200 mb-4">
+              Developer - Creator - Writer
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-16">
+              Building software to solve problems. Writing about tech to pass on what I learn.
+            </p>
+          </div>
         </div>
-        <div className="border border-blue-500 p-20">
-          Image
+        <div>
+          <Image
+            alt="John Braat"
+            height={176}
+            width={176}
+            src="/img/avatar.webp"
+            sizes="30vw"
+            priority
+            className="rounded-full"
+          />
         </div>
       </header>
 
