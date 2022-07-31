@@ -1,6 +1,7 @@
 import CustomLink from '@/components/Link'
 import Image from 'next/future/image'
 import React from 'react'
+import { PageSEO } from '@/components/SEO'
 
 // TODO move to site data
 const projects: any[] = [
@@ -12,6 +13,10 @@ const projects: any[] = [
 export default function Projects() {
   return (
     <>
+      <PageSEO
+        title="Projects - John Braat"
+        description="I build software in my spare time. Most of them will be SaaS projects or small apps."
+      />
       <div className="divide-y divide-gray-200 dark:divide-gray-700 min-h-90">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">

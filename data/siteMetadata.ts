@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'John Braat - Developer amd creator',
+  title: 'John Braat - Developer and Creator',
   author: 'Jonathan Braat',
   language: 'en-us',
   locale: 'en-US',

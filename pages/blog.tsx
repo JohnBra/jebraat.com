@@ -1,6 +1,7 @@
 import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesFrontMatter } from '@/lib/files'
 import { GrayMatter } from '@/lib/types'
+import { PageSEO } from '@/components/SEO'
 
 type Props = {
   posts: GrayMatter[]
@@ -9,7 +10,11 @@ type Props = {
 export default function Blog({ posts }: Props) {
   return (
     <>
-      <ListLayout posts={posts} title="All Posts" />
+      <PageSEO
+        title="Blog - John Braat"
+        description="My learnings, thoughts on software, programming, tech, and my personal life."
+      />
+      <ListLayout posts={posts} title="Blog" />
     </>
   )
 }
