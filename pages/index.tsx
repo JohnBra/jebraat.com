@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import BlogPostCard from '@/components/BlogPostCard'
 import Image from 'next/future/image'
+import CustomLink from '@/components/Link'
 
 const Home: NextPage = () => {
   return (
@@ -12,21 +13,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="flex gap-3">
-        <div className="flex-1">
-          <div className="flex flex-col pr-8">
-            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-              John Braat
-            </h1>
-            <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-              Developer and Creator
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-16">
-              Building software to solve problems. Writing about tech and sharing my learnings about building products/services on the web.
-            </p>
-          </div>
-        </div>
-        <div className="m-auto">
+      <header className="flex flex-col sm:flex-row sm:flex-row-reverse gap-3">
+        <div className="sm:mb-auto">
           <Image
             alt="John Braat"
             height={130}
@@ -37,28 +25,47 @@ const Home: NextPage = () => {
             className="rounded-full"
           />
         </div>
+        <div className="flex-1">
+          <div className="flex flex-col pr-8">
+            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
+              John Braat
+            </h1>
+            <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg">
+              Developer and Creator
+            </h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-16">
+              Building software to solve problems. Writing about tech and sharing my learnings about building products/services on the web.
+            </p>
+          </div>
+        </div>
       </header>
 
       <section className="mt-14">
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-          Featured Posts
+          From the Blog
         </h3>
-        <div className="flex gap-5 justify-between">
+        <div className="flex flex-col sm:flex-row gap-5 justify-between">
           <BlogPostCard
-            title="A really cool post about something I care about"
+            title="A really cool post about something I care"
             slug="style-guides-component-libraries-design-systems"
-            gradient="from-[#D8B4FE] to-[#818CF8]"
           />
           <BlogPostCard
-            title="A really cool post about something I care about"
+            title="A really cool post about something I care"
             slug="rust"
-            gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
           />
           <BlogPostCard
-            title="A really cool post about something I care about"
+            title="A really cool post about something I care"
             slug="react-state-management"
-            gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
           />
+        </div>
+        <div className="flex items-center text-neutral-500 py-8">
+          <CustomLink
+            href="/blog"
+            prefetch={false}
+            className="hover:text-neutral-800 dark:hover:text-neutral-300"
+          >
+            Discover more posts &rarr;
+          </CustomLink>
         </div>
       </section>
 
