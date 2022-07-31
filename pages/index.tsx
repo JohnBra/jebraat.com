@@ -19,18 +19,18 @@ const Home: NextPage = () => {
               John Braat
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-              Developer - Creator - Writer
+              Developer and Creator
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
-              Building software to solve problems. Writing about tech to pass on what I learn.
+              Building software to solve problems. Writing about tech and sharing my learnings about building products/services on the web.
             </p>
           </div>
         </div>
-        <div>
+        <div className="m-auto">
           <Image
             alt="John Braat"
-            height={176}
-            width={176}
+            height={130}
+            width={130}
             src="/img/avatar.webp"
             sizes="30vw"
             priority

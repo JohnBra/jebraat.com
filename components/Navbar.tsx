@@ -14,7 +14,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               prefetch={link.prefetch}
-              className="py-1 pr-2 font-medium text-gray-900 dark:text-gray-100 sm:py-4 pr-8 hover:text-primary-500 hover:dark:text-primary-500"
+              className="py-1 font-medium text-gray-900 dark:text-gray-100 sm:py-4 pr-8 hover:text-primary-500 hover:dark:text-primary-500"
             >
               {link.name}
             </Link>
