@@ -1,27 +1,20 @@
-//@ts-nocheck
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
-import Tag from '@/components/Tag'
-
 
 //const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 type Props = {
   frontMatter: any;
-  authorDetails: any;
+  authorDetails?: any;
   next: any;
   prev: any;
   children: React.ReactNode;
 }
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
-  const { slug, fileName, date, title, images, tags } = frontMatter
-  console.log('slug', slug)
-  console.log('filename', fileName)
-  console.log('images', images)
-
+export default function PostLayout({ frontMatter, next, prev, children }: Props) {
+  const { date, title } = frontMatter
   return (
     <SectionContainer>
       <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
@@ -47,7 +40,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <PageTitle>{title}</PageTitle>
               <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
                 <div className="flex items-center">
-                  <div>IMG</div>
+                  <Image
+                    alt="John Braat"
+                    height={30}
+                    width={30}
+                    src="/img/avatar.webp"
+                    sizes="10vw"
+                    priority
+                    className="rounded-full"
+                  />
                   <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                     Jonathan Braat / {new Date(date).toISOString()}
                   </p>
