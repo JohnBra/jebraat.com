@@ -7,7 +7,7 @@ const siteMetadata = {
   siteUrl: 'https://jebraat.com',
   siteRepo: 'https://github.com/JohnBra/jebraat.com',
   siteLogo: '',
-  socialBanner: '',
+  socialBanner: '/static/img/social-banner.png',
   email: 'hello@jebraat.com',
   github: 'https://github.com/JohnBra',
   twitter: 'https://twitter.com/jebraat',
