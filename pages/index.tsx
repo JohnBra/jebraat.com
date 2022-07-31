@@ -12,7 +12,7 @@ const Home: NextPage = () => {
             alt="John Braat"
             height={130}
             width={130}
-            src="/img/avatar.webp"
+            src="/static/img/avatar.webp"
             sizes="30vw"
             priority
             className="rounded-full"

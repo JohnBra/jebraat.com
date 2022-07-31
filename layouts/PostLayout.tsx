@@ -44,7 +44,7 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                     alt="John Braat"
                     height={30}
                     width={30}
-                    src="/img/avatar.webp"
+                    src="/static/img/avatar.webp"
                     sizes="10vw"
                     priority
                     className="rounded-full"
