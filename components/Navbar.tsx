@@ -18,7 +18,7 @@ export default function Navbar() {
               href={link.href}
               prefetch={link.prefetch}
               className={cn(
-                'py-1 font-medium text-gray-900 dark:text-gray-100 sm:py-4 pr-8 hover:text-primary-500 hover:dark:text-primary-500',
+                'py-1 font-medium text-gray-900 dark:text-gray-100 sm:py-4 pr-8 hover:text-primary-500 hover:dark:text-primary-500 transition-all ease-in-out',
                 router.asPath === link.href ? 'text-primary-500 dark:text-primary-500' : null
               )}
                 >

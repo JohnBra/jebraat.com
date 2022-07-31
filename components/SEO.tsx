@@ -94,12 +94,12 @@ type BlogProps = {
   title: string;
   summary: string;
   date: string;
-  lastmod: string;
+  lastmod?: string;
   url: string;
   images: any[] | string;
   canonicalUrl?: string;
 }
-export function BlogSEO ({
+export function PostSEO ({
   title,
   summary,
   date,
@@ -108,7 +108,6 @@ export function BlogSEO ({
   images = [],
   canonicalUrl,
 }: BlogProps) {
-  const router = useRouter()
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr = images.length === 0 ? [siteMetadata.socialBanner] : typeof images === 'string' ? [images] : images

@@ -3,6 +3,8 @@ import Image from 'next/future/image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
+import { PostSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 
 //const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -14,9 +16,16 @@ type Props = {
   children: React.ReactNode;
 }
 export default function PostLayout({ frontMatter, next, prev, children }: Props) {
-  const { date, title } = frontMatter
+  const { date, title, summary, slug } = frontMatter
   return (
     <SectionContainer>
+      <PostSEO
+        title={title}
+        summary={summary}
+        date={date}
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        {...frontMatter}
+      />
       <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="relative">
           {/* Sidebar */}
