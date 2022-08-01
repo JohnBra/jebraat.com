@@ -5,8 +5,18 @@ import { PageSEO } from '@/components/SEO'
 
 // TODO move to site data
 const projects: any[] = [
-  { title: 'Supatabs', summary: 'bla bla bla', image: '' },
-  { title: 'ChronoShift', summary: 'bla bla bla', image: '' },
+  {
+    title: 'Supatabs',
+    summary: 'A chrome extension to reduce memory usage and organize your tabs.',
+    image: '/static/img/projects/supatabs_cover.webp',
+    href: 'https://supatabs.com'
+  },
+  {
+    title: 'ChronoShift',
+    summary: 'Time zone conversion at a glance on any device',
+    image: '/static/img/projects/chronoshift_cover.webp',
+    href: 'https://chronoshift.io'
+  },
 ];
 
 
@@ -30,23 +40,25 @@ export default function Projects() {
               key={index}
               className="group w-full bg-day dark:bg-night bg-opacity-50 dark:bg-opacity-50"
             >
-              <CustomLink className="cursor-pointer c-card block bg-transparent rounded-lg overflow-hidden transform transition duration-500 group-hover:scale-105">
+              <CustomLink
+                className="cursor-pointer c-card block bg-transparent rounded-lg overflow-hidden transform transition duration-500 group-hover:scale-105"
+                href={project.href}
+                rel="noopener"
+              >
                 <div className="relative pb-60 max-h-4 rounded-lg overflow-hidden">
                   <Image
-                    src={'https://images.unsplash.com/photo-1659017472248-0fd786d28b49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8'}
+                    src={project.image}
                     width={0}
                     height={0}
-                    className="absolute inset-0 h-full w-full opacity-80 dark:opacity-70 object-cover transform transition duration-700 group-hover:scale-110 group-hover:opacity-100"
+                    className="absolute inset-0 h-full w-full opacity-90 dark:opacity-90 object-cover transform transition duration-700 group-hover:scale-110 group-hover:opacity-100"
                   />
                 </div>
                 <div className="py-4">
-                  {/* Card Title */}
                   <h2 className="mt-2 mb-2 md:text-xl font-bold">
-                    The Build Series: E6 — Fun with Flags
+                    {project.title}
                   </h2>
-                  {/* Summary Title */}
                   <p>
-                    Lorem ipsum dolor
+                    {project.summary}
                   </p>
                 </div>
               </CustomLink>

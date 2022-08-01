@@ -5,7 +5,7 @@ type Props = {
   prefetch?: boolean;
 } & React.HTMLProps<HTMLAnchorElement>
 
-export default function CustomLink({ prefetch, href, ...rest }: Props) {
+export default function CustomLink({ prefetch, href, rel, ...rest }: Props) {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 
@@ -21,5 +21,5 @@ export default function CustomLink({ prefetch, href, ...rest }: Props) {
     return <a href={href} {...rest} />
   }
 
-  return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />
+  return <a target="_blank" rel={rel ? rel : "noopener noreferrer"} href={href} {...rest} />
 }
