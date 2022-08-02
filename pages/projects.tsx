@@ -50,6 +50,7 @@ export default function Projects() {
                     src={project.image}
                     width={0}
                     height={0}
+                    alt={project.title}
                     className="absolute inset-0 h-full w-full opacity-90 dark:opacity-90 object-cover transform transition duration-700 group-hover:scale-110 group-hover:opacity-100"
                   />
                 </div>
