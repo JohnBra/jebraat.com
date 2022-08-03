@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
+import Typewriter from 'typewriter-effect'
 import BlogPostCard from '@/components/BlogPostCard'
 import Image from 'next/future/image'
 import CustomLink from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import Typical from '@/components/Typical'
 
 const Home: NextPage = () => {
   return (
@@ -32,11 +32,18 @@ const Home: NextPage = () => {
                 John Braat
               </h1>
               <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg font-mono">
-                <Typical steps={['Hello', 1000, 'Hello world!', 500]} loop={Infinity} />
-                Developer and Creator
+                <Typewriter
+                  options={{
+                    strings: ['Developer', 'Creator', 'Traveler', 'Learner', 'Striving to be better than yesterday'],
+                    autoStart: true,
+                    loop: true,
+                    cursor: '&#x258C;',
+                    cursorClassName: 'text-sky-600 dark:text-sky-500 ml-0.5'
+                  }}
+                />
               </h2>
               <p className="text-neutral-600 dark:text-neutral-400 mb-16 font-mono">
-                Building software to solve problems. Sharing my learnings about building products and services on the web.
+                Building software to solve problems. Self improvement nerd. Sharing my learnings about building products and services on the web.
               </p>
             </div>
           </div>
@@ -44,7 +51,7 @@ const Home: NextPage = () => {
 
         <section className="mt-14">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            Featured Reading
+            Read my stuff
           </h3>
           <div className="flex flex-col sm:flex-row gap-7 justify-between">
             <BlogPostCard
