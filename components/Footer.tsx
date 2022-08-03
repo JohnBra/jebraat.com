@@ -1,3 +1,4 @@
+import React from 'react'
 import SocialIcon from '@/components/SocialIcon'
 import { navLinks, socialLinks } from '@/lib/constants'
 
@@ -6,9 +7,9 @@ const navigation = {
   social: socialLinks,
 }
 
-export default function Footer() {
+export default function Footer({ className, ...rest }: React.HTMLProps<HTMLElement>) {
   return (
-    <footer>
+    <footer className={className} {...rest}>
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (

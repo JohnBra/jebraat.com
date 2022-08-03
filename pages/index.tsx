@@ -30,11 +30,11 @@ const Home: NextPage = () => {
               <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
                 John Braat
               </h1>
-              <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg">
+              <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg font-mono">
                 Developer and Creator
               </h2>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-16">
-                Building software to solve problems. Writing about tech and sharing my learnings about building products/services on the web.
+              <p className="text-neutral-600 dark:text-neutral-400 mb-16 font-mono">
+                Building software to solve problems. Sharing my learnings about building products and services on the web.
               </p>
             </div>
           </div>
@@ -42,9 +42,9 @@ const Home: NextPage = () => {
 
         <section className="mt-14">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            From the Blog
+            Featured Reading
           </h3>
-          <div className="flex flex-col sm:flex-row gap-5 justify-between">
+          <div className="flex flex-col sm:flex-row gap-7 justify-between">
             <BlogPostCard
               title="A really cool post about something I care"
               slug="style-guides-component-libraries-design-systems"
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
               prefetch={false}
               className="hover:text-neutral-800 dark:hover:text-neutral-300 transition-all ease-in-out"
             >
-              Discover more posts &rarr;
+              All posts &rarr;
             </CustomLink>
           </div>
         </section>
