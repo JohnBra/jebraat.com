@@ -4,6 +4,7 @@ import Image from 'next/future/image'
 import CustomLink from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import Typical from '@/components/Typical'
 
 const Home: NextPage = () => {
   return (
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
                 John Braat
               </h1>
               <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg font-mono">
+                <Typical steps={['Hello', 1000, 'Hello world!', 500]} loop={Infinity} />
                 Developer and Creator
               </h2>
               <p className="text-neutral-600 dark:text-neutral-400 mb-16 font-mono">
