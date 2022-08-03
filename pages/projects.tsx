@@ -32,6 +32,9 @@ export default function Projects() {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Projects
           </h1>
+          <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+            I absolutely love building things. Check out some of my SaaS projects below to see what I&apos;m working on.
+          </p>
         </div>
 
         <div className="grid gap-8 grid-cols-1 py-12 md:grid-cols-2">
