@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/files'
 import PostLayout from '@/layouts/PostLayout'
+import MDXComponents from '@/components/MDXComponents'
 
 export default function PostPage({ post }: { post: any }) {
   return (
@@ -10,7 +11,7 @@ export default function PostPage({ post }: { post: any }) {
       prev={post?.prev}
       frontMatter={post.frontMatter}
     >
-      <MDXRemote {...post.content} />
+      <MDXRemote {...post.content} components={MDXComponents} />
     </PostLayout>
   )
 }

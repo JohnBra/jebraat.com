@@ -84,7 +84,7 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
               */}
             </header>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose sm:prose-xl max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
 
             <div>
