@@ -23,7 +23,7 @@ const Home: NextPage = () => {
               src="/static/img/avatar.webp"
               sizes="30vw"
               priority
-              className="rounded-full grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
+              className="rounded-full grayscale hover:grayscale-0 transition-all ease-in-out duration-500 cursor-heart"
             />
           </div>
           <div className="flex-1">

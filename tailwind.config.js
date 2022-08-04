@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      cursor: {
+        'heart': 'url(/static/heart.cur), default',
+      },
       animation: {
         'blink': 'blink 1.5s steps(2) infinite',
       },
