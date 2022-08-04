@@ -5,6 +5,8 @@ import Twitter from '@/components/SocialIcon/Twitter'
 import Instagram from '@/components/SocialIcon/Instagram'
 import Youtube from '@/components/SocialIcon/Youtube'
 import { SocialIconKind } from '@/lib/types'
+import Twitch from '@/components/SocialIcon/Twitch'
+import LinkedIn from '@/components/SocialIcon/LinkedIn'
 
 // Icons taken from: https://simpleicons.org/
 
@@ -13,7 +15,9 @@ const components = {
   github: Github,
   twitter: Twitter,
   instagram: Instagram,
-  youtube: Youtube
+  youtube: Youtube,
+  twitch: Twitch,
+  linkedin: LinkedIn,
 }
 
 
@@ -25,7 +29,7 @@ type Props = {
   size?: number;
 }
 
-export default function SocialIcon({ kind, href, size = 6 }: Props) {
+export default function SocialIcon({ kind, href }: Props) {
   if (kind === 'email' && !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href))
     throw Error('Please provide a valid email address')
 
@@ -35,12 +39,12 @@ export default function SocialIcon({ kind, href, size = 6 }: Props) {
     <a
       className="text-sm text-gray-500 transition hover:text-gray-600"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener noreferrer nofollow"
       href={href}
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 h-${size} w-${size}`}
+        className={`fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 h-6 w-6`}
       />
     </a>
   )

@@ -5,6 +5,7 @@ import Image from 'next/future/image'
 import CustomLink from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import React from 'react'
 
 const Home: NextPage = () => {
   return (
@@ -31,12 +32,13 @@ const Home: NextPage = () => {
               <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
                 John Braat
               </h1>
-              <h2 className="text-neutral-800 dark:text-neutral-200 mb-4 text-lg font-mono">
+              <h2 className="h-16 sm:h-auto text-neutral-800 dark:text-neutral-200 sm:mb-4 text-lg font-mono">
                 <Typewriter
                   options={{
                     strings: ['Developer', 'Creator', 'Traveler', 'Learner', 'Striving to be better than yesterday'],
                     autoStart: true,
                     loop: true,
+                    delay: 75,
                     cursor: '&#x258C;',
                     cursorClassName: 'text-sky-600 dark:text-sky-500 ml-0.5'
                   }}
@@ -74,6 +76,21 @@ const Home: NextPage = () => {
               className="hover:text-neutral-800 dark:hover:text-neutral-300 transition-all ease-in-out"
             >
               All posts &rarr;
+            </CustomLink>
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+            Watch my stuff
+          </h3>
+          <div className="flex items-center text-neutral-500 py-8">
+            <CustomLink
+              href="https://www.youtube.com/channel/UCSYoM12jgDhSN57CMCqr-ZA"
+              prefetch={false}
+              className="hover:text-neutral-800 dark:hover:text-neutral-300 transition-all ease-in-out"
+            >
+              All videos &rarr;
             </CustomLink>
           </div>
         </section>

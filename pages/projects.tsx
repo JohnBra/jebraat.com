@@ -33,7 +33,7 @@ export default function Projects() {
             Projects
           </h1>
           <p className="mb-4 text-neutral-600 dark:text-neutral-400">
-            I absolutely love building things. Check out some of my SaaS projects below to see what I&apos;m working on.
+            I absolutely love building things. Check out some of my projects below to see what I&apos;m working on.
           </p>
         </div>
 

@@ -12,4 +12,4 @@ export type Post = {
   frontMatter: GrayMatter;
 }
 
-export type SocialIconKind = 'email' | 'github' | 'youtube' | 'twitter' | 'instagram';
+export type SocialIconKind = 'email' | 'github' | 'youtube' | 'twitter' | 'instagram' | 'twitch' | 'linkedin';
