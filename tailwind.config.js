@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontSize: {
+        'xs': '.8rem'
+      },
       cursor: {
         'heart': 'url(/static/heart.cur), default',
       },

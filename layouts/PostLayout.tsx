@@ -6,8 +6,8 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import { PostSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import Tag from '@/components/Tag'
 
-//const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 type Props = {
   frontMatter: any;
@@ -15,11 +15,12 @@ type Props = {
   prev: any;
   children: React.ReactNode;
 }
+
 export default function PostLayout({ frontMatter, next, prev, children }: Props) {
-  const { date, title, summary, slug } = frontMatter
+  const { date, title, summary, slug, tags } = frontMatter
 
   return (
-    <SectionContainer>
+    <>
       <PostSEO
         title={title}
         summary={summary}
@@ -48,7 +49,7 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
           <div className="relative">
             <header className="pt-6 xl:pb-6 space-y-1">
               <PageTitle>{title}</PageTitle>
-              <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+              <div className="flex flex-col-reverse items-start justify-between w-full mt-2 md:flex-row md:items-center">
                 <div className="flex items-center">
                   <Image
                     alt="John Braat"
@@ -60,29 +61,15 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                     className="rounded-full"
                   />
                   <p className="ml-2 text-sm text-neutral-600 dark:text-neutral-400">
-                    Jonathan Braat / {dayjs(new Date(date)).format('MMMM DD, YYYY')}
+                    Jonathan Braat / {dayjs(new Date(date)).format('MMMM DD, YYYY')} ⋅ {frontMatter.readingTime}
                   </p>
                 </div>
-                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 min-w-32 md:mt-0">
-                  {frontMatter.readingTime}
+                <p className="hidden md:block min-w-32">
+                  {tags.map((tag: any) => (
+                    <Tag key={tag} text={tag} />
+                  ))}
                 </p>
               </div>
-              {/*
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              */}
             </header>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose sm:prose-xl max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
@@ -126,7 +113,6 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
 
         </div>
       </article>
-
-    </SectionContainer>
+    </>
   )
 }
