@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { dateSortDesc } from '@/lib/utils'
+import { dateSortDesc, kebabCase } from '@/lib/utils'
 import { GrayMatter, Post } from '@/lib/types'
 import { mdxToHtml } from '@/lib/mdx'
 
@@ -108,4 +108,31 @@ export async function getAllFilesFrontMatter(subdirectory: string) {
   })
 
   return allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
+}
+
+/**
+ * Retrieves all posts for tag path
+ * @param subdirectory
+ */
+export async function getAllTags(subdirectory: string) {
+  const files = getFiles(subdirectory)
+
+  let tagCount: { [tag: string]: number } = {}
+  // Iterate through each post, putting all found tags into `tags`
+  files.forEach((file) => {
+    const source = fs.readFileSync(path.join(root, 'data', subdirectory, file), 'utf8')
+    const { data } = matter(source)
+    if (data.tags && data.draft !== true) {
+      data.tags.forEach((tag: string) => {
+        const formattedTag = kebabCase(tag)
+        if (formattedTag in tagCount) {
+          tagCount[formattedTag] += 1
+        } else {
+          tagCount[formattedTag] = 1
+        }
+      })
+    }
+  })
+
+  return tagCount
 }
