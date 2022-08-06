@@ -17,7 +17,7 @@ export async function mdxToHtml(source: string) {
       remarkPlugins: [
         remarkGfm,
         remarkMath,
-        remarkFootnotes
+        remarkFootnotes,
       ],
       rehypePlugins: [
         rehypeSlug,

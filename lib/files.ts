@@ -1,18 +1,8 @@
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import readingTime from 'reading-time'
-import { serialize } from 'next-mdx-remote/serialize'
 import { dateSortDesc } from '@/lib/utils'
 import { GrayMatter, Post } from '@/lib/types'
-import remarkGfm from 'remark-gfm'
-import remarkMath from 'remark-math'
-import remarkFootnotes from 'remark-footnotes'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeCitation from 'rehype-citation'
-import rehypeKatex from 'rehype-katex'
-import rehypePresetMinify from 'rehype-preset-minify'
-import rehypePrismPlus from 'rehype-prism-plus'
 import { mdxToHtml } from '@/lib/mdx'
 
 const root = process.cwd();
@@ -65,12 +55,8 @@ export async function getFileBySlug(subdirectory: string, slug: string): Promise
   const { data: frontmatter } = matter(source)
   const mdx = await mdxToHtml(source)
 
-  let toc: any[] = []
-
-
   return {
     html: mdx.html,
-    toc,
     frontMatter: {
       ...frontmatter,
       readingTime: mdx.readingTime,

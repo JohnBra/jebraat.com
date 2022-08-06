@@ -11,7 +11,6 @@ import siteMetadata from '@/data/siteMetadata'
 
 type Props = {
   frontMatter: any;
-  authorDetails?: any;
   next: any;
   prev: any;
   children: React.ReactNode;

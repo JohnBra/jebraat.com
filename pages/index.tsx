@@ -13,7 +13,6 @@ type Props = {
 }
 
 export default function Page({ featuredPosts }: Props) {
-  console.log({ featuredPosts })
   return (
     <>
       <PageSEO

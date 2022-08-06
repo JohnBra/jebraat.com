@@ -6,7 +6,6 @@ import MDXComponents from '@/components/MDXComponents'
 export default function PostPage({ post }: { post: any }) {
   return (
     <PostLayout
-      authorDetails={[]}
       next={post?.next}
       prev={post?.prev}
       frontMatter={post.frontMatter}
@@ -35,7 +34,6 @@ export async function getStaticProps(context: any) {
   const prev = allPosts?.[postIndex + 1] ?? null
   const next = allPosts?.[postIndex - 1] ?? null
   const post = await getFileBySlug('blog', slug)
-  const authorList = post.frontMatter?.authors ?? ['default']
 
   return {
     props: {
@@ -43,9 +41,7 @@ export async function getStaticProps(context: any) {
         content: post.html,
         prev,
         next,
-        authorList,
         frontMatter: post.frontMatter,
-        toc: post.toc
       }
     }
   }
