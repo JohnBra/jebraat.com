@@ -25,10 +25,15 @@ function CustomImage({ alt, className, ...rest }: any) {
   />
 }
 
+function Highlight({ className, ...rest }: any) {
+  return <span className={classNames('text-pink-500', className)} {...rest} />
+}
+
 
 const MDXComponents = {
   a: CustomLink,
   Image: CustomImage,
+  Highlight: Highlight,
 }
 
 export default MDXComponents
