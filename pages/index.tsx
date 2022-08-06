@@ -7,6 +7,10 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/files'
 import type { GrayMatter } from '@/lib/types'
+import SquigglyLine from '@/components/SquigglyLine'
+import { socialLinks } from '@/lib/constants'
+import SocialIcon from '@/components/SocialIcon'
+import EmailMeButton from '@/components/EmailMeButton'
 
 type Props = {
   featuredPosts: GrayMatter[]
@@ -54,7 +58,18 @@ export default function Page({ featuredPosts }: Props) {
               </p>
             </div>
           </div>
+
         </header>
+
+        <section>
+          <div className="flex items-center gap-5 mt-4">
+            {socialLinks.filter(l => l.top).map(l => (
+              <SocialIcon key={l.kind} kind={l.kind} href={l.href} />
+            ))}
+            <EmailMeButton className="ml-4" />
+          </div>
+          <SquigglyLine className="my-24" />
+        </section>
 
         <section className="mt-14">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">

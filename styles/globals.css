@@ -5,3 +5,28 @@
 .footnotes {
     @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
 }
+
+
+.holder {
+    position: relative;
+    width: 200px;
+    height: 50px;
+}
+
+.small-line {
+    position: absolute;
+    height: 10px;
+    width: 200%;
+    transform: translate(-25%) scale(0.5)
+}
+
+.small-line-1 {
+    background: linear-gradient(45deg, transparent, transparent 49%, gray 49%, transparent 51%);
+}
+.small-line-2 {
+    background: linear-gradient(-45deg, transparent, transparent 49%, gray 49%, transparent 51%);
+}
+
+.small-line {
+    background-size: 20px 20px;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import SocialIcon from '@/components/SocialIcon'
 import { navLinks, socialLinks } from '@/lib/constants'
+import SquigglyLine from '@/components/SquigglyLine'
 
 /*
 const navigation = {
@@ -185,7 +186,8 @@ export default function Example() {
           </div>
         </div>
       </div>
-      <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+      <SquigglyLine className="mt-8"/>
+      <div className="pt-8 md:flex md:items-center md:justify-between">
         <div className="flex space-x-6 md:order-2">
           {navigation.social.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">

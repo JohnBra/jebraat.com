@@ -10,6 +10,16 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundColor: {
+        'small-line-1': 'linear-gradient(45deg, transparent, transparent 49%, red 49%, transparent 51%)',
+        'small-line-2': 'linear-gradient(-45deg, transparent, transparent 49%, red 49%, transparent 51%);',
+      },
+      backgroundSize: {
+        'small-line': '5rem 5rem',
+      },
+      translate: {
+        'small-line': '-25%',
+      },
       fontSize: {
         'xs': '.8rem'
       },
