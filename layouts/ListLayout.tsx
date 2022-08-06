@@ -1,8 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
+import dayjs from 'dayjs'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import { useState } from 'react'
-import { GrayMatter } from '@/lib/types'
+import type { GrayMatter } from '@/lib/types'
 
 type Props = {
   posts: GrayMatter[];
@@ -57,7 +58,7 @@ export default function ListLayout({ posts, title }: Props) {
                   {date && <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{date}</time>
+                      <time dateTime={date}>{dayjs(new Date(date)).format('MMMM DD, YYYY')}</time>
                     </dd>
                   </dl>}
                   <div className="space-y-3 xl:col-span-3">

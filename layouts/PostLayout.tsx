@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
+import dayjs from 'dayjs'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -17,6 +18,7 @@ type Props = {
 }
 export default function PostLayout({ frontMatter, next, prev, children }: Props) {
   const { date, title, summary, slug } = frontMatter
+
   return (
     <SectionContainer>
       <PostSEO
@@ -54,15 +56,15 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                     height={30}
                     width={30}
                     src="/static/img/avatar.webp"
-                    sizes="10vw"
+                    sizes="5vw"
                     priority
                     className="rounded-full"
                   />
-                  <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                    Jonathan Braat / {new Date(date).toISOString()}
+                  <p className="ml-2 text-sm text-neutral-600 dark:text-neutral-400">
+                    Jonathan Braat / {dayjs(new Date(date)).format('MMMM DD, YYYY')}
                   </p>
                 </div>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 min-w-32 md:mt-0">
                   {frontMatter.readingTime}
                 </p>
               </div>
