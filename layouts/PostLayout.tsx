@@ -26,7 +26,7 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         {...frontMatter}
       />
-      <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+      <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 selection:bg-orange-300 selection:dark:bg-orange-700">
         <div className="relative">
           {/* Sidebar */}
           {/*

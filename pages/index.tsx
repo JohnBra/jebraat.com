@@ -1,13 +1,19 @@
-import type { NextPage } from 'next'
+import React from 'react'
+import Image from 'next/future/image'
 import Typewriter from 'typewriter-effect'
 import BlogPostCard from '@/components/BlogPostCard'
-import Image from 'next/future/image'
 import CustomLink from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import React from 'react'
+import { getAllFilesFrontMatter } from '@/lib/files'
+import type { GrayMatter } from '@/lib/types'
 
-const Home: NextPage = () => {
+type Props = {
+  featuredPosts: GrayMatter[]
+}
+
+export default function Page({ featuredPosts }: Props) {
+  console.log({ featuredPosts })
   return (
     <>
       <PageSEO
@@ -40,7 +46,7 @@ const Home: NextPage = () => {
                     loop: true,
                     delay: 75,
                     cursor: '&#x258C;',
-                    cursorClassName: 'text-sky-600 dark:text-sky-500 ml-0.5'
+                    cursorClassName: 'relative text-sky-600 dark:text-sky-500 ml-0.5 -top-0.5'
                   }}
                 />
               </h2>
@@ -56,18 +62,14 @@ const Home: NextPage = () => {
             Read my stuff
           </h3>
           <div className="flex flex-col sm:flex-row gap-7 justify-between">
-            <BlogPostCard
-              title="A really cool post about something I care"
-              slug="style-guides-component-libraries-design-systems"
-            />
-            <BlogPostCard
-              title="A really cool post about something I care"
-              slug="rust"
-            />
-            <BlogPostCard
-              title="A really cool post about something I care"
-              slug="react-state-management"
-            />
+            {featuredPosts.map(p => (
+              <BlogPostCard
+                key={p.slug}
+                title={p.title}
+                slug={p.slug}
+                summary={p.summary}
+              />
+            ))}
           </div>
           <div className="flex items-center text-neutral-500 py-8">
             <CustomLink
@@ -105,4 +107,9 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export async function getStaticProps(context: any) {
+  const posts = await getAllFilesFrontMatter('blog')
+  const featuredPosts = posts.filter(p => p?.featured)
+
+  return { props: { featuredPosts } }
+}
