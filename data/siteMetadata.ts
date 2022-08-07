@@ -14,7 +14,8 @@ const siteMetadata = {
   instagram: 'https://instagram.com/jebraat',
   youtube: 'https://www.youtube.com/channel/UCSYoM12jgDhSN57CMCqr-ZA',
   linkedin: 'https://www.linkedin.com/in/jebraat',
-  twitch: 'https://www.twitch.tv/johne_labs'
+  twitch: 'https://www.twitch.tv/johne_labs',
+  revue: 'https://www.getrevue.co/profile/jebraat'
 }
 
 export default siteMetadata

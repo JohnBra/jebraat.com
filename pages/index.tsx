@@ -11,6 +11,7 @@ import SquigglyLine from '@/components/SquigglyLine'
 import { socialLinks } from '@/lib/constants'
 import SocialIcon from '@/components/SocialIcon'
 import EmailMeButton from '@/components/EmailMeButton'
+import Subscribe from '@/components/Subscribe'
 
 type Props = {
   featuredPosts: GrayMatter[]
@@ -111,10 +112,8 @@ export default function Page({ featuredPosts }: Props) {
           </div>
         </section>
 
-        <section className="my-14 border border-purple-500 py-24">
-          <div>
-            Newsletter sign up
-          </div>
+        <section className="my-14">
+          <Subscribe />
         </section>
       </div>
     </>
