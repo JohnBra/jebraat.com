@@ -49,7 +49,7 @@ export default function Page({ featuredPosts }: Props) {
                     loop: true,
                     delay: 75,
                     cursor: '&#x258C;',
-                    cursorClassName: 'relative text-sky-600 dark:text-sky-500 ml-0.5 -top-0.5'
+                    cursorClassName: 'relative text-sky-500 ml-0.5 -top-0.5'
                   }}
                 />
               </h2>

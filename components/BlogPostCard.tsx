@@ -14,7 +14,7 @@ export default function BlogPostCard({ title, slug, summary, className }: Props)
     <CustomLink
       href={`/blog/${slug}`}
       className={cn(
-        'transform hover:scale-[1.02] sm:hover:scale-[1.07] transition-all duration-200 ease-in-out rounded-md w-full md:w-1/3 border-3 border-sky-500 dark:border-sky-600',
+        'transform hover:scale-[1.02] sm:hover:scale-[1.07] transition-all duration-200 ease-in-out rounded-md w-full md:w-1/3 border-3 border-sky-300 hover:border-sky-500 dark:border-sky-700 dark:hover:border-sky-500',
         className
       )}
     >
