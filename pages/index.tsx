@@ -63,7 +63,7 @@ export default function Page({ featuredPosts }: Props) {
 
         <section>
           <div className="flex items-center gap-5 mt-4">
-            {socialLinks.filter(l => l.top).map(l => (
+            {socialLinks.filter(l => ['github', 'twitter', 'linkedin', 'instagram'].includes(l.kind)).map(l => (
               <SocialIcon key={l.kind} kind={l.kind} href={l.href} />
             ))}
             <EmailMeButton className="ml-4" />

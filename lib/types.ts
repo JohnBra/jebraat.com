@@ -20,3 +20,9 @@ export type PostMeta = {
 }
 
 export type SocialIconKind = 'email' | 'github' | 'youtube' | 'twitter' | 'instagram' | 'twitch' | 'linkedin';
+
+export type SocialLink = {
+  href: string;
+  kind: SocialIconKind,
+  name: string;
+}

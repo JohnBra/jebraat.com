@@ -1,24 +1,15 @@
 import React from 'react'
 import SquigglyLine from '@/components/SquigglyLine'
+import CustomLink from '@/components/Link'
+import { navLinks, socialLinks } from '@/lib/constants'
 
 const navigation = {
-  solutions: [
-    { name: 'Blog', href: '#' },
-    { name: 'Tags', href: '#' },
-    { name: 'Projects', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+  nav: navLinks,
+  socials: socialLinks.filter(sl => ['github', 'twitter', 'linkedin', 'instagram'].includes(sl.kind)),
+  watch: socialLinks.filter(sl => ['youtube', 'twitch'].includes(sl.kind)),
+  other: [
+    { name: 'Links', href: '#' },
+    { name: 'Tags', href: '/tags' },
   ],
 }
 
@@ -34,23 +25,30 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Navigation</h3>
             <ul role="list" className="mt-4 space-y-4">
-              {navigation.solutions.map((item) => (
+              {navigation.nav.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100">
+                  <CustomLink
+                    className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100"
+                    href={item.href}
+                    prefetch={item.prefetch}
+                  >
                     {item.name}
-                  </a>
+                  </CustomLink>
                 </li>
               ))}
             </ul>
           </div>
           <div className="mt-12 md:mt-0">
-            <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Socials</h3>
+            <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Other</h3>
             <ul role="list" className="mt-4 space-y-4">
-              {navigation.support.map((item) => (
+              {navigation.other.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100">
+                  <CustomLink
+                    className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100"
+                    href={item.href}
+                  >
                     {item.name}
-                  </a>
+                  </CustomLink>
                 </li>
               ))}
             </ul>
@@ -58,21 +56,39 @@ export default function Footer() {
         </div>
         <div className="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Other</h3>
+            <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Socials</h3>
             <ul role="list" className="mt-4 space-y-4">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100">
+              {navigation.socials.map((item) => (
+                <li key={item.kind}>
+                  <CustomLink
+                    className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100"
+                    href={item.href}
+                  >
                     {item.name}
-                  </a>
+                  </CustomLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-12 md:mt-0">
+            <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">Watch</h3>
+            <ul role="list" className="mt-4 space-y-4">
+              {navigation.watch.map((item) => (
+                <li key={item.kind}>
+                  <CustomLink
+                    className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 hover:dark:text-gray-100"
+                    href={item.href}
+                  >
+                    {item.name}
+                  </CustomLink>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-      <div className="pt-8 md:flex md:items-center md:justify-between">
-        <p className="mt-8 text-base text-gray-400 md:mt-0">
+      <div className="pt-10 md:flex md:items-center md:justify-between">
+        <p className="mt-10 text-base text-gray-400 md:mt-0">
           &copy; {` ${new Date().getFullYear()} `} Spryse Limited&trade;. All rights reserved.
         </p>
         <p className="mt-1 text-base text-gray-400 md:mt-0 md:order-1">
