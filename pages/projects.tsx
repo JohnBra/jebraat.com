@@ -2,6 +2,7 @@ import CustomLink from '@/components/Link'
 import Image from 'next/future/image'
 import React from 'react'
 import { PageSEO } from '@/components/SEO'
+import SquigglyLine from '@/components/SquigglyLine'
 
 // TODO move to site data
 const projects: any[] = [
@@ -27,7 +28,7 @@ export default function Projects() {
         title="Projects - John Braat"
         description="I build software in my spare time. Most of them will be SaaS projects or small apps."
       />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700 min-h-90">
+      <div className="min-h-90">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Projects
@@ -36,6 +37,8 @@ export default function Projects() {
             I absolutely love building things. Check out some of my projects below to see what I&apos;m working on.
           </p>
         </div>
+
+        <SquigglyLine className="my-3" />
 
         <div className="grid gap-8 grid-cols-1 py-12 md:grid-cols-2">
           {projects.map((project, index) =>
