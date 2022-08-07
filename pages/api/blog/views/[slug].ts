@@ -9,15 +9,25 @@ export default async function handler(
 ) {
   const slug = req.query?.slug?.toString()
 
-  console.log('slug', slug)
-
   try {
     if (req.method === 'POST') {
       // function to update a blog_post row to increment the view counter
-      const { data, error } = await supabase.rpc('increment_views', { slug })
+      const { data, error } = await supabase.rpc('increment_views', { post_slug: slug })
       if (error) throw error
       return res.status(201).json({
         data
+      })
+    } else if (req.method === 'GET') {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('views')
+        .eq('slug', slug)
+        .single()
+
+      if (error) throw error
+
+      return res.status(200).json({
+        views: data.views
       })
     } else {
       return res.status(501).json({ message: 'Not implemented' })
