@@ -11,4 +11,12 @@ export type Post = {
   frontMatter: GrayMatter;
 }
 
+export type PostMeta = {
+  id: string;
+  slug: string;
+  views: number;
+  likes: number;
+  shares: number;
+}
+
 export type SocialIconKind = 'email' | 'github' | 'youtube' | 'twitter' | 'instagram' | 'twitch' | 'linkedin';
