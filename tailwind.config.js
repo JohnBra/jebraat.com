@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      borderWidth: {
+        '3': '3px',
+      },
       backgroundColor: {
         'small-line-1': 'linear-gradient(45deg, transparent, transparent 49%, red 49%, transparent 51%)',
         'small-line-2': 'linear-gradient(-45deg, transparent, transparent 49%, red 49%, transparent 51%);',

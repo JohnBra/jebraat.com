@@ -68,7 +68,7 @@ export default function Page({ featuredPosts }: Props) {
             ))}
             <EmailMeButton className="ml-4" />
           </div>
-          <SquigglyLine className="my-24" />
+          <SquigglyLine className="my-20" />
         </section>
 
         <section className="mt-14">
