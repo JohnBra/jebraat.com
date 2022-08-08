@@ -1,6 +1,11 @@
 import React from 'react'
 
-export default function Instagram(props: Omit<React.SVGProps<SVGElement>, 'viewBox' | 'xmlns' | 'children' | 'ref'>) {
+export default function Instagram(
+  props: Omit<
+    React.SVGProps<SVGElement>,
+    'viewBox' | 'xmlns' | 'children' | 'ref'
+  >,
+) {
   return (
     <svg role="img" viewBox="0 0 24 24" {...props}>
       <path

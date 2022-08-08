@@ -3,23 +3,35 @@
 @tailwind utilities;
 
 .footnotes {
-    @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
 
 .squiggly-line {
-    position: absolute;
-    height: 10px;
-    width: 200%;
-    transform: translate(-25%) scale(0.5)
+  position: absolute;
+  height: 10px;
+  width: 200%;
+  transform: translate(-25%) scale(0.5);
 }
 
 .zig {
-    background: linear-gradient(45deg, transparent, transparent 49%, gray 49%, transparent 51%);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    transparent 49%,
+    gray 49%,
+    transparent 51%
+  );
 }
 .zag {
-    background: linear-gradient(-45deg, transparent, transparent 49%, gray 49%, transparent 51%);
+  background: linear-gradient(
+    -45deg,
+    transparent,
+    transparent 49%,
+    gray 49%,
+    transparent 51%
+  );
 }
 
 .squiggly-line {
-    background-size: 20px 20px;
+  background-size: 20px 20px;
 }

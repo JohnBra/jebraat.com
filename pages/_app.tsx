@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </LayoutWrapper>
     </ThemeProvider>
-  );
+  )
 }
 
 export default MyApp

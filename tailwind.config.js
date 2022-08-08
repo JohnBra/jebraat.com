@@ -1,38 +1,38 @@
-const colors = require('tailwindcss/colors');
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./layouts/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {
     extend: {
       borderWidth: {
-        '3': '3px',
+        3: '3px',
       },
       fontSize: {
-        'xs': '.8rem'
+        xs: '.8rem',
       },
       cursor: {
-        'heart': 'url(/static/heart.cur), default',
+        heart: 'url(/static/heart.cur), default',
       },
       animation: {
-        'blink': 'blink 1.5s steps(2) infinite',
+        blink: 'blink 1.5s steps(2) infinite',
       },
       keyframes: {
         blink: {
           '0%': { opacity: 0 },
-        }
+        },
       },
       minHeight: {
-        '50': '50vh',
-        '60': '60vh',
-        '70': '70vh',
-        '80': '80vh',
-        '90': '90vh',
+        50: '50vh',
+        60: '60vh',
+        70: '70vh',
+        80: '80vh',
+        90: '90vh',
       },
       backgroundImage: {
         'animated-heart': "url('/img/animated-heart.png')",
@@ -41,7 +41,7 @@ module.exports = {
         'bg-position': 'background-position',
       },
       colors: {
-        primary: colors.sky
+        primary: colors.sky,
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -176,8 +176,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }

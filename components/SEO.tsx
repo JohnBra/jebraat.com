@@ -3,28 +3,40 @@ import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
 type CommonProps = {
-  title: string;
-  description: string;
-  ogType: string;
-  ogImage: any; // TODO proper type
-  twImage: string;
-  canonicalUrl?: string;
+  title: string
+  description: string
+  ogType: string
+  ogImage: any // TODO proper type
+  twImage: string
+  canonicalUrl?: string
 }
 
-function CommonSEO ({ title, description, ogType, ogImage, twImage, canonicalUrl }: CommonProps) {
+function CommonSEO({
+  title,
+  description,
+  ogType,
+  ogImage,
+  twImage,
+  canonicalUrl,
+}: CommonProps) {
   const router = useRouter()
   return (
     <Head>
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
-      <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+      <meta
+        property="og:url"
+        content={`${siteMetadata.siteUrl}${router.asPath}`}
+      />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       {Array.isArray(ogImage) ? (
-        ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
+        ogImage.map(({ url }) => (
+          <meta property="og:image" content={url} key={url} />
+        ))
       ) : (
         <meta property="og:image" content={ogImage} key={ogImage} />
       )}
@@ -35,18 +47,22 @@ function CommonSEO ({ title, description, ogType, ogImage, twImage, canonicalUrl
       <meta name="twitter:image" content={twImage} />
       <link
         rel="canonical"
-        href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
+        href={
+          canonicalUrl
+            ? canonicalUrl
+            : `${siteMetadata.siteUrl}${router.asPath}`
+        }
       />
     </Head>
   )
 }
 
 type PageProps = {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
-export function PageSEO ({ title, description }: PageProps) {
+export function PageSEO({ title, description }: PageProps) {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
@@ -61,11 +77,11 @@ export function PageSEO ({ title, description }: PageProps) {
 }
 
 type TagProps = {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
-export function TagSEO ({ title, description }: TagProps) {
+export function TagSEO({ title, description }: TagProps) {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const router = useRouter()
@@ -91,15 +107,15 @@ export function TagSEO ({ title, description }: TagProps) {
 }
 
 type BlogProps = {
-  title: string;
-  summary: string;
-  date: string;
-  lastmod?: string;
-  url: string;
-  images: any[] | string;
-  canonicalUrl?: string;
+  title: string
+  summary: string
+  date: string
+  lastmod?: string
+  url: string
+  images: any[] | string
+  canonicalUrl?: string
 }
-export function PostSEO ({
+export function PostSEO({
   title,
   summary,
   date,
@@ -110,7 +126,12 @@ export function PostSEO ({
 }: BlogProps) {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
-  let imagesArr = images.length === 0 ? [siteMetadata.socialBanner] : typeof images === 'string' ? [images] : images
+  let imagesArr =
+    images.length === 0
+      ? [siteMetadata.socialBanner]
+      : typeof images === 'string'
+      ? [images]
+      : images
 
   const featuredImages = imagesArr.map((img) => {
     return {
@@ -160,8 +181,12 @@ export function PostSEO ({
         canonicalUrl={canonicalUrl}
       />
       <Head>
-        {date && <meta property="article:published_time" content={publishedAt} />}
-        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
+        {date && (
+          <meta property="article:published_time" content={publishedAt} />
+        )}
+        {lastmod && (
+          <meta property="article:modified_time" content={modifiedAt} />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

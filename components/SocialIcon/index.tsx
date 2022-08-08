@@ -20,17 +20,18 @@ const components = {
   linkedin: LinkedIn,
 }
 
-
-
 type Props = {
-  kind: SocialIconKind;
-  href: string;
+  kind: SocialIconKind
+  href: string
   /** Tailwind units see: https://tailwindcss.com/docs/width */
-  size?: number;
+  size?: number
 }
 
 export default function SocialIcon({ kind, href }: Props) {
-  if (kind === 'email' && !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href))
+  if (
+    kind === 'email' &&
+    !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href)
+  )
     throw Error('Please provide a valid email address')
 
   const SocialSvg = components[kind]
@@ -44,7 +45,7 @@ export default function SocialIcon({ kind, href }: Props) {
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 h-6 w-6`}
+        className={`h-6 w-6 fill-current text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200`}
       />
     </a>
   )

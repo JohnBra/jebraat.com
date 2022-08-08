@@ -1,5 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote'
-import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/files'
+import {
+  formatSlug,
+  getAllFilesFrontMatter,
+  getFileBySlug,
+  getFiles,
+} from '@/lib/files'
 import PostLayout from '@/layouts/PostLayout'
 import MDXComponents from '@/components/MDXComponents'
 
@@ -42,7 +47,7 @@ export async function getStaticProps(context: any) {
         prev,
         next,
         frontMatter: post.frontMatter,
-      }
-    }
+      },
+    },
   }
 }

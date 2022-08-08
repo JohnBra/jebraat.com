@@ -5,12 +5,18 @@ import { dateSortDesc, kebabCase } from '@/lib/utils'
 import { GrayMatter, Post } from '@/lib/types'
 import { mdxToHtml } from '@/lib/mdx'
 
-const root = process.cwd();
+const root = process.cwd()
 
-const pipe = (...fns: Function[]) => (x: any) => fns.reduce((v, f) => f(v), x)
+const pipe =
+  (...fns: Function[]) =>
+  (x: any) =>
+    fns.reduce((v, f) => f(v), x)
 
 function flattenArray(input: any[]) {
-  return input.reduce((acc, item) => [...acc, ...(Array.isArray(item) ? item : [item])], [])
+  return input.reduce(
+    (acc, item) => [...acc, ...(Array.isArray(item) ? item : [item])],
+    [],
+  )
 }
 
 function map(fn: Function): Function {
@@ -18,7 +24,9 @@ function map(fn: Function): Function {
 }
 
 function walkDir(fullPath: string) {
-  return fs.statSync(fullPath).isFile() ? fullPath : getAllFilesRecursively(fullPath)
+  return fs.statSync(fullPath).isFile()
+    ? fullPath
+    : getAllFilesRecursively(fullPath)
 }
 
 function pathJoinPrefix(prefix: string): (extraPath: string) => string {
@@ -26,7 +34,11 @@ function pathJoinPrefix(prefix: string): (extraPath: string) => string {
 }
 
 export function getAllFilesRecursively(folder: string): string[] {
-  return pipe(fs.readdirSync, map(pipe(pathJoinPrefix(folder), walkDir)), flattenArray)(folder)
+  return pipe(
+    fs.readdirSync,
+    map(pipe(pathJoinPrefix(folder), walkDir)),
+    flattenArray,
+  )(folder)
 }
 
 /**
@@ -37,7 +49,9 @@ export function getFiles(subdirectory: string): string[] {
   const prefixPaths = path.join(root, 'data', subdirectory)
   const files = getAllFilesRecursively(prefixPaths)
   // Only want to return blog/path and ignore root, replace is needed to work on Windows
-  return files.map((file) => file.slice(prefixPaths.length + 1).replace(/\\/g, '/'))
+  return files.map((file) =>
+    file.slice(prefixPaths.length + 1).replace(/\\/g, '/'),
+  )
 }
 
 /**
@@ -45,7 +59,10 @@ export function getFiles(subdirectory: string): string[] {
  * @param subdirectory
  * @param slug
  */
-export async function getFileBySlug(subdirectory: string, slug: string): Promise<Post> {
+export async function getFileBySlug(
+  subdirectory: string,
+  slug: string,
+): Promise<Post> {
   const mdxPath = path.join(root, 'data', subdirectory, `${slug}.mdx`)
   const mdPath = path.join(root, 'data', subdirectory, `${slug}.md`)
   const source = fs.existsSync(mdxPath)
@@ -68,7 +85,6 @@ export async function getFileBySlug(subdirectory: string, slug: string): Promise
   }
 }
 
-
 /**
  * Removes md and mdx from the slug
  * @param slug
@@ -76,7 +92,6 @@ export async function getFileBySlug(subdirectory: string, slug: string): Promise
 export function formatSlug(slug: string): string {
   return slug.replace(/\.(mdx|md)/, '')
 }
-
 
 /**
  * Retrieves front matter for all files in the provided subdirectory of the data directory
@@ -102,7 +117,9 @@ export async function getAllFilesFrontMatter(subdirectory: string) {
       allFrontMatter.push({
         ...frontmatter,
         slug: formatSlug(fileName),
-        date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
+        date: frontmatter.date
+          ? new Date(frontmatter.date).toISOString()
+          : null,
       })
     }
   })
@@ -120,7 +137,10 @@ export async function getAllTags(subdirectory: string) {
   let tagCount: { [tag: string]: number } = {}
   // Iterate through each post, putting all found tags into `tags`
   files.forEach((file) => {
-    const source = fs.readFileSync(path.join(root, 'data', subdirectory, file), 'utf8')
+    const source = fs.readFileSync(
+      path.join(root, 'data', subdirectory, file),
+      'utf8',
+    )
     const { data } = matter(source)
     if (data.tags && data.draft !== true) {
       data.tags.forEach((tag: string) => {

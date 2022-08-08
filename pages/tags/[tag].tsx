@@ -8,7 +8,6 @@ import path from 'path'
 
 const root = process.cwd()
 
-
 export default function Tag({ posts, tag }: any) {
   // Capitalize first letter and convert space to dash
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
@@ -39,7 +38,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
   const allPosts = await getAllFilesFrontMatter('blog')
   const filteredPosts = allPosts.filter(
-    (post) => post.draft !== true && post.tags.map((t: any) => kebabCase(t)).includes(params.tag)
+    (post) =>
+      post.draft !== true &&
+      post.tags.map((t: any) => kebabCase(t)).includes(params.tag),
   )
 
   // rss

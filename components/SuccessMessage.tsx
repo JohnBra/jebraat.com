@@ -1,7 +1,7 @@
 import React from 'react'
 
 type Props = {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default function SuccessMessage({ children }: Props) {
@@ -21,5 +21,5 @@ export default function SuccessMessage({ children }: Props) {
       </svg>
       {children}
     </p>
-  );
+  )
 }

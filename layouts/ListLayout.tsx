@@ -7,21 +7,22 @@ import type { GrayMatter } from '@/lib/types'
 import SquigglyLine from '@/components/SquigglyLine'
 
 type Props = {
-  posts: GrayMatter[];
-  title: React.ReactNode;
+  posts: GrayMatter[]
+  title: React.ReactNode
 }
 
 export default function ListLayout({ posts, title }: Props) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter: GrayMatter) => {
-    const searchContent = frontMatter?.title + frontMatter?.summary + frontMatter?.tags?.join(' ')
+    const searchContent =
+      frontMatter?.title + frontMatter?.summary + frontMatter?.tags?.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
   return (
     <>
       <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
           {title}
         </h1>
         <div className="relative">
@@ -50,22 +51,33 @@ export default function ListLayout({ posts, title }: Props) {
       </div>
       <SquigglyLine className="my-3" />
       <ul>
-        {!filteredBlogPosts.length && <div className="text-neutral-800 dark:text-neutral-300 my-6">No posts found.</div>}
+        {!filteredBlogPosts.length && (
+          <div className="my-6 text-neutral-800 dark:text-neutral-300">
+            No posts found.
+          </div>
+        )}
         {filteredBlogPosts.map((frontMatter: GrayMatter) => {
           const { slug, date, title, summary, tags } = frontMatter
           return (
             <li key={slug} className="py-4">
               <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                {date && <dl>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{dayjs(new Date(date)).format('MMMM DD, YYYY')}</time>
-                  </dd>
-                </dl>}
+                {date && (
+                  <dl>
+                    <dt className="sr-only">Published on</dt>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>
+                        {dayjs(new Date(date)).format('MMMM DD, YYYY')}
+                      </time>
+                    </dd>
+                  </dl>
+                )}
                 <div className="space-y-3 xl:col-span-3">
                   <div>
                     <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                      <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="text-gray-900 dark:text-gray-100"
+                      >
                         {title}
                       </Link>
                     </h3>

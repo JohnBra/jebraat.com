@@ -2,10 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 
 type Props = {
-  prefetch?: boolean;
+  prefetch?: boolean
 } & React.HTMLProps<HTMLAnchorElement>
 
-export default function CustomLink({ prefetch, href, rel = "noopener noreferrer", ...rest }: Props) {
+export default function CustomLink({
+  prefetch,
+  href,
+  rel = 'noopener noreferrer',
+  ...rest
+}: Props) {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 

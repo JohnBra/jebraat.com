@@ -18,14 +18,14 @@ export default function Subscribe() {
 
       const email = ref.current.value
       const res = await fetch(`/api/newsletter/subscribers?email=${email}`, {
-        method: 'POST'
+        method: 'POST',
       })
 
       const { error } = await res.json()
       if (error) {
         setForm({
           state: Form.Error,
-          message: error
+          message: error,
         })
         return
       }
@@ -33,14 +33,14 @@ export default function Subscribe() {
       ref.current.value = ''
       setForm({
         state: Form.Success,
-        message: `Hooray! You're now on the list.`
+        message: `Hooray! You're now on the list.`,
       })
     }
   }
 
   return (
-    <div className="border border-blue-200 rounded-md p-6 my-4 w-full dark:border-gray-700 bg-blue-50 dark:bg-gray-800">
-      <p className="text-lg md:text-xl font-bold text-neutral-900 dark:text-neutral-100">
+    <div className="my-4 w-full rounded-md border border-blue-200 bg-blue-50 p-6 dark:border-gray-700 dark:bg-gray-800">
+      <p className="text-lg font-bold text-neutral-900 dark:text-neutral-100 md:text-xl">
         Subscribe to the newsletter
       </p>
       <p className="my-1 text-neutral-700 dark:text-neutral-200">
@@ -54,11 +54,11 @@ export default function Subscribe() {
           type="email"
           autoComplete="email"
           required
-          className="px-4 py-2 mt-1 focus:ring-sky-500 focus:border-sky-500 block w-full border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 pr-32"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-sky-500 focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
         />
         {/* bg-gray-100 dark:bg-gray-700 hover:bg-sky-200 text-gray-900 dark:text-gray-100  */}
         <button
-          className="flex items-center justify-center absolute right-1 top-1 px-4 font-medium h-8 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 border-2 dark:border-gray-500 hover:border-sky-400 hover:dark:border-sky-400 rounded"
+          className="absolute right-1 top-1 flex h-8 items-center justify-center rounded border-2 bg-gray-100 px-4 font-medium text-gray-900 hover:border-sky-400 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-100 hover:dark:border-sky-400"
           type="submit"
         >
           {form.state === Form.Loading ? <LoadingSpinner /> : 'Subscribe'}
@@ -69,12 +69,10 @@ export default function Subscribe() {
       ) : form.state === Form.Success ? (
         <SuccessMessage>{form.message}</SuccessMessage>
       ) : (
-        <p className="text-sm text-neutral-500 dark:text-neutral-200 hover:text-neutral-900 hover:dark:text-neutral-50">
-          <CustomLink href={siteMetadata.revue}>
-            View all issues
-          </CustomLink>
+        <p className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-200 hover:dark:text-neutral-50">
+          <CustomLink href={siteMetadata.revue}>View all issues</CustomLink>
         </p>
       )}
     </div>
-  );
+  )
 }

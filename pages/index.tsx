@@ -25,7 +25,7 @@ export default function Page({ featuredPosts }: Props) {
         description="Building software to solve problems. Writing about tech and sharing my learnings about building services on the web."
       />
       <div className="h-full">
-        <header className="flex flex-col sm:flex-row sm:flex-row-reverse gap-8">
+        <header className="flex flex-col gap-8 sm:flex-row sm:flex-row-reverse">
           <div className="sm:mb-auto">
             <Image
               alt="John Braat"
@@ -34,50 +34,61 @@ export default function Page({ featuredPosts }: Props) {
               src="/static/img/avatar.webp"
               sizes="30vw"
               priority
-              className="rounded-full grayscale hover:grayscale-0 transition-all ease-in-out duration-500 cursor-heart"
+              className="cursor-heart rounded-full grayscale transition-all duration-500 ease-in-out hover:grayscale-0"
             />
           </div>
           <div className="flex-1">
             <div className="flex flex-col pr-8">
-              <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
+              <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
                 John Braat
               </h1>
-              <h2 className="h-16 sm:h-auto text-neutral-800 dark:text-neutral-200 sm:mb-4 text-lg font-mono">
+              <h2 className="h-16 font-mono text-lg text-neutral-800 dark:text-neutral-200 sm:mb-4 sm:h-auto">
                 <Typewriter
                   options={{
-                    strings: ['Developer', 'Creator', 'Traveler', 'Learner', 'Striving to be better than yesterday'],
+                    strings: [
+                      'Developer',
+                      'Creator',
+                      'Traveler',
+                      'Learner',
+                      'Striving to be better than yesterday',
+                    ],
                     autoStart: true,
                     loop: true,
                     delay: 75,
                     cursor: '&#x258C;',
-                    cursorClassName: 'relative text-sky-500 ml-0.5 -top-0.5'
+                    cursorClassName: 'relative text-sky-500 ml-0.5 -top-0.5',
                   }}
                 />
               </h2>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-16 font-mono">
-                Building software to solve problems. Self improvement nerd. Sharing my learnings about building products and services on the web.
+              <p className="mb-16 font-mono text-neutral-600 dark:text-neutral-400">
+                Building software to solve problems. Self improvement nerd.
+                Sharing my learnings about building products and services on the
+                web.
               </p>
             </div>
           </div>
-
         </header>
 
         <section>
-          <div className="flex items-center gap-5 mt-4">
-            {socialLinks.filter(l => ['github', 'twitter', 'linkedin', 'instagram'].includes(l.kind)).map(l => (
-              <SocialIcon key={l.kind} kind={l.kind} href={l.href} />
-            ))}
+          <div className="mt-4 flex items-center gap-5">
+            {socialLinks
+              .filter((l) =>
+                ['github', 'twitter', 'linkedin', 'instagram'].includes(l.kind),
+              )
+              .map((l) => (
+                <SocialIcon key={l.kind} kind={l.kind} href={l.href} />
+              ))}
             <EmailMeButton className="ml-4" />
           </div>
           <SquigglyLine className="my-20" />
         </section>
 
         <section className="mt-14">
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+          <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             Read my stuff
           </h3>
-          <div className="flex flex-col sm:flex-row gap-7 justify-between">
-            {featuredPosts.map(p => (
+          <div className="flex flex-col justify-between gap-7 sm:flex-row">
+            {featuredPosts.map((p) => (
               <BlogPostCard
                 key={p.slug}
                 title={p.title}
@@ -86,11 +97,11 @@ export default function Page({ featuredPosts }: Props) {
               />
             ))}
           </div>
-          <div className="flex items-center text-neutral-500 py-8">
+          <div className="flex items-center py-8 text-neutral-500">
             <CustomLink
               href="/blog"
               prefetch={false}
-              className="hover:text-neutral-800 dark:hover:text-neutral-300 transition-all ease-in-out"
+              className="transition-all ease-in-out hover:text-neutral-800 dark:hover:text-neutral-300"
             >
               All posts &rarr;
             </CustomLink>
@@ -98,14 +109,14 @@ export default function Page({ featuredPosts }: Props) {
         </section>
 
         <section className="mt-14">
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+          <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             Watch my stuff
           </h3>
-          <div className="flex items-center text-neutral-500 py-8">
+          <div className="flex items-center py-8 text-neutral-500">
             <CustomLink
               href="https://www.youtube.com/channel/UCSYoM12jgDhSN57CMCqr-ZA"
               prefetch={false}
-              className="hover:text-neutral-800 dark:hover:text-neutral-300 transition-all ease-in-out"
+              className="transition-all ease-in-out hover:text-neutral-800 dark:hover:text-neutral-300"
             >
               All videos &rarr;
             </CustomLink>
@@ -122,7 +133,7 @@ export default function Page({ featuredPosts }: Props) {
 
 export async function getStaticProps(context: any) {
   const posts = await getAllFilesFrontMatter('blog')
-  const featuredPosts = posts.filter(p => p?.featured)
+  const featuredPosts = posts.filter((p) => p?.featured)
 
   return { props: { featuredPosts } }
 }

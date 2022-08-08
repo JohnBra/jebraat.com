@@ -8,15 +8,19 @@ import siteMetadata from '@/data/siteMetadata'
 import Tag from '@/components/Tag'
 import ViewCounter from '@/components/ViewCounter'
 
-
 type Props = {
-  frontMatter: any;
-  next: any;
-  prev: any;
-  children: React.ReactNode;
+  frontMatter: any
+  next: any
+  prev: any
+  children: React.ReactNode
 }
 
-export default function PostLayout({ frontMatter, next, prev, children }: Props) {
+export default function PostLayout({
+  frontMatter,
+  next,
+  prev,
+  children,
+}: Props) {
   const { date, title, summary, slug, tags } = frontMatter
 
   return (
@@ -28,10 +32,10 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         {...frontMatter}
       />
-      <article className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 selection:bg-orange-300 selection:dark:bg-orange-700">
+      <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="relative">
           {/* Sidebar */}
-          <div className="hidden xl:block fixed top-1/3 -mx-32 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 w-18 h-0">
+          <div className="w-18 fixed top-1/3 -mx-32 hidden h-0 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:block xl:divide-y-0">
             <div>
               <ViewCounter slug={slug} />
               <div className="pt-4 xl:pt-8">
@@ -46,9 +50,9 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
           </div>
           {/* Blog post with title and author */}
           <div className="relative">
-            <header className="pt-6 xl:pb-6 space-y-1">
+            <header className="space-y-1 pt-6 xl:pb-6">
               <PageTitle>{title}</PageTitle>
-              <div className="flex flex-col-reverse items-start justify-between w-full mt-2 md:flex-row md:items-center">
+              <div className="mt-2 flex w-full flex-col-reverse items-start justify-between md:flex-row md:items-center">
                 <div className="flex items-center">
                   <Image
                     alt="John Braat"
@@ -60,10 +64,12 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                     className="rounded-full"
                   />
                   <p className="ml-2 text-sm text-neutral-600 dark:text-neutral-400">
-                    Jonathan Braat / {dayjs(new Date(date)).format('MMMM DD, YYYY')} ⋅ {frontMatter.readingTime}
+                    Jonathan Braat /{' '}
+                    {dayjs(new Date(date)).format('MMMM DD, YYYY')} ⋅{' '}
+                    {frontMatter.readingTime}
                   </p>
                 </div>
-                <p className="hidden md:block min-w-32">
+                <p className="min-w-32 hidden md:block">
                   {tags.map((tag: any) => (
                     <Tag key={tag} text={tag} />
                   ))}
@@ -71,17 +77,19 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
               </div>
             </header>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose sm:prose-xl max-w-3xl pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark sm:prose-xl">
+                {children}
+              </div>
             </div>
 
             <div>
               {(next || prev) && (
-                <nav className="grid grid-cols-2 py-4 gap-3">
+                <nav className="grid grid-cols-2 gap-3 py-4">
                   {prev && (
-                    <div className="col-span-1 group">
+                    <div className="group col-span-1">
                       <Link href={`/blog/${prev.slug}`}>
-                        <div className="text-left p-3 flex flex-col border border-gray-400 dark:border-gray-700 rounded-md group-hover:border-primary-600 cursor-pointer transition-all ease-in-out">
-                          <div className="text-sm text-bold tracking-wide text-gray-700 dark:text-gray-200">
+                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 p-3 text-left transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
+                          <div className="text-bold text-sm tracking-wide text-gray-700 dark:text-gray-200">
                             Previous
                           </div>
                           <div className="text-primary-500">
@@ -92,9 +100,9 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                     </div>
                   )}
                   {next && (
-                    <div className="col-start-2 col-span-1 group">
+                    <div className="group col-span-1 col-start-2">
                       <Link href={`/blog/${next.slug}`}>
-                        <div className="text-right p-3 flex flex-col border border-gray-400 dark:border-gray-700 rounded-md group-hover:border-primary-600 cursor-pointer transition-all ease-in-out">
+                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 p-3 text-right transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
                           <div className="text-sm tracking-wide text-gray-700 dark:text-gray-200">
                             Next
                           </div>
@@ -109,7 +117,6 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
               )}
             </div>
           </div>
-
         </div>
       </article>
     </>

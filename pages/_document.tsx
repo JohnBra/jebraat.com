@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document(props: any) {
   return (
@@ -51,5 +51,5 @@ export default function Document(props: any) {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }

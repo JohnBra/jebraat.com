@@ -14,11 +14,7 @@ export async function mdxToHtml(source: string) {
   const mdxSource = await serialize(source, {
     parseFrontmatter: true,
     mdxOptions: {
-      remarkPlugins: [
-        remarkGfm,
-        remarkMath,
-        remarkFootnotes,
-      ],
+      remarkPlugins: [remarkGfm, remarkMath, remarkFootnotes],
       rehypePlugins: [
         rehypeSlug,
         rehypeCodeTitles,
@@ -29,18 +25,18 @@ export async function mdxToHtml(source: string) {
           rehypeAutolinkHeadings,
           {
             properties: {
-              className: ['anchor']
-            }
-          }
-        ]
+              className: ['anchor'],
+            },
+          },
+        ],
       ],
-      format: 'mdx'
-    }
-  });
+      format: 'mdx',
+    },
+  })
 
   return {
     html: mdxSource,
     wordCount: source.split(/\s+/gu).length,
-    readingTime: readingTime(source).text
-  };
+    readingTime: readingTime(source).text,
+  }
 }
