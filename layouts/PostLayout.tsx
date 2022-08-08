@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/future/image'
 import dayjs from 'dayjs'
 import Link from '@/components/Link'
@@ -6,7 +6,11 @@ import PageTitle from '@/components/PageTitle'
 import { PostSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import Tag from '@/components/Tag'
-import ViewCounter from '@/components/ViewCounter'
+import useSWR from 'swr'
+import { PostMeta } from '@/lib/types'
+import fetcher from '@/lib/fetcher'
+import { EyeIcon, ShareIcon } from '@heroicons/react/outline'
+import { HeartIcon } from '@heroicons/react/solid'
 
 type Props = {
   frontMatter: any
@@ -22,6 +26,19 @@ export default function PostLayout({
   children,
 }: Props) {
   const { date, title, summary, slug, tags } = frontMatter
+  const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
+
+  console.log({ ...data })
+
+  useEffect(() => {
+    const incrementViewCount = () => {
+      fetch(`/api/blog/views/${slug}`, {
+        method: 'POST',
+      }).catch((e) => console.warn(e))
+    }
+
+    incrementViewCount()
+  }, [slug])
 
   return (
     <>
@@ -35,17 +52,19 @@ export default function PostLayout({
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="relative">
           {/* Sidebar */}
-          <div className="w-18 fixed top-1/3 -mx-32 hidden h-0 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:block xl:divide-y-0">
-            <div>
-              <ViewCounter slug={slug} />
-              <div className="pt-4 xl:pt-8">
-                <Link
-                  href="/blog"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                >
-                  &larr;
-                </Link>
+          <div className="fixed top-1/3 -mx-28 hidden h-0 divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:block xl:divide-y-0">
+            <div className="">
+              <div className="flex flex-col items-center py-3 px-6">
+                <EyeIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+                <div className="text-xs">{data?.views}</div>
               </div>
+              <button className="flex flex-col items-center py-3 px-6">
+                <HeartIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+                <div className="text-center text-xs">{data?.likes}</div>
+              </button>
+              <button className="block py-3 px-6">
+                <ShareIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+              </button>
             </div>
           </div>
           {/* Blog post with title and author */}
