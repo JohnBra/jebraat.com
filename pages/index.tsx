@@ -56,8 +56,8 @@ export default function Page({ featuredPosts }: Props) {
                     autoStart: true,
                     loop: true,
                     delay: 75,
-                    cursor: '&#x258C;',
-                    cursorClassName: 'relative text-sky-500 ml-0.5 -top-0.5',
+                    cursor: '&nbsp;',
+                    cursorClassName: 'bg-sky-500 font-sans ml-0.5',
                   }}
                 />
               </h2>
