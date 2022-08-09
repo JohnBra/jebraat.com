@@ -28,8 +28,6 @@ export default function PostLayout({
   const { date, title, summary, slug, tags } = frontMatter
   const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
 
-  console.log({ ...data })
-
   useEffect(() => {
     const incrementViewCount = () => {
       fetch(`/api/blog/views/${slug}`, {
