@@ -118,6 +118,7 @@ export default function Page({ featuredPosts }: Props) {
             then this is the perfect place to start.
           </p>
           <VideoCard
+            className="border-t"
             index={1}
             title="How to Leverage Time With Multitasking"
             href="https://www.youtube.com/watch?v=dYl25SRJ02w"

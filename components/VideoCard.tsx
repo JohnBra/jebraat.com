@@ -1,20 +1,28 @@
+import classNames from 'classnames'
+import CustomLink from '@/components/Link'
+
 type Props = {
   href: string
   length: string
   title: string
   index: number
+  className?: string
 }
 
-export default function VideoCard({ href, length, title, index }: Props) {
+export default function VideoCard({ href, length, title, index, className }: Props) {
   return (
-    <a
+    <CustomLink
       className="w-full"
       href={href}
       aria-label={title}
       target="_blank"
-      rel="noopener noreferrer"
     >
-      <div className="w-full border-b border-t border-neutral-200 dark:border-neutral-700 py-3 transform hover:scale-[1.01] transition-all">
+      <div
+        className={classNames(
+          'w-full border-b border-neutral-200 dark:border-neutral-700 py-3 transform hover:scale-[1.01] transition-all',
+          className
+        )}
+      >
         <div className="flex flex-col sm:flex-row justify-between items-baseline">
           <div className="flex items-center">
             <div className="text-gray-500 dark:text-gray-400 text-left mr-6">
@@ -43,6 +51,6 @@ export default function VideoCard({ href, length, title, index }: Props) {
           </div>
         </div>
       </div>
-    </a>
+    </CustomLink>
   );
 }
