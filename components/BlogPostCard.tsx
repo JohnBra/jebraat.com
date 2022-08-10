@@ -23,7 +23,7 @@ export default function BlogPostCard({
       )}
     >
       <div className="h-full px-4 pt-4 pb-6 sm:p-4">
-        <div className="h-full flex flex-col justify-between">
+        <div className="flex h-full flex-col justify-between">
           <h4 className="mb-6 w-full text-xl font-medium tracking-tight text-neutral-900 dark:text-neutral-100 sm:mb-10">
             {title}
           </h4>

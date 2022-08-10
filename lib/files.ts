@@ -74,6 +74,7 @@ export async function getFileBySlug(
 
   return {
     html: mdx.html,
+    tweetIds: mdx.tweetIds,
     frontMatter: {
       ...frontmatter,
       readingTime: mdx.readingTime,

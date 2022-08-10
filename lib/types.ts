@@ -8,6 +8,7 @@ export type GrayMatter = {
 
 export type Post = {
   html: MDXRemoteSerializeResult<Record<string, unknown>>
+  tweetIds: string[]
   frontMatter: GrayMatter
 }
 

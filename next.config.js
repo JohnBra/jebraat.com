@@ -6,7 +6,7 @@ const nextConfig = {
     images: { allowFutureImage: true },
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'pbs.twimg.com'],
   },
 }
 

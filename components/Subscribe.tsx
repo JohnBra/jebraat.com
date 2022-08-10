@@ -46,8 +46,8 @@ export default function Subscribe({ className }: Props) {
   return (
     <div
       className={classNames(
-      'my-4 w-full rounded-md border-2 border-sky-200 bg-sky-100 p-6 dark:border-gray-700 dark:bg-gray-800',
-        className
+        'my-4 w-full rounded-md border-2 border-sky-200 bg-sky-100 p-6 dark:border-gray-700 dark:bg-gray-800',
+        className,
       )}
     >
       <p className="text-lg font-bold text-neutral-900 dark:text-neutral-100 md:text-xl">

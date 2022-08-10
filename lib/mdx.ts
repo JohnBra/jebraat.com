@@ -34,8 +34,12 @@ export async function mdxToHtml(source: string) {
     },
   })
 
+  const tweetMatches = source.match(/<StaticTweet\sid="\d+"\s\/>/g);
+  const tweetIds: (string | undefined)[] = tweetMatches?.map(tweet => tweet.match(/\d+/g)?.[0]) ?? [];
+
   return {
     html: mdxSource,
+    tweetIds: tweetIds.filter(t => t) as string[],
     wordCount: source.split(/\s+/gu).length,
     readingTime: readingTime(source).text,
   }

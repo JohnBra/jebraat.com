@@ -6,16 +6,30 @@ import {
   getFiles,
 } from '@/lib/files'
 import PostLayout from '@/layouts/PostLayout'
+import Tweet from '@/components/Tweet'
 import MDXComponents from '@/components/MDXComponents'
+import { getTweets } from '@/lib/twitter'
 
 export default function PostPage({ post }: { post: any }) {
+
+  const StaticTweet = ({ id }: { id: string }) => {
+    const tweet = post.tweets.find((tweet: any) => tweet.id === id)
+    return <Tweet {...tweet} />
+  };
+
   return (
     <PostLayout
       next={post?.next}
       prev={post?.prev}
       frontMatter={post.frontMatter}
     >
-      <MDXRemote {...post.content} components={MDXComponents} />
+      <MDXRemote
+        {...post.content}
+        components={{
+          ...MDXComponents,
+          StaticTweet
+        }}
+      />
     </PostLayout>
   )
 }
@@ -39,11 +53,13 @@ export async function getStaticProps(context: any) {
   const prev = allPosts?.[postIndex + 1] ?? null
   const next = allPosts?.[postIndex - 1] ?? null
   const post = await getFileBySlug('blog', slug)
+  const tweets = await getTweets(post.tweetIds)
 
   return {
     props: {
       post: {
         content: post.html,
+        tweets,
         prev,
         next,
         frontMatter: post.frontMatter,

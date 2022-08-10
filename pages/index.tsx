@@ -114,9 +114,10 @@ export default function Page({ featuredPosts }: Props) {
           <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             Watch my stuff
           </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 mb-6 font-mono">
-            I make videos about tech behind SaaS and personal development topics. If you prefer watching over reading
-            then this is the perfect place to start.
+          <p className="mb-6 font-mono text-neutral-600 dark:text-neutral-400">
+            I make videos about tech behind SaaS and personal development
+            topics. If you prefer watching over reading then this is the perfect
+            place to start.
           </p>
           <VideoCard
             className="border-t"

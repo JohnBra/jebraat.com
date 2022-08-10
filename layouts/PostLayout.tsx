@@ -113,7 +113,9 @@ export default function PostLayout({
                           </div>
                           <div className="flex text-primary-500">
                             <span className="mr-1.5">&larr;</span>
-                            <span className="flex-1 truncate">{prev.title}</span>
+                            <span className="flex-1 truncate">
+                              {prev.title}
+                            </span>
                           </div>
                         </div>
                       </Link>
@@ -122,12 +124,14 @@ export default function PostLayout({
                   {next && (
                     <div className="group col-span-1 col-start-2">
                       <Link href={`/blog/${next.slug}`}>
-                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 pr-3 py-3 pl-4 text-right transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
+                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 py-3 pr-3 pl-4 text-right transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
                           <div className="text-sm tracking-wide text-gray-700 dark:text-gray-200">
                             Next
                           </div>
                           <div className="flex text-primary-500">
-                            <span className="flex-1 truncate">{next.title}</span>
+                            <span className="flex-1 truncate">
+                              {next.title}
+                            </span>
                             <span className="ml-1.5">&rarr;</span>
                           </div>
                         </div>
