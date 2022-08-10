@@ -50,6 +50,7 @@ export default function Page({ featuredPosts }: Props) {
                       'Developer',
                       'Creator',
                       'Traveler',
+                      'Burger Connoisseur',
                       'Learner',
                       'Striving to be better than yesterday',
                     ],
