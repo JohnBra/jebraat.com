@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/future/image'
 import classNames from 'classnames'
+import Subscribe from '@/components/Subscribe'
 
 function CustomLink(props: any) {
   const href = props.href
@@ -31,10 +32,19 @@ function Highlight({ className, ...rest }: any) {
   return <span className={classNames('text-pink-500', className)} {...rest} />
 }
 
+function NewsletterSubscribe() {
+  return (
+    <div className="not-prose my-20">
+      <Subscribe />
+    </div>
+  )
+}
+
 const MDXComponents = {
   a: CustomLink,
   Image: CustomImage,
   Highlight: Highlight,
+  NewsletterSubscribe: NewsletterSubscribe,
 }
 
 export default MDXComponents

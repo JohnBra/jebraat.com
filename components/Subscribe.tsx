@@ -1,13 +1,18 @@
 import React from 'react'
-import { useState, useRef, FormEvent } from 'react'
+import { useState, useRef } from 'react'
 import { Form, FormState } from 'lib/types'
 import SuccessMessage from 'components/SuccessMessage'
 import ErrorMessage from 'components/ErrorMessage'
 import LoadingSpinner from 'components/LoadingSpinner'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/Link'
+import classNames from 'classnames'
 
-export default function Subscribe() {
+type Props = {
+  className?: string
+}
+
+export default function Subscribe({ className }: Props) {
   const [form, setForm] = useState<FormState>({ state: Form.Initial })
   const ref = useRef<HTMLInputElement>(null)
 
@@ -39,7 +44,12 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="my-4 w-full rounded-md border border-blue-200 bg-blue-50 p-6 dark:border-gray-700 dark:bg-gray-800">
+    <div
+      className={classNames(
+      'my-4 w-full rounded-md border-2 border-sky-200 bg-sky-100 p-6 dark:border-gray-700 dark:bg-gray-800',
+        className
+      )}
+    >
       <p className="text-lg font-bold text-neutral-900 dark:text-neutral-100 md:text-xl">
         Subscribe to the newsletter
       </p>
