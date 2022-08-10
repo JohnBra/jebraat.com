@@ -34,12 +34,16 @@ export async function mdxToHtml(source: string) {
     },
   })
 
-  const tweetMatches = source.match(/<StaticTweet\sid="\d+"\s\/>/g);
-  const tweetIds: (string | undefined)[] = tweetMatches?.map(tweet => tweet.match(/\d+/g)?.[0]) ?? [];
+  // this here is omega hacky, don't try it at home kids
+  // first step match all StaticTweet elements in MDX where id follows this exact element
+  const tweetMatches = source.match(/<StaticTweet\s*id="\d+"/g)
+  // second step extract all ids from previously matched static tweet occurrences in mdx
+  const tweetIds: (string | undefined)[] =
+    tweetMatches?.map((tweet) => tweet.match(/\d+/g)?.[0]) ?? []
 
   return {
     html: mdxSource,
-    tweetIds: tweetIds.filter(t => t) as string[],
+    tweetIds: tweetIds.filter((t) => t) as string[],
     wordCount: source.split(/\s+/gu).length,
     readingTime: readingTime(source).text,
   }

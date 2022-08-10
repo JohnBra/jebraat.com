@@ -1,3 +1,4 @@
+import React from 'react'
 import { MDXRemote } from 'next-mdx-remote'
 import {
   formatSlug,
@@ -11,11 +12,16 @@ import MDXComponents from '@/components/MDXComponents'
 import { getTweets } from '@/lib/twitter'
 
 export default function PostPage({ post }: { post: any }) {
-
-  const StaticTweet = ({ id }: { id: string }) => {
+  const StaticTweet = ({
+    id,
+    linkPreview,
+  }: {
+    id: string
+    linkPreview?: any
+  }) => {
     const tweet = post.tweets.find((tweet: any) => tweet.id === id)
-    return <Tweet {...tweet} />
-  };
+    return <Tweet {...tweet} linkPreview={linkPreview} />
+  }
 
   return (
     <PostLayout
@@ -27,7 +33,7 @@ export default function PostPage({ post }: { post: any }) {
         {...post.content}
         components={{
           ...MDXComponents,
-          StaticTweet
+          StaticTweet,
         }}
       />
     </PostLayout>
