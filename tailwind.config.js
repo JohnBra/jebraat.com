@@ -34,12 +34,6 @@ module.exports = {
         80: '80vh',
         90: '90vh',
       },
-      backgroundImage: {
-        'animated-heart': "url('/img/animated-heart.png')",
-      },
-      transitionProperty: {
-        'bg-position': 'background-position',
-      },
       colors: {
         primary: colors.sky,
       },
