@@ -35,21 +35,3 @@
 .squiggly-line {
   background-size: 20px 20px;
 }
-
-.animated-heart {
-
-}
-
-.animated-heart {
-  width: 100px;
-  height: 100px;
-  background: url("/static/img/heart.png") no-repeat 0 0;
-  transition: background-position 1s steps(28);
-  transition-duration: 0s;
-}
-
-.animated-heart.animated-heart-active {
-   transition-duration: 1s;
-   background-position: -2800px 0;
-}
-

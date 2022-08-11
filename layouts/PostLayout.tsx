@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/future/image'
 import dayjs from 'dayjs'
 import Link from '@/components/Link'
@@ -10,10 +10,7 @@ import useSWR from 'swr'
 import { PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import { EyeIcon, ShareIcon } from '@heroicons/react/outline'
-import { HeartIcon } from '@heroicons/react/solid'
 import Subscribe from '@/components/Subscribe'
-import AnimatedHeart from '@/components/AnimatedHeart'
-import { useLocalStorage } from 'usehooks-ts'
 
 type Props = {
   frontMatter: any
@@ -30,10 +27,7 @@ export default function PostLayout({
 }: Props) {
   const { date, title, summary, slug, tags } = frontMatter
   const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
-  const [liked, setLiked] = useLocalStorage<boolean>(`blog/likes/${slug}`, false)
-  console.log('liked', liked)
 
-  console.log('slug', slug)
   useEffect(() => {
     const incrementViewCount = () => {
       fetch(`/api/blog/views/${slug}`, {
@@ -43,10 +37,6 @@ export default function PostLayout({
 
     incrementViewCount()
   }, [slug])
-
-  const onClickLike = () => {
-    setLiked(prevState => !prevState)
-  }
 
   return (
     <>
@@ -64,17 +54,11 @@ export default function PostLayout({
             <div className="">
               <div className="flex flex-col items-center py-3 px-6">
                 <EyeIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
-                <div className="text-xs">{data?.views}</div>
+                <div className="text-xs">{data?.views ?? <>&nbsp;</>}</div>
               </div>
-              <button
-                className="relative w-full flex flex-col items-center h-16 cursor-pointer"
-                onClick={() => onClickLike()}
-              >
-                <AnimatedHeart active={liked} className="absolute -top-7"/>
-                <div className="absolute top-11 text-center text-xs">{data?.likes}</div>
-              </button>
               <button className="block py-3 px-6">
                 <ShareIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+                <div className="text-xs">{data?.shares ?? <>&nbsp;</>}</div>
               </button>
             </div>
           </div>
