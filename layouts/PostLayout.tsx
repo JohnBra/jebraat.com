@@ -15,6 +15,8 @@ import { PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
 import CustomLink from '@/components/Link'
+import CopyToClipboard from 'react-copy-to-clipboard'
+import ShareButton from '@/components/ShareButton'
 
 type Props = {
   frontMatter: any
@@ -31,6 +33,7 @@ export default function PostLayout({
 }: Props) {
   const router = useRouter()
   const [shareModalOpen, setShareModalOpen] = useState(false)
+  const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const { date, title, summary, slug, tags } = frontMatter
   const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
   const url = `${siteMetadata.siteUrl}${router.asPath}`
@@ -44,6 +47,11 @@ export default function PostLayout({
 
     incrementViewCount()
   }, [slug])
+
+  const onSetShareModalState = (open: boolean) => {
+    if (open) setCopiedToClipboard(false)
+    setShareModalOpen(open)
+  }
 
   return (
     <>
@@ -65,7 +73,7 @@ export default function PostLayout({
               </div>
               <button
                 className="block py-3 px-6"
-                onClick={() => setShareModalOpen(true)}
+                onClick={() => onSetShareModalState(true)}
               >
                 <ShareIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
                 <div className="text-xs">{data?.shares ?? <>&nbsp;</>}</div>
@@ -150,33 +158,40 @@ export default function PostLayout({
           </div>
         </div>
       </article>
-      <Modal open={shareModalOpen} setOpen={(val) => setShareModalOpen(val)}>
-        <div className="flex flex-col gap-2">
-          <div><span>Copy link</span><span>IC</span></div>
-          <CustomLink href={share.toTwitter(url, title)}>
-            Share to twitter
-          </CustomLink>
-          <CustomLink href={share.toLinkedIn(url, title, summary)}>
-            Share to LinkedIn
-          </CustomLink>
-          <CustomLink href={share.toReddit(url, title)}>
-            Share to Reddit
-          </CustomLink>
-          <CustomLink href={share.toHackerNews(url, title)}>
-            Share to Hacker News
-          </CustomLink>
-          <CustomLink href={share.toFacebook(url)}>
-            Share to Facebook
-          </CustomLink>
-        </div>
-        <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-          <button
-            type="button"
-            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-sky-600 text-base font-medium text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 sm:col-start-2 sm:text-sm"
-            onClick={() => setShareModalOpen(false)}
+      <Modal
+        className="sm:my-6 sm:px-3 sm:py-2 sm:max-w-xs sm:w-full"
+        open={shareModalOpen}
+        setOpen={(val) => onSetShareModalState(val)}
+      >
+        <div className="flex flex-col">
+          <CopyToClipboard
+            text={url}
+            onCopy={() => setCopiedToClipboard(true)}
           >
-            Deactivate
-          </button>
+            <button className="text-left p-2">
+              <span>Copy link</span><span>IC</span>
+            </button>
+          </CopyToClipboard>
+          {copiedToClipboard && (
+            <div className="text-center py-2 bg-green-100 text-green-900 font-semibold rounded-md">
+              Copied to Clipboard
+            </div>
+          )}
+          <ShareButton href={share.toTwitter(url, title)}>
+            Share to Twitter
+          </ShareButton>
+          <ShareButton href={share.toLinkedIn(url, title, summary)}>
+            Share to LinkedIn
+          </ShareButton>
+          <ShareButton href={share.toReddit(url, title)}>
+            Share to Reddit
+          </ShareButton>
+          <ShareButton href={share.toHackerNews(url, title)}>
+            Share to Hacker News
+          </ShareButton>
+          <ShareButton href={share.toFacebook(url)}>
+            Share to Facebook
+          </ShareButton>
         </div>
       </Modal>
     </>
