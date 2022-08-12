@@ -1,9 +1,11 @@
 const siteMetadata = {
   title: 'John Braat - Developer and Creator',
   author: 'Jonathan Braat',
+  twitterHandle: '@jebraat',
   language: 'en-us',
   locale: 'en-US',
   theme: 'system',
+  siteDomain: 'jebraat.com',
   siteUrl: 'https://jebraat.com',
   siteRepo: 'https://github.com/JohnBra/jebraat.com',
   siteLogo: '/static/img/icons/android-chrome-512x512.png',

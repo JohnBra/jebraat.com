@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/future/image'
 import dayjs from 'dayjs'
+import useSWR from 'swr'
+import { EyeIcon, ShareIcon } from '@heroicons/react/outline'
+import { PostSEO } from '@/components/SEO'
+import Modal from '@/components/Modal'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import { PostSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import Subscribe from '@/components/Subscribe'
 import Tag from '@/components/Tag'
-import useSWR from 'swr'
+import siteMetadata from '@/data/siteMetadata'
 import { PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
-import { EyeIcon, ShareIcon } from '@heroicons/react/outline'
-import Subscribe from '@/components/Subscribe'
+import share from '@/lib/share'
+import CustomLink from '@/components/Link'
 
 type Props = {
   frontMatter: any
@@ -25,8 +29,11 @@ export default function PostLayout({
   prev,
   children,
 }: Props) {
+  const router = useRouter()
+  const [shareModalOpen, setShareModalOpen] = useState(false)
   const { date, title, summary, slug, tags } = frontMatter
   const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
+  const url = `${siteMetadata.siteUrl}${router.asPath}`
 
   useEffect(() => {
     const incrementViewCount = () => {
@@ -56,7 +63,10 @@ export default function PostLayout({
                 <EyeIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
                 <div className="text-xs">{data?.views ?? <>&nbsp;</>}</div>
               </div>
-              <button className="block py-3 px-6">
+              <button
+                className="block py-3 px-6"
+                onClick={() => setShareModalOpen(true)}
+              >
                 <ShareIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
                 <div className="text-xs">{data?.shares ?? <>&nbsp;</>}</div>
               </button>
@@ -140,6 +150,35 @@ export default function PostLayout({
           </div>
         </div>
       </article>
+      <Modal open={shareModalOpen} setOpen={(val) => setShareModalOpen(val)}>
+        <div className="flex flex-col gap-2">
+          <div><span>Copy link</span><span>IC</span></div>
+          <CustomLink href={share.toTwitter(url, title)}>
+            Share to twitter
+          </CustomLink>
+          <CustomLink href={share.toLinkedIn(url, title, summary)}>
+            Share to LinkedIn
+          </CustomLink>
+          <CustomLink href={share.toReddit(url, title)}>
+            Share to Reddit
+          </CustomLink>
+          <CustomLink href={share.toHackerNews(url, title)}>
+            Share to Hacker News
+          </CustomLink>
+          <CustomLink href={share.toFacebook(url)}>
+            Share to Facebook
+          </CustomLink>
+        </div>
+        <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+          <button
+            type="button"
+            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-sky-600 text-base font-medium text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 sm:col-start-2 sm:text-sm"
+            onClick={() => setShareModalOpen(false)}
+          >
+            Deactivate
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }
