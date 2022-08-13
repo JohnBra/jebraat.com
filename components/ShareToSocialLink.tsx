@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import CustomLink, { Props } from '@/components/Link'
 
 
-export default function ShareButton({ className, ...rest }: Props) {
+export default function ShareToSocialLink({ className, ...rest }: Props) {
   return (
     <CustomLink
       className={classNames(
