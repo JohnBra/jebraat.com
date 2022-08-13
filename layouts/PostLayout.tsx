@@ -36,7 +36,7 @@ export default function PostLayout({
   const router = useRouter()
   const [shareModalOpen, setShareModalOpen] = useState(false)
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
-  const { date, title, summary, slug, tags } = frontMatter
+  const { date, title, summary, slug, tags, lastmod } = frontMatter
   const { data } = useSWR<PostMeta>(`/api/blog/meta/${slug}`, fetcher)
   const url = `${siteMetadata.siteUrl}${router.asPath}`
 
@@ -62,7 +62,7 @@ export default function PostLayout({
         summary={summary}
         date={date}
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
-        {...frontMatter}
+        images={[]}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="xl:relative">
