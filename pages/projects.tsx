@@ -9,15 +9,21 @@ const projects: any[] = [
   {
     title: 'Supatabs',
     summary:
-      'A chrome extension to reduce memory usage and organize your tabs.',
+      'A free chrome extension to reduce memory usage and organize your tabs.',
     image: '/static/img/projects/supatabs_cover.webp',
     href: 'https://supatabs.com',
   },
   {
     title: 'ChronoShift',
-    summary: 'Time zone conversion at a glance on any device',
+    summary: 'Time zone conversion and meeting planning at a glance on any device',
     image: '/static/img/projects/chronoshift_cover.webp',
     href: 'https://chronoshift.io',
+  },
+  {
+    title: 'My Personal Website',
+    summary: 'My personal website built with Nextjs, TailwindCSS and MDX.',
+    image: '/static/img/projects/jb_cover.webp',
+    href: 'https://github.com/JohnBra/jebraat.com',
   },
 ]
 
