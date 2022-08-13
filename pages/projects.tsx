@@ -21,7 +21,7 @@ const projects: any[] = [
   },
   {
     title: 'My Personal Website',
-    summary: 'My personal website built with Nextjs, TailwindCSS and MDX.',
+    summary: 'My personal website built with Nextjs, TailwindCSS and MDX. (GitHub)',
     image: '/static/img/projects/jb_cover.webp',
     href: 'https://github.com/JohnBra/jebraat.com',
   },
