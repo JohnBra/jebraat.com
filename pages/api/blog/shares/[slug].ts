@@ -12,7 +12,6 @@ export default async function handler(
     if (!slug) throw Error('Slug must be defined')
 
     if (req.method === 'POST') {
-      console.log('now incrementing shares')
       // function to update a blog_post row to increment the share counter
       const { data, error } = await supabase.rpc<PostMeta>('increment_shares', {
         post_slug: slug,
