@@ -67,17 +67,17 @@ export default function PostLayout({
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="xl:relative">
           {/* Sidebar */}
-          <div className="fixed bottom-1 inset-x-0 mx-auto flex justify-center lg:inset-auto lg:top-1/3 lg:-mx-28 lg:h-0 lg:pb-8 z-20">
-            <div className="flex justify-center gap-4 px-6 py-2 text-neutral-600 dark:text-neutral-300 lg:px-0 lg:py-0 bg-neutral-100 dark:bg-neutral-800 shadow-md rounded-md lg:rounded-none lg:bg-none lg:block">
-              <div className="flex gap-1 lg:flex-col items-center lg:py-3 lg:px-6">
+          <div className="fixed inset-x-0 bottom-1 z-20 mx-auto flex justify-center lg:inset-auto lg:top-1/3 lg:-mx-28 lg:h-0 lg:pb-8">
+            <div className="flex justify-center gap-4 rounded-md bg-neutral-100 px-6 py-2 text-neutral-600 shadow-md dark:bg-neutral-800 dark:text-neutral-300 lg:block lg:rounded-none lg:bg-none lg:px-0 lg:py-0">
+              <div className="flex items-center gap-1 lg:flex-col lg:py-3 lg:px-6">
                 <EyeIcon className="h-7 w-7 lg:h-9 lg:w-9" />
                 <div className="text-xs">{data?.views ?? <>&nbsp;</>}</div>
               </div>
               <button
-                className="flex gap-1 lg:flex-col items-center lg:py-3 lg:px-6"
+                className="flex items-center gap-1 lg:flex-col lg:py-3 lg:px-6"
                 onClick={() => onSetShareModalState(true)}
               >
-                <ShareIcon className="h-7 w-7 lg:w-9 lg:h-9" />
+                <ShareIcon className="h-7 w-7 lg:h-9 lg:w-9" />
                 <div className="text-xs">{data?.shares ?? <>&nbsp;</>}</div>
               </button>
             </div>
@@ -161,23 +161,20 @@ export default function PostLayout({
         </div>
       </article>
       <Modal
-        className="px-2 pt-2 pb-2 sm:my-6 sm:px-3 sm:py-2 max-w-xs w-full"
+        className="w-full max-w-xs px-2 pt-2 pb-2 sm:my-6 sm:px-3 sm:py-2"
         open={shareModalOpen}
         setOpen={(val) => onSetShareModalState(val)}
       >
         <div className="flex flex-col">
-          <CopyToClipboard
-            text={url}
-            onCopy={() => setCopiedToClipboard(true)}
-          >
-            <button className="flex justify-between items-center text-left p-2 font-bold hover:text-sky-600">
+          <CopyToClipboard text={url} onCopy={() => setCopiedToClipboard(true)}>
+            <button className="flex items-center justify-between p-2 text-left font-bold hover:text-sky-600">
               <span>Copy link</span>
               <ClipboardCopyIcon className="h-5 w-5" />
             </button>
           </CopyToClipboard>
           {copiedToClipboard && (
-            <div className="flex justify-center items-center py-1 bg-green-100 text-green-900 dark:bg-teal-700 dark:text-emerald-100 font-semibold rounded-md">
-              Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5"/>
+            <div className="flex items-center justify-center rounded-md bg-green-100 py-1 font-semibold text-green-900 dark:bg-teal-700 dark:text-emerald-100">
+              Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5" />
             </div>
           )}
           {isMobile() && <ShareViaButton shareData={{ url }} />}

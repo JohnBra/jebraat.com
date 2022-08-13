@@ -25,8 +25,8 @@ export default function Modal({ open, setOpen, children, className }: Props) {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed z-10 inset-0 pb-12 sm:pb-0 overflow-y-auto">
-          <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+        <div className="fixed inset-0 z-10 overflow-y-auto pb-12 sm:pb-0">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -38,8 +38,8 @@ export default function Modal({ open, setOpen, children, className }: Props) {
             >
               <Dialog.Panel
                 className={classNames(
-                  'relative bg-white dark:bg-neutral-800 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all',
-                  className
+                  'relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-neutral-800',
+                  className,
                 )}
               >
                 {children}

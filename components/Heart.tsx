@@ -9,7 +9,7 @@ export default function Heart({ className, active }: Props) {
   return (
     <div
       className={cn(
-        'cursor-pointer bg-animated-heart bg-left-top bg-no-repeat transition-bg-position',
+        'bg-animated-heart transition-bg-position cursor-pointer bg-left-top bg-no-repeat',
         active && '',
         className,
       )}
