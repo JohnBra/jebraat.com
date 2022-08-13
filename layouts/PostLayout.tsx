@@ -55,6 +55,13 @@ export default function PostLayout({
     setShareModalOpen(open)
   }
 
+  const onShare = () => {
+    console.log('on share triggered')
+    fetch(`/api/blog/shares/${slug}`, {
+      method: 'POST',
+    }).catch((e) => console.warn(e))
+  }
+
   return (
     <>
       <PostSEO
@@ -62,6 +69,7 @@ export default function PostLayout({
         summary={summary}
         date={date}
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        lastmod={lastmod}
         images={[]}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
@@ -166,7 +174,13 @@ export default function PostLayout({
         setOpen={(val) => onSetShareModalState(val)}
       >
         <div className="flex flex-col">
-          <CopyToClipboard text={url} onCopy={() => setCopiedToClipboard(true)}>
+          <CopyToClipboard
+            text={url}
+            onCopy={() => {
+              setCopiedToClipboard(true)
+              onShare()
+            }}
+          >
             <button className="flex items-center justify-between p-2 text-left font-bold hover:text-primary-600">
               <span>Copy link</span>
               <ClipboardCopyIcon className="h-5 w-5" />
@@ -177,32 +191,37 @@ export default function PostLayout({
               Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5" />
             </div>
           )}
-          {isMobile() && <ShareViaButton shareData={{ url }} />}
+          {isMobile() && <ShareViaButton shareData={{ url }} onClick={onShare} />}
           <ShareToSocialLink
+            onClick={() => onShare()}
             className="hidden sm:block"
             href={share.toTwitter(url, title)}
           >
             Share to Twitter
           </ShareToSocialLink>
           <ShareToSocialLink
+            onClick={() => onShare()}
             className="hidden sm:block"
             href={share.toLinkedIn(url, title, summary)}
           >
             Share to LinkedIn
           </ShareToSocialLink>
           <ShareToSocialLink
+            onClick={() => onShare()}
             className="hidden sm:block"
             href={share.toReddit(url, title)}
           >
             Share to Reddit
           </ShareToSocialLink>
           <ShareToSocialLink
+            onClick={() => onShare()}
             className="hidden sm:block"
             href={share.toHackerNews(url, title)}
           >
             Share to Hacker News
           </ShareToSocialLink>
           <ShareToSocialLink
+            onClick={() => onShare()}
             className="hidden sm:block"
             href={share.toFacebook(url)}
           >
