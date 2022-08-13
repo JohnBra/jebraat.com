@@ -122,7 +122,7 @@ export default function Page({ featuredPosts }: Props) {
           <VideoCard
             className="border-t"
             index={1}
-            title="How to Leverage Time With Multitasking"
+            title="How Elon Musk Leverages Time With Multitasking"
             href="https://www.youtube.com/watch?v=dYl25SRJ02w"
             length="6:04"
           />

@@ -10,6 +10,7 @@ This project was bootstrapped from scratch with [`create-next-app`](https://gith
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ## Overview
+
 - `components/*` - Reusable react components used within the app
 - `data/siteMetadata.ts` - Settings for the entire app, such as social links, banners, domain etc.
 - `data/blog/*` - Static blog posts (md/mdx) parsed during the build step
@@ -25,8 +26,8 @@ This project was bootstrapped from scratch with [`create-next-app`](https://gith
 ## Credit
 
 I took inspiration from two separate repositories:
+
 - [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog/tree/4bd9eb9c7c54222eb0c1c56e68a108e9dd476a80)
 - [leerob/leerob.io](https://github.com/leerob/leerob.io)
 
 Make sure to check them out too.
-
