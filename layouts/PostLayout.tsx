@@ -58,10 +58,10 @@ export default function PostLayout({
   return (
     <>
       <PostSEO
-        title={title}
+        title={`${title} - ${siteMetadata.authorTitle}`}
         summary={summary}
         date={date}
-        url={`${siteMetadata.siteUrl}/blog/${slug} - ${siteMetadata.authorTitle}`}
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
         {...frontMatter}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
