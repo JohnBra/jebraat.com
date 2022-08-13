@@ -167,7 +167,7 @@ export default function PostLayout({
       >
         <div className="flex flex-col">
           <CopyToClipboard text={url} onCopy={() => setCopiedToClipboard(true)}>
-            <button className="flex items-center justify-between p-2 text-left font-bold hover:text-sky-600">
+            <button className="flex items-center justify-between p-2 text-left font-bold hover:text-primary-600">
               <span>Copy link</span>
               <ClipboardCopyIcon className="h-5 w-5" />
             </button>

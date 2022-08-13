@@ -15,13 +15,13 @@ const projects: any[] = [
   },
   {
     title: 'ChronoShift',
-    summary: 'Time zone conversion and meeting planning at a glance on any device',
+    summary: 'Time zone conversion and meeting planning at a glance on any device.',
     image: '/static/img/projects/chronoshift_cover.webp',
     href: 'https://chronoshift.io',
   },
   {
     title: 'My Personal Website',
-    summary: 'My personal website built with Nextjs, TailwindCSS and MDX. (GitHub)',
+    summary: 'This website. Built with Nextjs, TailwindCSS and MDX. Links to the GitHub repo.',
     image: '/static/img/projects/jb_cover.webp',
     href: 'https://github.com/JohnBra/jebraat.com',
   },
@@ -63,6 +63,7 @@ export default function Projects() {
                     src={project.image}
                     width={0}
                     height={0}
+                    sizes="35vw"
                     alt={project.title}
                     className="absolute inset-0 h-full w-full transform object-cover opacity-90 transition duration-700 group-hover:scale-110 group-hover:opacity-100 dark:opacity-90"
                   />

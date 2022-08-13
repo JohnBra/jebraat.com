@@ -18,7 +18,7 @@ export default function BlogPostCard({
     <CustomLink
       href={`/blog/${slug}`}
       className={cn(
-        'w-full transform rounded-md border-3 border-sky-300 transition-all duration-200 ease-in-out hover:scale-[1.02] hover:border-sky-500 dark:border-sky-700 dark:hover:border-sky-500 sm:hover:scale-[1.07] md:w-1/3',
+        'w-full transform rounded-md border-3 border-primary-400 transition-all duration-200 ease-in-out hover:shadow-primary-300 dark:hover:shadow-primary-700 hover:scale-[1.02] hover:border-primary-500 hover:shadow-2xl dark:border-primary-700 dark:hover:border-primary-500 sm:hover:scale-[1.07] md:w-1/3',
         className,
       )}
     >

@@ -46,7 +46,7 @@ export default function Subscribe({ className }: Props) {
   return (
     <div
       className={classNames(
-        'my-4 w-full rounded-md border-2 border-sky-200 bg-sky-100 p-6 dark:border-gray-700 dark:bg-gray-800',
+        'my-4 w-full rounded-md border-2 border-primary-200 bg-primary-100 p-6 dark:border-gray-700 dark:bg-gray-800',
         className,
       )}
     >
@@ -64,11 +64,11 @@ export default function Subscribe({ className }: Props) {
           type="email"
           autoComplete="email"
           required
-          className="mt-1 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-sky-500 focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
         />
-        {/* bg-gray-100 dark:bg-gray-700 hover:bg-sky-200 text-gray-900 dark:text-gray-100  */}
+        {/* bg-gray-100 dark:bg-gray-700 hover:bg-primary-200 text-gray-900 dark:text-gray-100  */}
         <button
-          className="absolute right-1 top-1 flex h-8 items-center justify-center rounded border-2 bg-gray-100 px-4 font-medium text-gray-900 hover:border-sky-400 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-100 hover:dark:border-sky-400"
+          className="absolute right-1 top-1 flex h-8 items-center justify-center rounded border-2 bg-gray-100 px-4 font-medium text-gray-900 hover:border-primary-400 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-100 hover:dark:border-primary-400"
           type="submit"
         >
           {form.state === Form.Loading ? <LoadingSpinner /> : 'Subscribe'}

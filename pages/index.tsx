@@ -43,7 +43,7 @@ export default function Page({ featuredPosts }: Props) {
               <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
                 John Braat
               </h1>
-              <h2 className="h-16 font-mono text-lg text-neutral-800 dark:text-neutral-200 sm:mb-4 sm:h-auto">
+              <h2 className="h-16 font-mono text-lg text-neutral-800 dark:text-neutral-200 sm:mb-4 sm:h-14">
                 <Typewriter
                   options={{
                     strings: [
@@ -58,7 +58,7 @@ export default function Page({ featuredPosts }: Props) {
                     loop: true,
                     delay: 75,
                     cursor: '&nbsp;',
-                    cursorClassName: 'bg-sky-500 font-sans ml-0.5',
+                    cursorClassName: 'bg-primary-500 font-sans ml-0.5',
                   }}
                 />
               </h2>
