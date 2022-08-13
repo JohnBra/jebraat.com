@@ -18,7 +18,7 @@ This project was bootstrapped from scratch with [`create-next-app`](https://gith
 - `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) manages blog post metadata and newsletter subs
 - `pages/blog/*` - Static pre-rendered blog pages using MDX - supports nested routes
 - `pages/tags/*` - Static pre-rendered pages for each tag used in blog posts (e.g. #saas)
-- `pages/*` - 
+- `pages/*` - All other static pages
 - `public/*` - Static assets including images, custom cursor and [automatically generated](https://github.com/iamvishnusankar/next-sitemap) sitemap.xml + robots.txt
 - `styles/*` - Tailwind initialization, a few global styles and styles for prism (code highlighting in blog posts)
 
