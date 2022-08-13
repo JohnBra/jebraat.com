@@ -3,6 +3,7 @@ import Image from 'next/future/image'
 import React from 'react'
 import { PageSEO } from '@/components/SEO'
 import SquigglyLine from '@/components/SquigglyLine'
+import siteMetadata from '@/data/siteMetadata'
 
 // TODO move to site data
 const projects: any[] = [
@@ -33,7 +34,7 @@ export default function Projects() {
   return (
     <>
       <PageSEO
-        title="Projects - John Braat"
+        title={`Projects - ${siteMetadata.authorTitle}`}
         description="I build software in my spare time. Most of them will be SaaS projects or small apps."
       />
       <div className="min-h-90">

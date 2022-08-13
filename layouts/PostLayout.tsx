@@ -61,7 +61,7 @@ export default function PostLayout({
         title={title}
         summary={summary}
         date={date}
-        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        url={`${siteMetadata.siteUrl}/blog/${slug} - ${siteMetadata.authorTitle}`}
         {...frontMatter}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">

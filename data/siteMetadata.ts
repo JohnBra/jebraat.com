@@ -1,6 +1,7 @@
 const siteMetadata = {
   title: 'John Braat - Developer and Creator',
   author: 'Jonathan Braat',
+  authorTitle: 'John Braat',  // this is used in the meta title
   twitterHandle: '@jebraat',
   language: 'en-us',
   locale: 'en-US',
