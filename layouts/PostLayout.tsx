@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/future/image'
 import dayjs from 'dayjs'
 import useSWR from 'swr'
-import { EyeIcon, ShareIcon } from '@heroicons/react/outline'
+import { ClipboardCopyIcon, EyeIcon, ShareIcon } from '@heroicons/react/outline'
 import { PostSEO } from '@/components/SEO'
 import Modal from '@/components/Modal'
 import Link from '@/components/Link'
@@ -17,6 +17,7 @@ import share from '@/lib/share'
 import CustomLink from '@/components/Link'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import ShareButton from '@/components/ShareButton'
+import { CheckIcon } from '@heroicons/react/solid'
 
 type Props = {
   frontMatter: any
@@ -63,19 +64,19 @@ export default function PostLayout({
         {...frontMatter}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-        <div className="relative">
+        <div className="xl:relative">
           {/* Sidebar */}
-          <div className="fixed top-1/3 -mx-28 hidden h-0 pb-8 xl:block">
-            <div className="">
-              <div className="flex flex-col items-center py-3 px-6">
-                <EyeIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+          <div className="fixed bottom-1 inset-x-0 mx-auto flex justify-center lg:inset-auto lg:top-1/3 lg:-mx-28 lg:h-0 lg:pb-8 z-20">
+            <div className="flex justify-center gap-4 px-3 py-2 lg:px-0 lg:py-0 bg-neutral-50 shadow-md rounded-md lg:rounded-none lg:bg-none lg:block">
+              <div className="flex gap-1 lg:flex-col items-center lg:py-3 lg:px-6">
+                <EyeIcon className="h-7 w-7 lg:h-9 lg:w-9 text-neutral-900 dark:text-neutral-200" />
                 <div className="text-xs">{data?.views ?? <>&nbsp;</>}</div>
               </div>
               <button
-                className="block py-3 px-6"
+                className="flex gap-1 lg:flex-col items-center lg:py-3 lg:px-6"
                 onClick={() => onSetShareModalState(true)}
               >
-                <ShareIcon className="h-9 w-9 text-neutral-900 dark:text-neutral-200" />
+                <ShareIcon className="h-7 w-7 lg:w-9 lg:h-9 text-neutral-900 dark:text-neutral-200" />
                 <div className="text-xs">{data?.shares ?? <>&nbsp;</>}</div>
               </button>
             </div>
@@ -168,28 +169,44 @@ export default function PostLayout({
             text={url}
             onCopy={() => setCopiedToClipboard(true)}
           >
-            <button className="text-left p-2">
-              <span>Copy link</span><span>IC</span>
+            <button className="flex justify-between items-center text-left p-2 font-bold hover:text-sky-600">
+              <span>Copy link</span>
+              <ClipboardCopyIcon className="h-5 w-5" />
             </button>
           </CopyToClipboard>
           {copiedToClipboard && (
-            <div className="text-center py-2 bg-green-100 text-green-900 font-semibold rounded-md">
-              Copied to Clipboard
+            <div className="flex justify-center items-center py-2 bg-green-100 text-green-900 dark:bg-teal-700 dark:text-emerald-100 font-semibold rounded-md">
+              Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5"/>
             </div>
           )}
-          <ShareButton href={share.toTwitter(url, title)}>
+          <ShareButton
+            className="hidden sm:block"
+            href={share.toTwitter(url, title)}
+          >
             Share to Twitter
           </ShareButton>
-          <ShareButton href={share.toLinkedIn(url, title, summary)}>
+          <ShareButton
+            className="hidden sm:block"
+            href={share.toLinkedIn(url, title, summary)}
+          >
             Share to LinkedIn
           </ShareButton>
-          <ShareButton href={share.toReddit(url, title)}>
+          <ShareButton
+            className="hidden sm:block"
+            href={share.toReddit(url, title)}
+          >
             Share to Reddit
           </ShareButton>
-          <ShareButton href={share.toHackerNews(url, title)}>
+          <ShareButton
+            className="hidden sm:block"
+            href={share.toHackerNews(url, title)}
+          >
             Share to Hacker News
           </ShareButton>
-          <ShareButton href={share.toFacebook(url)}>
+          <ShareButton
+            className="hidden sm:block"
+            href={share.toFacebook(url)}
+          >
             Share to Facebook
           </ShareButton>
         </div>
