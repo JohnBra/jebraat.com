@@ -68,9 +68,9 @@ export default function PostLayout({
         <div className="xl:relative">
           {/* Sidebar */}
           <div className="fixed bottom-1 inset-x-0 mx-auto flex justify-center lg:inset-auto lg:top-1/3 lg:-mx-28 lg:h-0 lg:pb-8 z-20">
-            <div className="flex justify-center gap-4 px-6 py-2 text-neutral-600 dark:text-neutral-300 lg:px-0 lg:py-0 bg-neutral-100 dark:bg-neutral-800 shadow-xl rounded-md lg:rounded-none lg:bg-none lg:block">
+            <div className="flex justify-center gap-4 px-6 py-2 text-neutral-600 dark:text-neutral-300 lg:px-0 lg:py-0 bg-neutral-100 dark:bg-neutral-800 shadow-md rounded-md lg:rounded-none lg:bg-none lg:block">
               <div className="flex gap-1 lg:flex-col items-center lg:py-3 lg:px-6">
-                <EyeIcon className="h-7 w-7 lg:h-9 lg:w-9 " />
+                <EyeIcon className="h-7 w-7 lg:h-9 lg:w-9" />
                 <div className="text-xs">{data?.views ?? <>&nbsp;</>}</div>
               </div>
               <button
@@ -121,7 +121,7 @@ export default function PostLayout({
               {(next || prev) && (
                 <nav className="grid grid-cols-2 gap-3 py-4">
                   {prev && (
-                    <div className="group col-span-1">
+                    <div className="group col-span-2 sm:col-span-1">
                       <Link href={`/blog/${prev.slug}`}>
                         <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 p-3 text-left transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
                           <div className="text-bold text-sm tracking-wide text-gray-700 dark:text-gray-200">
@@ -138,7 +138,7 @@ export default function PostLayout({
                     </div>
                   )}
                   {next && (
-                    <div className="group col-span-1 col-start-2">
+                    <div className="group col-span-2 sm:col-span-1 sm:col-start-2">
                       <Link href={`/blog/${next.slug}`}>
                         <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 py-3 pr-3 pl-4 text-right transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
                           <div className="text-sm tracking-wide text-gray-700 dark:text-gray-200">
