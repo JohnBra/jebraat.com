@@ -203,7 +203,7 @@ export default function PostLayout({
           <ShareToSocialLink
             onClick={() => onShare()}
             className="hidden sm:block"
-            href={share.toLinkedIn(url, title, summary)}
+            href={share.toLinkedIn(url)}
           >
             Share to LinkedIn
           </ShareToSocialLink>

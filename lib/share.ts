@@ -1,17 +1,9 @@
 import siteMetadata from '@/data/siteMetadata'
 
-export function shareToLinkedIn(
-  url: string,
-  title: string,
-  summary: string,
-  source?: string,
-) {
-  const s = summary.length > 97 ? summary.slice(0, 97) + '...' : summary
-  return `https://www.linkedin.com/shareArticle/?mini=true&url=${encodeURIComponent(
+export function shareToLinkedIn(url: string) {
+  return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     url,
-  )}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(
-    s,
-  )}&source=${encodeURIComponent(source ?? siteMetadata.siteDomain)}`
+  )}`
 }
 
 export function shareToTwitter(url: string, title: string, author?: string) {
