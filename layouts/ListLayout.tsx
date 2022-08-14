@@ -20,7 +20,7 @@ export default function ListLayout({ posts, title }: Props) {
   })
 
   return (
-    <>
+    <div className="min-h-90">
       <div className="space-y-2 pt-6 pb-8 md:space-y-5">
         <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
           {title}
@@ -96,6 +96,6 @@ export default function ListLayout({ posts, title }: Props) {
           )
         })}
       </ul>
-    </>
+    </div>
   )
 }
