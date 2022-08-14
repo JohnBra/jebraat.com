@@ -28,6 +28,13 @@ const projects: any[] = [
     image: '/static/img/projects/jb_cover.webp',
     href: 'https://github.com/JohnBra/jebraat.com',
   },
+  {
+    title: 'Chrome Extension Template',
+    summary:
+      'A browser extension template for Chrome using React, TailwindCSS, TypeScript and Vite.',
+    image: '/static/img/projects/extension_template_cover.webp',
+    href: 'https://github.com/JohnBra/vite-web-extension',
+  },
 ]
 
 export default function Projects() {
