@@ -14,6 +14,7 @@ export default function BlogPostCard({
   summary,
   className,
 }: Props) {
+  const shortSummary = summary.length >= 123 ? summary.slice(0, 123) + '...' : summary
   return (
     <CustomLink
       href={`/blog/${slug}`}
@@ -28,7 +29,7 @@ export default function BlogPostCard({
             {title}
           </h4>
           <p className="font-mono text-sm text-neutral-600 dark:text-neutral-400">
-            {summary}
+            {shortSummary}
           </p>
         </div>
       </div>
