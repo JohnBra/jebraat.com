@@ -120,6 +120,7 @@ export default function PostLayout({
             </header>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark sm:prose-xl">
+                <p>{summary}</p>
                 {children}
               </div>
               <Subscribe className="my-20" />
