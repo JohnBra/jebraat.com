@@ -22,6 +22,12 @@ function CustomImage({ alt, className, ...rest }: any) {
   return (
     <Image
       alt={alt}
+      sizes="(min-width: 1024px) 80vw,
+              (min-width: 1280px) 70vw,
+              (min-width: 1536px) 60vw,
+              100vw"
+      height={0}
+      width={0}
       className={classNames('rounded-lg', className)}
       {...rest}
     />

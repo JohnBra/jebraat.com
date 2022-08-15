@@ -73,7 +73,11 @@ export default function Projects() {
                     src={project.image}
                     width={0}
                     height={0}
-                    sizes="100vw"
+                    sizes="(min-width: 768px) 50vw,
+                            (min-width: 1024px) 40vw,
+                            (min-width: 1280px) 35vw,
+                            (min-width: 1536px) 25vw,
+                            100vw"
                     alt={project.title}
                     className="absolute inset-0 h-full w-full transform object-cover opacity-90 transition duration-700 group-hover:scale-110 group-hover:opacity-100 dark:opacity-90"
                   />
