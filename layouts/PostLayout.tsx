@@ -122,6 +122,11 @@ export default function PostLayout({
               <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark sm:prose-xl">
                 <p>{summary}</p>
                 {children}
+                <p>
+                  If you liked this article and know a friend who could benefit from it as well, please consider
+                  sharing it 🙏 If you want to get news and updates from me, subscribe to the
+                  newsletter below 👇 No spam. I promise!
+                </p>
               </div>
               <Subscribe className="my-20" />
             </div>

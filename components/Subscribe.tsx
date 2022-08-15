@@ -51,7 +51,7 @@ export default function Subscribe({ className }: Props) {
       )}
     >
       <p className="text-lg font-bold text-neutral-900 dark:text-neutral-100 md:text-xl">
-        Subscribe to the newsletter
+        Subscribe to my newsletter
       </p>
       <p className="my-1 text-neutral-700 dark:text-neutral-200">
         Get emails from me about tech, travel and personal development.
@@ -60,7 +60,7 @@ export default function Subscribe({ className }: Props) {
         <input
           ref={ref}
           aria-label="Email for newsletter"
-          placeholder="mybest@email.com"
+          placeholder="coolperson@email.com"
           type="email"
           autoComplete="email"
           required
