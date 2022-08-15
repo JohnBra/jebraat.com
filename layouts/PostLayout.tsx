@@ -197,7 +197,7 @@ export default function PostLayout({
               Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5" />
             </div>
           )}
-          {isMobile() && <ShareViaButton shareData={{ url, title, text: summary }} onClick={onShare} />}
+          {isMobile() && <ShareViaButton shareData={{ url, text: summary }} onClick={onShare} />}
           <ShareToSocialLink
             onClick={() => onShare()}
             className="hidden sm:block"
