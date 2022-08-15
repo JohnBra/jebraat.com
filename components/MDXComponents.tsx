@@ -22,7 +22,7 @@ function CustomImage({ alt, className, ...rest }: any) {
   return (
     <Image
       alt={alt}
-      className={classNames('rounded-sm', className)}
+      className={classNames('rounded-lg', className)}
       {...rest}
     />
   )

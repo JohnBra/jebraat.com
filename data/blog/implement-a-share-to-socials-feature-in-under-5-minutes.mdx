@@ -8,8 +8,244 @@ featured: true
 summary: Learn how to quickly build a share to socials feature, including share to LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.
 ---
 
-Soon<span>&trade;</span>
+## Why you need a social sharing feature
 
-In the meanwhile, please subscribe to my newsletter 👇
+- Pages shared often will establish you as an expert in the industry
+- Shared pages will improve your SEO ranking ([qualified backlinks is one of the big ranking factors on Google](https://www.monsterinsights.com/how-to-get-backlinks/))
+- Increase social visibility, which in turn will help you get exposure to potential customers for your business or content
+- More exposure makes it easier to get new followers
+- Great for building relationships and loyalty
+- A direct sharing feature will reduce friction for users <Highlight>You want to make it as easy to share as possible</Highlight>
 
-🙏 Thanks!
+Keep in mind, that we want to reduce as much friction as possible for your users. This means, 1 click to share is
+better than 2. 2 is better than 3 and so on. Make it as easy as possible.
+
+Technically you could already just _"mark the url in the address bar, copy and paste it somewhere else"_. This
+requires work on the users end. I don't know how you feel about it, but I prefer go through fewer steps, rather
+than more.
+
+<Highlight>Not everything that's shareable should be self-promotional. Make sure your content provides
+value to the consumer. Content with value to others will be shared more often.</Highlight>
+
+## What exactly is a sharing feature
+
+This one is simple. It's a button or link forwarding your content/link to a social network, messenger or another app.
+
+Here are some examples from popular sites and networks with a sharing feature:
+- **YouTube**: Share video link with or without timestamp
+- **TikTok**: Native share on Mobile (we will get to that later as well)
+- **Medium**: Share article on Twitter, Facebook, or LinkedIn
+
+There are quite a few ways and libraries to implement this. If you are super pressed for time, I would recommend using
+a library like [react-share](https://www.npmjs.com/package/react-share) or the Vue/Angualar equivalent. It comes with
+tons of social networks including icons integrated.
+
+## How to implement a simple sharing feature on your site
+
+This article is geared towards web apps. If you are implementing for mobile applications please refer to
+the native sharing method for the specific platform.
+
+My implementation for the web can be used in plain JS applications and any kind of frontend framework as it is as
+simple anchor tag (`<a ...> ... </a>`) for each network we cover. The code is implemented in TypeScript, if you are
+using plain JS, just remove the types. We will build a link each for the following networks:
+
+- LinkedIn
+- HackerNews
+- Twitter
+- Reddit
+- Facebook
+
+In addition to each link, I will provide an example usage implementation for React.
+
+Once that's done we will also build a **Share via** feature for mobile devices utilizing the web native share API.
+With this, we will have a button opening the native share drawer. This enables users to share to apps installed on
+their device.
+
+Let's go!
+
+### Constructing the link for each network
+
+As mentioned above we will construct a share link for each network and put it into a simple `<a>` tag.
+In this example we are sharing blog post articles and are passing some metadata about the articles such as `url`,
+`title` and `author` to the social network. Let's look at share to twitter first:
+
+```ts:share-utils.ts
+export function shareToTwitter(
+  url: string,
+  title: string,
+  author: string
+) {
+  const text =
+    encodeURIComponent(`"${title}" by ${author}`)
+    + '%0A%0A'
+    + encodeURIComponent(url)
+  return `https://twitter.com/intent/tweet?text=${text}`
+}
+```
+
+This is a simple function returning a string to be plugged into an `<a href="<return string>" ...> ... </a>`.
+Since twitter accepts a text param, you can pass any value you want to that function and construct the string.
+I decided to pass a blog post `url` and the corresponding `title` as well as `author` of the post. The general steps
+to construct share links for any social network are as follows:
+
+1. Read passed params
+2. Form the string or strings for your query
+3. Encode the shareable strings
+4. Append the encoded strings to your base url. In this case we append `text=<encoded string>` to `https://twitter.com/intent/tweet`
+
+It's important to use [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+for any text you will use as a query param. Otherwise, you might run into issues and your shared text gets messed up, or
+won't be shared at all.
+
+This is the result when you click the Twitter share link for one of my blog posts:
+
+<Image
+  alt="Twitter Share Showcase"
+  src="/static/img/blog/twitter-share.webp"
+  sizes="50vw"
+  height={0}
+  width={0}
+  className="h-auto w-full"
+/>
+
+_Side note: You may have noticed the `%0A%0A` I have added to the text. `%0A` is the URL encoded equivalent to a line
+break, which you see two of after "**@jebraat**" in the image above._
+
+<NewsletterSubscribe />
+
+Let's create a function to construct the URLs for the other networks.
+
+```ts:share-utils.ts
+//... snip
+
+// Share to linkedin
+export function shareToLinkedIn(url: string) {
+  return `https://www.linkedin.com/sharing/share-offsite/?url=${
+      encodeURIComponent(url)
+    }`
+}
+
+// Share to reddit
+export function shareToReddit(url: string, title: string) {
+  return `https://www.reddit.com/submit?url=${
+      encodeURIComponent(url)
+    }&title=${encodeURIComponent(title)}`
+}
+
+// Share to hacker news
+export function shareToHackerNews(url: string, title: string) {
+  return `https://news.ycombinator.com/submitlink?u=${
+      encodeURIComponent(url)
+    }&t=${encodeURIComponent(title)}`
+}
+
+// Share to facebook
+export function shareToFacebook(url: string) {
+  return `https://www.facebook.com/sharer.php?u=${
+      encodeURIComponent(url)
+    }`
+}
+```
+
+As you can see the URLs and passable metadata differ slightly between the networks. E.g.: some allow for titles
+to be sent through, others don't. You can find a list of 25+ social network links and how to construct them
+[here](https://gist.github.com/HoldOffHunger/1998b92acb80bc83547baeaff68aaaf4).
+
+Onto the usage example with React.
+
+### Usage example for web share links with React
+
+Again. Usage is simple as we really just put the previously constructed string into an `<a>` tag.
+
+Here is a simple React component implementing the share to Twitter function from above:
+
+```tsx:ShareToTwitter.tsx
+import React from 'react'
+import { shareToTwitter } from './share-utils'
+
+type Props = {
+  url: string // URL to be shared
+  title: string // Blog post title
+  author: string  // Blog post author twitter handle
+  children: React.ReactNode  // E.g.: link text or twitter icon
+}
+
+export default function ShareToTwitter({
+  url,
+  title,
+  author,
+  children
+}: Props) {
+  return (
+    <a
+      href={shareToTwitter(url, title, author)}
+      target="_blank"
+      rel="noopener norefferrer"
+    >
+      {children}
+    </a>
+  )
+}
+```
+
+And that's it!
+
+Let's move on to sharing with the native share drawer on mobile 👇
+
+
+### Implementing mobile native share
+
+To make it feel more natural on mobile devices we want the user to be able to click
+"share" and then have the platform specific (iOS/Android) sharing experience. This
+is usually a drawer sliding in from the bottom of the screen providing them with options
+to copy the link, or share to apps on their device.
+
+<Image
+  alt="ios and android native share drawer"
+  src="/static/img/blog/ios-android-native-share.webp"
+  sizes="50vw"
+  height={0}
+  width={0}
+  className="h-auto w-full"
+/>
+
+Lucky for us, we can use the [Navigator.share()](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
+method available in the browser. Be aware that this feature is built for mobile browsers. However, it works for desktop
+browsers as well, except [Firefox](https://caniuse.com/mdn-api_navigator_share). I only mention this, so you won't be
+surprised if it doesn't work on your development machine in case you are using Firefox.
+
+Here is a simple React component to showcase the native share implementation
+```tsx
+import React from 'react'
+
+// ShareData: { url?: string; text?: string; title?: string; files?: File[] }
+type Props = {
+  shareData: ShareData  // find the full docs through the link above
+}
+
+/** This will only work with HTTPS */
+export default function ShareViaButton({ shareData }: Props) {
+  return (
+    <button
+      onClick={() => {
+        navigator.share(shareData)
+          .catch(e => console.warn(e))
+      }}
+      type="button"
+    >
+      Share via ...
+    </button>
+  )
+}
+```
+
+As this API should really only be used on mobile devices, I recommend only showing the button if the client
+is on a mobile device. You can use the [is-mobile](https://www.npmjs.com/package/is-mobile) npm package for that.
+
+Alternatively you could use the [Navigator.canShare()](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare)
+API and display the social links from above when it returns `false` or the `ShareViaButton` when it returns `true`.
+
+And that's it!
+
+If you want to see how I implemented the share to social links on my website, including a copy to clipboard, feel free
+to check out my [GitHub repository](https://github.com/JohnBra/jebraat.com) and maybe leave a ⭐.
