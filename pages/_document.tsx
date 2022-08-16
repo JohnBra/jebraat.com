@@ -4,7 +4,11 @@ export default function Document(props: any) {
   return (
     <Html lang="en">
       <Head>
-        <script defer data-domain="jebraat.com" src="https://plausible.io/js/plausible.js" />
+        <script
+          defer
+          data-domain="jebraat.com"
+          src="https://plausible.io/js/plausible.js"
+        />
         <link href="/static/icons/favicon.ico" rel="shortcut icon" />
         <link href="/static/icons/site.webmanifest" rel="manifest" />
         <link

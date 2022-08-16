@@ -24,14 +24,18 @@ Technically you could already just _"mark the url in the address bar, copy and p
 requires work on the users end. I don't know how you feel about it, but I prefer go through fewer steps, rather
 than more.
 
-<Highlight>Not everything that's shareable should be self-promotional. Make sure your content provides
-value to the consumer. Content with value to others will be shared more often.</Highlight>
+<Highlight>
+  Not everything that's shareable should be self-promotional. Make sure your
+  content provides value to the consumer. Content with value to others will be
+  shared more often.
+</Highlight>
 
 ## What exactly is a sharing feature
 
 This one is simple. It's a button or link forwarding your content/link to a social network, messenger or another app.
 
 Here are some examples from popular sites and networks with a sharing feature:
+
 - **YouTube**: Share video link with or without timestamp
 - **TikTok**: Native share on Mobile (we will get to that later as well)
 - **Medium**: Share article on Twitter, Facebook, or LinkedIn
@@ -189,7 +193,6 @@ And that's it!
 
 Let's move on to sharing with the native share drawer on mobile 👇
 
-
 ### Implementing mobile native share
 
 To make it feel more natural on mobile devices we want the user to be able to click
@@ -209,12 +212,13 @@ browsers as well, except [Firefox](https://caniuse.com/mdn-api_navigator_share).
 surprised if it doesn't work on your development machine in case you are using Firefox.
 
 Here is a simple React component to showcase the native share implementation:
-```tsx
+
+```tsx:ShareViaButton.tsx
 import React from 'react'
 
 // ShareData: { url?: string; text?: string; title?: string; files?: File[] }
 type Props = {
-  shareData: ShareData  // find the full docs through the link above
+  shareData: ShareData // find the full docs through the link above
 }
 
 /** This will only work with HTTPS */

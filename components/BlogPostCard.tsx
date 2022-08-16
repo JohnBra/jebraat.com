@@ -14,7 +14,8 @@ export default function BlogPostCard({
   summary,
   className,
 }: Props) {
-  const shortSummary = summary.length >= 123 ? summary.slice(0, 123) + '...' : summary
+  const shortSummary =
+    summary.length >= 123 ? summary.slice(0, 123) + '...' : summary
   return (
     <CustomLink
       href={`/blog/${slug}`}

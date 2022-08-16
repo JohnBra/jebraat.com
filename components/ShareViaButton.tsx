@@ -17,7 +17,7 @@ export default function ShareViaButton({
   return (
     <button
       onClick={() => {
-        navigator.share(shareData).catch(e => console.warn(e))
+        navigator.share(shareData).catch((e) => console.warn(e))
         if (onClick) onClick()
       }}
       type="button"

@@ -1,9 +1,9 @@
 import siteMetadata from '@/data/siteMetadata'
 
 export function shareToLinkedIn(url: string) {
-  return `https://www.linkedin.com/sharing/share-offsite/?url=${
-    encodeURIComponent(url)
-  }`
+  return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    url,
+  )}`
 }
 
 export function shareToTwitter(url: string, title: string, author?: string) {

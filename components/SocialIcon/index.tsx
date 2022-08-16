@@ -4,13 +4,13 @@ import Github from '@/components/SocialIcon/Github'
 import Twitter from '@/components/SocialIcon/Twitter'
 import Instagram from '@/components/SocialIcon/Instagram'
 import Youtube from '@/components/SocialIcon/Youtube'
-import { SocialIconKind } from '@/lib/types'
 import Twitch from '@/components/SocialIcon/Twitch'
 import LinkedIn from '@/components/SocialIcon/LinkedIn'
+import { SocialIconKind } from '@/lib/types'
 
 // Icons taken from: https://simpleicons.org/
 
-const components = {
+export const components = {
   email: Email,
   github: Github,
   twitter: Twitter,

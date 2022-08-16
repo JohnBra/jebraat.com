@@ -123,9 +123,10 @@ export default function PostLayout({
                 <p>{summary}</p>
                 {children}
                 <p>
-                  If you liked this article and know a friend who could benefit from it as well, please consider
-                  sharing it 🙏 If you want to get news and updates from me, subscribe to the
-                  newsletter below 👇 No spam. I promise!
+                  If you liked this article and know a friend who could benefit
+                  from it as well, please consider sharing it 🙏 If you want to
+                  get news and updates from me, subscribe to the newsletter
+                  below 👇 No spam. I promise!
                 </p>
               </div>
               <Subscribe className="my-20" />
@@ -197,7 +198,12 @@ export default function PostLayout({
               Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5" />
             </div>
           )}
-          {isMobile() && <ShareViaButton shareData={{ url, text: summary }} onClick={onShare} />}
+          {isMobile() && (
+            <ShareViaButton
+              shareData={{ url, text: summary }}
+              onClick={onShare}
+            />
+          )}
           <ShareToSocialLink
             onClick={() => onShare()}
             className="hidden sm:block"
