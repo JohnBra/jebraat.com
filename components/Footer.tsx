@@ -10,7 +10,7 @@ const navigation = {
   ),
   watch: socialLinks.filter((sl) => ['youtube', 'twitch'].includes(sl.kind)),
   other: [
-    { name: 'Links', href: '#' },
+    { name: 'Links', href: '/links' },
     { name: 'Tags', href: '/tags' },
   ],
 }
@@ -55,6 +55,7 @@ export default function Footer() {
                   <CustomLink
                     className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 hover:dark:text-gray-100"
                     href={item.href}
+                    prefetch={false}
                   >
                     {item.name}
                   </CustomLink>

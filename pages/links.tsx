@@ -35,12 +35,12 @@ export default function Links() {
               const SVGComponent = components[l.kind]
               return (
                 <CustomLink
-                  className="mb-6 w-full rounded-lg border-2 border-primary-400 bg-neutral-100 py-4 px-6 font-mono text-lg text-neutral-500 transition-all ease-in-out hover:scale-105 hover:border-primary-500 hover:text-neutral-700 hover:shadow-lg hover:shadow-primary-300 dark:border-primary-500 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-primary-400 dark:hover:text-neutral-100 dark:hover:shadow-primary-500"
+                  className="mb-6 w-full rounded-lg border-2 border-primary-400 bg-neutral-100 py-4 px-6 font-mono text-lg text-neutral-500 transition-all ease-in-out hover:scale-105 hover:border-primary-500 hover:text-neutral-700 hover:shadow-lg hover:shadow-primary-300 dark:border-primary-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-primary-400 dark:hover:text-neutral-50 dark:hover:shadow-primary-500"
                   key={l.kind}
                   href={l.href}
                 >
                 <span className="flex items-center gap-4">
-                  <SVGComponent className="h-9 w-9 fill-current text-neutral-500 hover:text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100" />
+                  <SVGComponent className="h-9 w-9 fill-current text-neutral-500 hover:text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-50" />
                   {l.name}
                 </span>
                 </CustomLink>
