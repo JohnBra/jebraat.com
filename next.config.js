@@ -24,7 +24,7 @@ const nextConfig = {
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' *.youtube.com *.twitter.com plausible.io;
+    script-src 'self' 'unsafe-eval' *.youtube.com *.twitter.com plausible.io;
     child-src *.youtube.com *.google.com *.twitter.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
