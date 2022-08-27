@@ -168,7 +168,8 @@ export function PostSEO({
     description: summary,
   }
 
-  const twImageUrl = featuredImages[0].url
+  const twImageUrl = featuredImages[0].url.startsWith('https://img.spryse.com') ?
+      featuredImages[0].url + '&w=1200&h=600' : featuredImages[0].url
 
   return (
     <>
