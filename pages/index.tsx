@@ -90,7 +90,8 @@ export default function Page({ featuredPosts }: Props) {
             Read my stuff
           </h3>
           <div className="flex flex-col justify-between gap-7 sm:flex-row">
-            {featuredPosts.map((p) => (
+            {/* Display a maximum of 3 featured posts */}
+            {featuredPosts.slice(0,3).map((p) => (
               <BlogPostCard
                 key={p.slug}
                 title={p.title}
@@ -147,7 +148,7 @@ export default function Page({ featuredPosts }: Props) {
 
 export async function getStaticProps(context: any) {
   const posts = await getAllFilesFrontMatter('blog')
-  const featuredPosts = posts.filter((p) => p?.featured)
+  const featuredPosts = posts.filter((p) => p?.featured && !p.draft)
 
   return { props: { featuredPosts } }
 }
