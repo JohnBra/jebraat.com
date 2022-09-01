@@ -70,7 +70,7 @@ export default function PostLayout({
         date={date}
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         lastmod={lastmod}
-        images={[`https://img.spryse.com/?t=${encodeURIComponent(title)}`]}
+        images={[`https://img.spryse.com/og/${title.replaceAll(' ', '-').toLowerCase()}.png`]}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
         <div className="xl:relative">
