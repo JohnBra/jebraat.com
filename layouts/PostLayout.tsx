@@ -107,7 +107,7 @@ export default function PostLayout({
                   />
                   <p className="ml-2 text-sm text-neutral-600 dark:text-neutral-400">
                     Jonathan Braat /{' '}
-                    {dayjs(new Date(date)).format('MMMM DD, YYYY')} ⋅{' '}
+                    {dayjs(new Date(date)).format('MMMM D, YYYY')} ⋅{' '}
                     {frontMatter.readingTime}
                   </p>
                 </div>
