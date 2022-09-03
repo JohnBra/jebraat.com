@@ -19,6 +19,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
+import CustomLink from '@/components/Link'
 
 type Props = {
   frontMatter: any
@@ -124,9 +125,9 @@ export default function PostLayout({
                 {children}
                 <p>
                   If you liked this article and know a friend who could benefit
-                  from it as well, please consider sharing it 🙏 If you want to
-                  get news and updates from me, subscribe to the newsletter
-                  below 👇 No spam. I promise!
+                  from it as well, please consider sharing it 🙏
+                  If you want to get news and updates from me, subscribe to the newsletter
+                  below 👇 or follow me on <CustomLink href="https://twitter.com/jebraat">Twitter</CustomLink>.
                 </p>
               </div>
               <Subscribe className="my-20" />
