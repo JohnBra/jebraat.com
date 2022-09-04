@@ -5,8 +5,8 @@ import dayjs from 'dayjs'
 import useSWR from 'swr'
 import isMobile from 'is-mobile'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import { CheckIcon } from '@heroicons/react/solid'
-import { ClipboardCopyIcon, EyeIcon, ShareIcon } from '@heroicons/react/outline'
+import { CheckIcon } from '@heroicons/react/24/solid'
+import { ClipboardDocumentIcon, EyeIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { PostSEO } from '@/components/SEO'
 import ShareToSocialLink from '@/components/ShareToSocialLink'
 import ShareViaButton from '@/components/ShareViaButton'
@@ -191,7 +191,7 @@ export default function PostLayout({
           >
             <button className="flex items-center justify-between p-2 text-left font-bold hover:text-primary-600">
               <span>Copy link</span>
-              <ClipboardCopyIcon className="h-5 w-5" />
+              <ClipboardDocumentIcon className="h-5 w-5" />
             </button>
           </CopyToClipboard>
           {copiedToClipboard && (

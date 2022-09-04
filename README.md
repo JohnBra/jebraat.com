@@ -8,6 +8,7 @@ This project was bootstrapped from scratch with [`create-next-app`](https://gith
 - **Database**: [Supabase](https://supabase.com)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Tracking**: [Plausible](https://plausible.io/)
 
 ## Overview
 
