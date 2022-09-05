@@ -33,6 +33,23 @@ function pathJoinPrefix(prefix: string): (extraPath: string) => string {
   return (extraPath) => path.join(prefix, extraPath)
 }
 
+function getFrontMatter(source: string): GrayMatter {
+  const { data } = matter(source)
+
+  //Throw error if summary is not between 130 and 155 characters (best for Google)
+  if (data?.summary?.length < 130 || data?.summary?.length > 155)
+    throw new Error(`Blog post summary of ${data?.title} has ${data?.summary?.length} characters. Should be between 130 and 155`)
+
+  return {
+    slug: '',
+    ...data,
+    summary: data.summary,
+    date: data.date ? new Date(data.date).toISOString() : null,
+    draft: data?.draft ?? true,
+    featured: data?.featured ?? false,
+  }
+}
+
 export function getAllFilesRecursively(folder: string): string[] {
   return pipe(
     fs.readdirSync,
@@ -69,7 +86,7 @@ export async function getFileBySlug(
     ? fs.readFileSync(mdxPath, 'utf8')
     : fs.readFileSync(mdPath, 'utf8')
 
-  const { data: frontmatter } = matter(source)
+  const frontmatter = getFrontMatter(source)
   const mdx = await mdxToHtml(source)
 
   return {
@@ -81,7 +98,6 @@ export async function getFileBySlug(
       wordCount: mdx.wordCount,
       slug,
       fileName: fs.existsSync(mdxPath) ? `${slug}.mdx` : `${slug}.md`,
-      date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
     },
   }
 }
@@ -113,14 +129,12 @@ export async function getAllFilesFrontMatter(subdirectory: string) {
       return
     }
     const source = fs.readFileSync(file, 'utf8')
-    const { data: frontmatter } = matter(source)
-    if (frontmatter.draft !== true) {
+    const frontmatter = getFrontMatter(source)
+    // ignore drafts
+    if (!frontmatter.draft) {
       allFrontMatter.push({
         ...frontmatter,
         slug: formatSlug(fileName),
-        date: frontmatter.date
-          ? new Date(frontmatter.date).toISOString()
-          : null,
       })
     }
   })
