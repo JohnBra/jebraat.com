@@ -27,6 +27,7 @@ export default function PostPage({ post }: { post: any }) {
     <PostLayout
       next={post?.next}
       prev={post?.prev}
+      related={post.related}
       frontMatter={post.frontMatter}
     >
       <MDXRemote
@@ -53,11 +54,35 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const allPosts = await getAllFilesFrontMatter('blog')
+  const allPostsFrontMatter = await getAllFilesFrontMatter('blog')
   const slug = context.params?.slug?.join('/')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slug)
-  const prev = allPosts?.[postIndex + 1] ?? null
-  const next = allPosts?.[postIndex - 1] ?? null
+  const postIndex = allPostsFrontMatter.findIndex((post) => formatSlug(post.slug) === slug)
+
+  // very simple way of finding similar blog articles depending on tag matches
+  // count tag matches for each other post to current post
+  // TODO: maybe improve this with a 'similar tags' algo
+  const otherPostsFrontMatter = [...allPostsFrontMatter]
+  otherPostsFrontMatter.splice(postIndex, 1)
+  const postTagSet = new Set(allPostsFrontMatter?.[postIndex]?.tags)
+  const matches = new Map<string, number>([])
+  for (let i = 0; i < otherPostsFrontMatter.length; i++) {
+    const postFrontMatter = otherPostsFrontMatter[i]
+    matches.set(postFrontMatter.slug, 0)
+    for (const t of postFrontMatter.tags) {
+      if (postTagSet.has(t)) {
+        matches.set(postFrontMatter.slug, (matches.get(postFrontMatter.slug) as number) + 1)
+      }
+    }
+    postFrontMatter.matches = matches.get(postFrontMatter.slug)
+  }
+
+  // sort related by matches descending if matches are equal sort by date descending
+  const related = otherPostsFrontMatter.sort((a, b) =>
+    b.matches - a.matches !== 0 ? b.matches - a.matches : new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+
+  const prev = allPostsFrontMatter?.[postIndex + 1] ?? null
+  const next = allPostsFrontMatter?.[postIndex - 1] ?? null
   const post = await getFileBySlug('blog', slug)
   const tweets = await getTweets(post.tweetIds)
 
@@ -68,6 +93,7 @@ export async function getStaticProps(context: any) {
         tweets,
         prev,
         next,
+        related,
         frontMatter: post.frontMatter,
       },
     },

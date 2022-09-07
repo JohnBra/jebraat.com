@@ -16,15 +16,16 @@ import PageTitle from '@/components/PageTitle'
 import Subscribe from '@/components/Subscribe'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { PostMeta } from '@/lib/types'
+import { GrayMatter, PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
 import CustomLink from '@/components/Link'
 
 type Props = {
-  frontMatter: any
-  next: any
-  prev: any
+  frontMatter: GrayMatter
+  next: GrayMatter
+  prev: GrayMatter
+  related: GrayMatter
   children: React.ReactNode
 }
 
@@ -57,7 +58,6 @@ export default function PostLayout({
   }
 
   const onShare = () => {
-    console.log('on share triggered')
     fetch(`/api/blog/shares/${slug}`, {
       method: 'POST',
     }).catch((e) => console.warn(e))

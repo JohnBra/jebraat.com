@@ -1,11 +1,12 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export type GrayMatter = {
-  date: string | null
+  date: string
   slug: string
   draft: boolean
   featured: boolean
   summary: string
+  tags: string[]
   [key: string]: any
 }
 

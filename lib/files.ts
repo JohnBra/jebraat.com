@@ -43,8 +43,9 @@ function getFrontMatter(source: string): GrayMatter {
   return {
     slug: '',
     ...data,
+    tags: data?.tags ?? [],
     summary: data.summary,
-    date: data.date ? new Date(data.date).toISOString() : null,
+    date: new Date(data.date).toISOString(),
     draft: data?.draft ?? true,
     featured: data?.featured ?? false,
   }
