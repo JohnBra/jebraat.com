@@ -25,9 +25,7 @@ export default function PostPage({ post }: { post: any }) {
 
   return (
     <PostLayout
-      next={post?.next}
-      prev={post?.prev}
-      related={post.related}
+      relatedPosts={post.relatedPosts}
       frontMatter={post.frontMatter}
     >
       <MDXRemote
@@ -77,12 +75,11 @@ export async function getStaticProps(context: any) {
   }
 
   // sort related by matches descending if matches are equal sort by date descending
-  const related = otherPostsFrontMatter.sort((a, b) =>
+  // only return two posts
+  const relatedPosts = otherPostsFrontMatter.sort((a, b) =>
     b.matches - a.matches !== 0 ? b.matches - a.matches : new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
+  ).slice(0, 2)
 
-  const prev = allPostsFrontMatter?.[postIndex + 1] ?? null
-  const next = allPostsFrontMatter?.[postIndex - 1] ?? null
   const post = await getFileBySlug('blog', slug)
   const tweets = await getTweets(post.tweetIds)
 
@@ -91,9 +88,7 @@ export async function getStaticProps(context: any) {
       post: {
         content: post.html,
         tweets,
-        prev,
-        next,
-        related,
+        relatedPosts,
         frontMatter: post.frontMatter,
       },
     },

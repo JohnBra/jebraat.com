@@ -11,7 +11,6 @@ import { PostSEO } from '@/components/SEO'
 import ShareToSocialLink from '@/components/ShareToSocialLink'
 import ShareViaButton from '@/components/ShareViaButton'
 import Modal from '@/components/Modal'
-import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import Subscribe from '@/components/Subscribe'
 import Tag from '@/components/Tag'
@@ -20,19 +19,17 @@ import { GrayMatter, PostMeta } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
 import CustomLink from '@/components/Link'
+import ArticleList from '@/components/ArticleList'
 
 type Props = {
   frontMatter: GrayMatter
-  next: GrayMatter
-  prev: GrayMatter
-  related: GrayMatter
+  relatedPosts: GrayMatter[]
   children: React.ReactNode
 }
 
 export default function PostLayout({
   frontMatter,
-  next,
-  prev,
+  relatedPosts,
   children,
 }: Props) {
   const router = useRouter()
@@ -132,50 +129,17 @@ export default function PostLayout({
               </div>
               <Subscribe className="my-20" />
             </div>
-
-            <div>
-              {(next || prev) && (
-                <nav className="grid grid-cols-2 gap-3 py-4">
-                  {prev && (
-                    <div className="group col-span-2 sm:col-span-1">
-                      <Link href={`/blog/${prev.slug}`}>
-                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 p-3 text-left transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
-                          <div className="text-bold text-sm tracking-wide text-gray-700 dark:text-gray-200">
-                            Previous
-                          </div>
-                          <div className="flex text-primary-500">
-                            <span className="mr-1.5">&larr;</span>
-                            <span className="flex-1 truncate">
-                              {prev.title}
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  )}
-                  {next && (
-                    <div className="group col-span-2 sm:col-span-1 sm:col-start-2">
-                      <Link href={`/blog/${next.slug}`}>
-                        <div className="flex cursor-pointer flex-col rounded-md border border-gray-400 py-3 pr-3 pl-4 text-right transition-all ease-in-out group-hover:border-primary-600 dark:border-gray-700">
-                          <div className="text-sm tracking-wide text-gray-700 dark:text-gray-200">
-                            Next
-                          </div>
-                          <div className="flex text-primary-500">
-                            <span className="flex-1 truncate">
-                              {next.title}
-                            </span>
-                            <span className="ml-1.5">&rarr;</span>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  )}
-                </nav>
-              )}
-            </div>
           </div>
         </div>
       </article>
+
+      <div className="mb-44">
+        <div className="text-5xl font-bold pt-8 pb-4">
+          Related Articles
+        </div>
+        <ArticleList postFrontMatter={relatedPosts} hideDate />
+      </div>
+
       <Modal
         className="w-full max-w-xs px-2 pt-2 pb-2 sm:my-6 sm:px-3 sm:py-2"
         open={shareModalOpen}
