@@ -70,7 +70,7 @@ export default function PostLayout({
         lastmod={lastmod}
         images={[`https://img.spryse.com/og/${title.replaceAll(' ', '-').toLowerCase()}.png`]}
       />
-      <article className="selection:bg-orange-300 selection:dark:bg-orange-700 xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+      <article className="selection:bg-orange-300 selection:dark:bg-orange-700">
         <div className="xl:relative">
           {/* Sidebar */}
           <div className="fixed inset-x-0 bottom-1 z-20 mx-auto flex justify-center lg:inset-auto lg:top-1/3 lg:-mx-28 lg:h-0 lg:pb-8">
@@ -116,7 +116,7 @@ export default function PostLayout({
                 </p>
               </div>
             </header>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+            <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark sm:prose-xl">
                 <p>{summary}</p>
                 {children}
@@ -127,14 +127,16 @@ export default function PostLayout({
                   below 👇 or follow me on <CustomLink href="https://twitter.com/jebraat">Twitter</CustomLink>.
                 </p>
               </div>
-              <Subscribe className="my-20" />
+              <div className="not-prose my-4" >
+                <Subscribe/>
+              </div>
             </div>
           </div>
         </div>
       </article>
 
       <div className="mb-44">
-        <div className="text-5xl font-bold pt-8 pb-4">
+        <div className="text-5xl font-bold pt-14 pb-4">
           Related Articles
         </div>
         <ArticleList postFrontMatter={relatedPosts} hideDate />
