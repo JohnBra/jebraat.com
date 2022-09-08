@@ -87,7 +87,7 @@ export default function Page({ featuredPosts }: Props) {
 
         <section className="mt-14">
           <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
-            Read my stuff
+            Blog
           </h3>
           <div className="flex flex-col justify-between gap-7 sm:flex-row">
             {/* Display a maximum of 3 featured posts */}
@@ -113,7 +113,7 @@ export default function Page({ featuredPosts }: Props) {
 
         <section className="mt-14">
           <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
-            Watch my stuff
+            Videos
           </h3>
           <p className="mb-6 font-mono text-neutral-600 dark:text-neutral-400">
             I make videos about tech behind SaaS and personal development

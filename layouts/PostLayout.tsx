@@ -140,6 +140,15 @@ export default function PostLayout({
           Related Articles
         </div>
         <ArticleList postFrontMatter={relatedPosts} hideDate />
+        <div className="flex items-center py-4 text-neutral-500">
+          <CustomLink
+            href="/blog"
+            prefetch={false}
+            className="transition-all ease-in-out hover:text-neutral-800 dark:hover:text-neutral-300"
+          >
+            All posts &rarr;
+          </CustomLink>
+        </div>
       </div>
 
       <Modal
