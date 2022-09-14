@@ -1,8 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import dayjs from 'dayjs'
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
 import type { GrayMatter } from '@/lib/types'
 import SquigglyLine from '@/components/SquigglyLine'
 import ArticleList from '@/components/ArticleList'
