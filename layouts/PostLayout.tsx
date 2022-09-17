@@ -118,7 +118,7 @@ export default function PostLayout({
             </header>
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-3xl pt-10 pb-8 dark:prose-dark sm:prose-xl">
-                <p>{summary}</p>
+                <p><em>{summary}</em></p>
                 {children}
                 <p>
                   If you liked this article and know a friend who could benefit
