@@ -20,6 +20,7 @@ import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
 import CustomLink from '@/components/Link'
 import ArticleList from '@/components/ArticleList'
+import { kebabCase } from '@/lib/utils'
 
 type Props = {
   frontMatter: GrayMatter
@@ -68,7 +69,7 @@ export default function PostLayout({
         date={date}
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         lastmod={lastmod}
-        images={[`https://img.spryse.com/og/${title.replaceAll(' ', '-').toLowerCase()}.png`]}
+        images={[`https://img.spryse.com/og/${kebabCase(title)}.png`]}
       />
       <article className="selection:bg-orange-300 selection:dark:bg-orange-700">
         <div className="xl:relative">
