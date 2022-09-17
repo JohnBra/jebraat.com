@@ -5,6 +5,10 @@ export function dateSortDesc(a: string | null, b: string | null) {
   return 0
 }
 
-export function kebabCase(s: string): string {
-  return s.split(' ').join('-')
+export function kebabCase(str: string) {
+  return str
+    .replaceAll(' - ', ' ')
+    .replaceAll(' ', '-')
+    .replaceAll(',', '')
+    .toLowerCase();
 }
