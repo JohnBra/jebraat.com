@@ -54,7 +54,7 @@ export default function Subscribe({ className }: Props) {
         Subscribe to my newsletter
       </p>
       <p className="my-1 text-neutral-700 dark:text-neutral-200">
-        Get emails from me about tech, travel and personal development.
+        Get notifications about new personal development and SaaS blog posts.
       </p>
       <form className="relative my-4" onSubmit={subscribe}>
         <input
