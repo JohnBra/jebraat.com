@@ -24,6 +24,7 @@ export async function mdxToHtml(source: string) {
         [
           rehypeAutolinkHeadings,
           {
+            behaviour: 'append',
             properties: {
               className: ['anchor'],
             },

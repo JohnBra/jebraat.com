@@ -37,11 +37,8 @@
 }
 
 .prose .anchor {
-  @apply absolute invisible;
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 740px;
+  @apply invisible;
+  padding-left: 0.25rem;
   cursor: pointer;
 }
 
