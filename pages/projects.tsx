@@ -35,6 +35,13 @@ const projects: any[] = [
     image: '/static/img/projects/extension_template_cover.webp',
     href: 'https://github.com/JohnBra/vite-web-extension',
   },
+  {
+    title: 'Send URL to Things3',
+    summary:
+      'A free browser extension to send the current page URL to Things3.',
+    image: '/static/img/projects/url_to_things_cover.webp',
+    href: 'https://github.com/JohnBra/url-to-things',
+  },
 ]
 
 export default function Projects() {
