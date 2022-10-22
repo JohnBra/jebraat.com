@@ -51,7 +51,7 @@ export default function Page({ featuredPosts }: Props) {
                       'Creator',
                       'Burger Connoisseur',
                       'Traveler',
-                      'Continuous Learner',
+                      'Lifelong Learner',
                       'Striving to be better than yesterday',
                     ],
                     autoStart: true,
