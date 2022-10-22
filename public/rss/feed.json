@@ -1,0 +1,158 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "John Braat's Blog",
+    "home_page_url": "https://jebraat.com",
+    "feed_url": "https://jebraat.com/rss/feed.json",
+    "description": "My learnings, thoughts on software, programming, tech, and my personal life.",
+    "icon": "https://jebraat.com/static/img/social-banner.png",
+    "author": {
+        "name": "Jonathan Braat",
+        "url": "https://twitter.com/jebraat"
+    },
+    "items": [
+        {
+            "id": "https://jebraat.com/blog/building-software-every-day-for-a-year",
+            "content_html": "I have challenged myself to build software every day for a whole year straight. Here are the reasons behind it, how it's going and my learnings so far.",
+            "url": "https://jebraat.com/blog/building-software-every-day-for-a-year",
+            "title": "Building Software Every Day For a Year",
+            "summary": "I have challenged myself to build software every day for a whole year straight. Here are the reasons behind it, how it's going and my learnings so far.",
+            "date_modified": "2022-10-19T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/my-favorite-tech-stack-to-build-saas",
+            "content_html": "This is the my favorite stack for people who want to build SaaS fast. It includes everything from backend, to frontend, emails and payment.",
+            "url": "https://jebraat.com/blog/my-favorite-tech-stack-to-build-saas",
+            "title": "My Favorite Tech Stack to Build SaaS",
+            "summary": "This is the my favorite stack for people who want to build SaaS fast. It includes everything from backend, to frontend, emails and payment.",
+            "date_modified": "2022-10-12T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/marketing-sucks-or-does-it",
+            "content_html": "I have had a somewhat negative mindset towards marketing. It seemed like only sleazy sales people are the ones doing it. This is how I changed my mindset.",
+            "url": "https://jebraat.com/blog/marketing-sucks-or-does-it",
+            "title": "Marketing Sucks! Or Does It?",
+            "summary": "I have had a somewhat negative mindset towards marketing. It seemed like only sleazy sales people are the ones doing it. This is how I changed my mindset.",
+            "date_modified": "2022-10-07T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-3",
+            "content_html": "In the last part of my series on productivity, we talk about focus. Knowing how to focus is an absolute necessity for anybody with an ambitious goal.",
+            "url": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-3",
+            "title": "Mastering Discipline, Consistency and Focus - Part 3",
+            "summary": "In the last part of my series on productivity, we talk about focus. Knowing how to focus is an absolute necessity for anybody with an ambitious goal.",
+            "date_modified": "2022-09-27T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-2",
+            "content_html": "This is part 2 of a 3 part series on self-discipline, consistency and focus. How did I work on my consistency? Here is what you can take from it.",
+            "url": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-2",
+            "title": "Mastering Discipline, Consistency and Focus - Part 2",
+            "summary": "This is part 2 of a 3 part series on self-discipline, consistency and focus. How did I work on my consistency? Here is what you can take from it.",
+            "date_modified": "2022-09-19T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-1",
+            "content_html": "This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.",
+            "url": "https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-1",
+            "title": "Mastering Discipline, Consistency and Focus - Part 1",
+            "summary": "This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.",
+            "date_modified": "2022-09-18T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor",
+            "content_html": "I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.",
+            "url": "https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor",
+            "title": "Read This BEFORE Seeking Out a Business Mentor",
+            "summary": "I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.",
+            "date_modified": "2022-09-09T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/a-guide-to-building-saas-businesses-in-public",
+            "content_html": "I have been wanting to build in public for a while but didn't really know where to start. Here is a compilation of things to get going and keep at it.",
+            "url": "https://jebraat.com/blog/a-guide-to-building-saas-businesses-in-public",
+            "title": "A Guide to Building SaaS Businesses in Public",
+            "summary": "I have been wanting to build in public for a while but didn't really know where to start. Here is a compilation of things to get going and keep at it.",
+            "date_modified": "2022-09-07T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/dealing-with-the-perfectionism-trap-as-a-developer",
+            "content_html": "When developing software or even building a SaaS business over-planning and over-engineering stifles your progress. Learn how to battle your perfectionism.",
+            "url": "https://jebraat.com/blog/dealing-with-the-perfectionism-trap-as-a-developer",
+            "title": "Dealing With the Perfectionism Trap as a Developer",
+            "summary": "When developing software or even building a SaaS business over-planning and over-engineering stifles your progress. Learn how to battle your perfectionism.",
+            "date_modified": "2022-09-06T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/implement-a-share-to-socials-feature-in-under-5-minutes",
+            "content_html": "Learn how to quickly build a share to socials feature. Including LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.",
+            "url": "https://jebraat.com/blog/implement-a-share-to-socials-feature-in-under-5-minutes",
+            "title": "Implement a Share to Socials Feature in Under 5 Minutes",
+            "summary": "Learn how to quickly build a share to socials feature. Including LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.",
+            "date_modified": "2022-09-06T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/26-actionable-marketing-tasks-you-can-do-right-now",
+            "content_html": "Marketing is hard. Sometimes, we just don't know where to start or are stuck in a rut. This is a curated list of 26 actionable marketing tasks for devs.",
+            "url": "https://jebraat.com/blog/26-actionable-marketing-tasks-you-can-do-right-now",
+            "title": "26 Actionable Marketing Tasks You Can Do Right Now",
+            "summary": "Marketing is hard. Sometimes, we just don't know where to start or are stuck in a rut. This is a curated list of 26 actionable marketing tasks for devs.",
+            "date_modified": "2022-09-06T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
+            "id": "https://jebraat.com/blog/how-to-become-a-better-developer",
+            "content_html": "As devs we are constantly challenged by the rapidly changing environment. Here are four habits that will help you become the best developer you can be.",
+            "url": "https://jebraat.com/blog/how-to-become-a-better-developer",
+            "title": "How to Become a Better Developer",
+            "summary": "As devs we are constantly challenged by the rapidly changing environment. Here are four habits that will help you become the best developer you can be.",
+            "date_modified": "2022-09-07T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        }
+    ]
+}

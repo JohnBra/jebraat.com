@@ -1,8 +1,9 @@
 import ListLayout from '@/layouts/ListLayout'
-import { getAllFilesFrontMatter } from '@/lib/files'
+import { getAllFilesFrontMatter, getAllTags } from '@/lib/files'
 import { GrayMatter } from '@/lib/types'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import { generateRssFeed } from '@/lib/rss'
 
 type Props = {
   posts: GrayMatter[]
@@ -22,6 +23,7 @@ export default function Blog({ posts }: Props) {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
+  await generateRssFeed(posts)
 
   return { props: { posts } }
 }

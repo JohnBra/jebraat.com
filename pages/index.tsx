@@ -79,7 +79,8 @@ export default function Page({ featuredPosts }: Props) {
               )
               .map((l) => (
                 <SocialIcon key={l.kind} kind={l.kind} href={l.href} />
-              ))}
+              ))
+            }
             <EmailMeButton className="ml-4" />
           </div>
           <SquigglyLine className="my-20" />

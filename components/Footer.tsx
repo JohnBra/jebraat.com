@@ -12,6 +12,7 @@ const navigation = {
   other: [
     { name: 'Links', href: '/links' },
     { name: 'Tags', href: '/tags' },
+    { name: 'RSS', href: '/rss/feed.xml' },
   ],
 }
 

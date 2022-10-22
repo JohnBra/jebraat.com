@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jebraat.com</id>
+    <title>John Braat's Blog</title>
+    <updated>2022-10-22T03:52:22.473Z</updated>
+    <generator>Feed for Node.js</generator>
+    <author>
+        <name>Jonathan Braat</name>
+        <email>me@jebraat.com</email>
+        <uri>https://twitter.com/jebraat</uri>
+    </author>
+    <link rel="alternate" href="https://jebraat.com"/>
+    <link rel="self" href="https://jebraat.com/rss/atom.xml"/>
+    <subtitle>My learnings, thoughts on software, programming, tech, and my personal life.</subtitle>
+    <logo>https://jebraat.com/static/img/social-banner.png</logo>
+    <icon>https://jebraat.com/static/icons/favicon-32x32.png</icon>
+    <rights>© 2022 Spryse Limited™. All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[Building Software Every Day For a Year]]></title>
+        <id>https://jebraat.com/blog/building-software-every-day-for-a-year</id>
+        <link href="https://jebraat.com/blog/building-software-every-day-for-a-year"/>
+        <updated>2022-10-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I have challenged myself to build software every day for a whole year straight. Here are the reasons behind it, how it's going and my learnings so far.]]></summary>
+        <content type="html"><![CDATA[I have challenged myself to build software every day for a whole year straight. Here are the reasons behind it, how it's going and my learnings so far.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My Favorite Tech Stack to Build SaaS]]></title>
+        <id>https://jebraat.com/blog/my-favorite-tech-stack-to-build-saas</id>
+        <link href="https://jebraat.com/blog/my-favorite-tech-stack-to-build-saas"/>
+        <updated>2022-10-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is the my favorite stack for people who want to build SaaS fast. It includes everything from backend, to frontend, emails and payment.]]></summary>
+        <content type="html"><![CDATA[This is the my favorite stack for people who want to build SaaS fast. It includes everything from backend, to frontend, emails and payment.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Marketing Sucks! Or Does It?]]></title>
+        <id>https://jebraat.com/blog/marketing-sucks-or-does-it</id>
+        <link href="https://jebraat.com/blog/marketing-sucks-or-does-it"/>
+        <updated>2022-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I have had a somewhat negative mindset towards marketing. It seemed like only sleazy sales people are the ones doing it. This is how I changed my mindset.]]></summary>
+        <content type="html"><![CDATA[I have had a somewhat negative mindset towards marketing. It seemed like only sleazy sales people are the ones doing it. This is how I changed my mindset.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mastering Discipline, Consistency and Focus - Part 3]]></title>
+        <id>https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-3</id>
+        <link href="https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-3"/>
+        <updated>2022-09-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In the last part of my series on productivity, we talk about focus. Knowing how to focus is an absolute necessity for anybody with an ambitious goal.]]></summary>
+        <content type="html"><![CDATA[In the last part of my series on productivity, we talk about focus. Knowing how to focus is an absolute necessity for anybody with an ambitious goal.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mastering Discipline, Consistency and Focus - Part 2]]></title>
+        <id>https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-2</id>
+        <link href="https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-2"/>
+        <updated>2022-09-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is part 2 of a 3 part series on self-discipline, consistency and focus. How did I work on my consistency? Here is what you can take from it.]]></summary>
+        <content type="html"><![CDATA[This is part 2 of a 3 part series on self-discipline, consistency and focus. How did I work on my consistency? Here is what you can take from it.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mastering Discipline, Consistency and Focus - Part 1]]></title>
+        <id>https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-1</id>
+        <link href="https://jebraat.com/blog/mastering-discipline-consistency-and-focus-part-1"/>
+        <updated>2022-09-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.]]></summary>
+        <content type="html"><![CDATA[This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Read This BEFORE Seeking Out a Business Mentor]]></title>
+        <id>https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor</id>
+        <link href="https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor"/>
+        <updated>2022-09-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></summary>
+        <content type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Guide to Building SaaS Businesses in Public]]></title>
+        <id>https://jebraat.com/blog/a-guide-to-building-saas-businesses-in-public</id>
+        <link href="https://jebraat.com/blog/a-guide-to-building-saas-businesses-in-public"/>
+        <updated>2022-09-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I have been wanting to build in public for a while but didn't really know where to start. Here is a compilation of things to get going and keep at it.]]></summary>
+        <content type="html"><![CDATA[I have been wanting to build in public for a while but didn't really know where to start. Here is a compilation of things to get going and keep at it.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dealing With the Perfectionism Trap as a Developer]]></title>
+        <id>https://jebraat.com/blog/dealing-with-the-perfectionism-trap-as-a-developer</id>
+        <link href="https://jebraat.com/blog/dealing-with-the-perfectionism-trap-as-a-developer"/>
+        <updated>2022-09-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[When developing software or even building a SaaS business over-planning and over-engineering stifles your progress. Learn how to battle your perfectionism.]]></summary>
+        <content type="html"><![CDATA[When developing software or even building a SaaS business over-planning and over-engineering stifles your progress. Learn how to battle your perfectionism.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Implement a Share to Socials Feature in Under 5 Minutes]]></title>
+        <id>https://jebraat.com/blog/implement-a-share-to-socials-feature-in-under-5-minutes</id>
+        <link href="https://jebraat.com/blog/implement-a-share-to-socials-feature-in-under-5-minutes"/>
+        <updated>2022-09-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to quickly build a share to socials feature. Including LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.]]></summary>
+        <content type="html"><![CDATA[Learn how to quickly build a share to socials feature. Including LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[26 Actionable Marketing Tasks You Can Do Right Now]]></title>
+        <id>https://jebraat.com/blog/26-actionable-marketing-tasks-you-can-do-right-now</id>
+        <link href="https://jebraat.com/blog/26-actionable-marketing-tasks-you-can-do-right-now"/>
+        <updated>2022-09-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Marketing is hard. Sometimes, we just don't know where to start or are stuck in a rut. This is a curated list of 26 actionable marketing tasks for devs.]]></summary>
+        <content type="html"><![CDATA[Marketing is hard. Sometimes, we just don't know where to start or are stuck in a rut. This is a curated list of 26 actionable marketing tasks for devs.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Become a Better Developer]]></title>
+        <id>https://jebraat.com/blog/how-to-become-a-better-developer</id>
+        <link href="https://jebraat.com/blog/how-to-become-a-better-developer"/>
+        <updated>2022-09-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[As devs we are constantly challenged by the rapidly changing environment. Here are four habits that will help you become the best developer you can be.]]></summary>
+        <content type="html"><![CDATA[As devs we are constantly challenged by the rapidly changing environment. Here are four habits that will help you become the best developer you can be.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+</feed>
