@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system",
+            "content_html": "I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.",
+            "url": "https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system",
+            "title": "How I Manage My Life With The GTD System",
+            "summary": "I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.",
+            "date_modified": "2022-10-25T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
             "id": "https://jebraat.com/blog/building-software-every-day-for-a-year",
             "content_html": "I have challenged myself to build software every day for a whole year straight. Here are the reasons behind it, how it's going and my learnings so far.",
             "url": "https://jebraat.com/blog/building-software-every-day-for-a-year",

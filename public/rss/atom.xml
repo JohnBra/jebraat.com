@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jebraat.com</id>
     <title>John Braat's Blog</title>
-    <updated>2022-10-22T03:52:22.473Z</updated>
+    <updated>2022-11-01T20:56:13.074Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Jonathan Braat</name>
@@ -15,6 +15,24 @@
     <logo>https://jebraat.com/static/img/social-banner.png</logo>
     <icon>https://jebraat.com/static/icons/favicon-32x32.png</icon>
     <rights>© 2022 Spryse Limited™. All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[How I Manage My Life With The GTD System]]></title>
+        <id>https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system</id>
+        <link href="https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system"/>
+        <updated>2022-10-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></summary>
+        <content type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Building Software Every Day For a Year]]></title>
         <id>https://jebraat.com/blog/building-software-every-day-for-a-year</id>
