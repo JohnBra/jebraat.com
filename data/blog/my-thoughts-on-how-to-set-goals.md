@@ -33,51 +33,115 @@ a sense of purpose.
 Goals can also be beneficial to track your progress and see how far you've 
 come looking back. They provide the target [for you to focus on](/blog/mastering-discipline-consistency-and-focus-part-3).
 
-## What is a goal
+## How I set personal goals and achieve them
 
-I think it is important to be very clear about what a goal is.
+> Shoot for the moon. Even if you miss, you'll land among the stars.
+> - Les Brown
 
-A goal is generally a **large vision for the future**. It's okay to dream big and set 
-goals seemingly out of reach. You can set short term goals and objectives to get
-where you want to be.
+### Decide what it is you want to achieve
+I start with a vision for several different areas in my life:
+1. **Health**: Everything from nutrition and exercise to mental health. _What kind of body do you want to have?_
+2. **Relationships**: Life partner, family and friends. _What kind of relationships do you want to have?_
+3. **Finances & Lifestyle**: Money, daily life. _What kind of lifestyle do you want to lead?_
+4. **Self**: Everything around personal self. _What kind of person do you want to be?_
+5. **Job**: Work and career related things. _What's the vision for your career?_
 
-## How I set personal goals
+Here are a few examples to each question (not all my own):
+1. **Healthy body**: Don't drink. Exercise every day. Don't eat out more than twice a week.
+2. **Strong relationships**: Contact friends and family regularly. Spend quality time with your partner every week.
+3. **Optimal lifestyle**: Have the choice when and what to work on. Be able to comfortably retire by 40. Experience other cultures regularly.
+4. **Personal Aspirations**: Inspire others. Help people to improve themselves. Bring humanity further by launching a rocket to Mars. Make a dent in the universe.
+5. **Career**: Build a million (billion?) dollar business. Build a company that truly values their employees.
 
-Personally I start with a vision for several different areas in my life:
-1. **Health**: Everything from nutrition and exercise to mental health. What kind of body do you want to have?
-2. **Relationships**: Life partner, family and friends. What kind of relationships do you want to have?
-3. **Finances & Lifestyle**: Money, daily life. What kind of lifestyle do you want to lead?
-4. **Self**: What kind of person do you want to be?
-5. **Job**: What's the vision for your career?
-
-Here are a few examples to each question:
-1. Don't drink. Exercise every day. Don't eat out more than twice a week.
-2. Contact friends and family regularly. Spend quality time with your partner every week.
-3. Be able to comfortably retire by 40. Own multiple homes.
-4. Inspire others. Bring humanity further by launching a rocket to Mars. Make a dent in the universe.
-5. Build a million dollar business.
-
-It's on you to find out what it is you want.
+At the end of the day it's on you to find out what it is you want.
 
 Not every goal needs to be outrageous and it's ok to not reach for the 100 million dollar 
-mansion. If you know you will be happy with a self sustained hut in the mountains, or a 
+mansion. If you know you will be happy with a self sustained cottage in the mountains, or a 
 simple life on an island, work towards that.
 
 Once you have decided, I strongly believe you should visualize your long-term goals. The 
 simplest way is to write them down, but you could also go further and make vision boards 
 or similar things. Visualizing makes them much more real.
 
+### Break it down
 
+After setting my vision for each of my life's areas I break down the life goals to mid-term
+goals and short-term objectives. In my opinion, a top down approach like this is much better
+than a bottom up approach.
 
+Here are my guidelines to break down the big visions. I think in horizons:
+- **Horizon 4**: Life
+- **Horizon 3**: Long-term visions
+- **Horizon 2**: One- to two-year goals
+- **Horizon 1**: Current projects (objectives)
+- **Ground**: Current actions
 
-decide
+An abstract example for my life vision to be my own boss:
+- **H4**: Decided to be own boss (life)
+- **H3**: Create a business for self (vision)
+- **H2**: Short term key objectives to make H3 happen. E.g. Make the first dollar or 10k MRR by year X (job goal)
+- **H1**: Projects to achieve the H2 objective (projects)
+- **Ground**: On each of these projects are tasks that need to be done as soon as I can (next actions)
 
-writing down visualizing
+Once you have done this for every vision you might notice some overlap between the
+different the horizons and tasks for the big visions. That's a good thing and shows your 
+goals are aligned and work well together.
 
-planing / break it down
+If you notice conflicting tasks on any of the horizons, this is a sign of conflicting goals.
+Should this happen, I advise to think about what you value most and set priorities accordingly.
 
-clebrating
+## My hot takes, dos and don'ts to reach goals
 
-telling someone
+**There is a ton of material** on how to reach goals out there. I have read countless books and
+blog articles to find a way that works for me.
 
-SMART goals ??
+### What you should do 
+
+**Celebrate your wins**. Whenever you achieve a milestone, or something that you worked for
+happens, celebrate it! This will generate a positive feedback loop and keep you motivated
+to keep going.
+
+**Share your successes with others.** Whether you post about it on social media or simply tell 
+your friends and family, sharing your accomplishments with those you care about will help you 
+feel even more proud.
+
+**Keep a running list of your accomplishments**. This is a great way to track your progress 
+and look back on all that you've accomplished- no matter how small.
+
+**Take a moment to reflect on your successes**. Whether you journal about it or simply take 
+a few minutes to yourself, taking the time to reflect on what you've done right will help you 
+stay focused and motivated.
+
+**Review your goals and the progress regularly**. You must review where you are and whether
+the trajectory you are on is the right one. Without reviews it's easy to slip and work on 
+things not beneficial or even detrimental to you goals. I personally review my progress every 
+two weeks. I have a recurring task in [Things 3, which I use to manage basically my whole life](/blog/how-i-manage-my-time-with-the-gtd-system).
+
+**Don't let others make you feel bad about your aspirations**. There will be many voices
+telling you _"Why do you need to be a millionaire?"_ or _"Why don't you just have one drink? You are boring!"_.
+Don't be afraid to be who you want to be.
+
+### Hot takes and don'ts
+
+🌶️ I don't think your visions should be [SMART goals](https://en.wikipedia.org/wiki/SMART_criteria).
+Dream big. Screw _"realistic"_! Realistic is what you make it to be. You just have to put in the work.
+
+🌶️ There is a notion to _"tell others"_ about your goals for accountability. This may 
+work, but often leads to a false feeling of accomplishment when you haven't actually done anything
+yet. People actually must hold you accountable for this to be a valid strategy. Most people don't.
+
+**Don't give up**! Big goals are hard to achieve. Embrace the challenge and don't let setbacks
+destroy your overall plan to achieve your vision. Plans will fail. Deadlines will be missed. Review,
+reflect and adapt. Get back up and go do it.
+
+## Closing thoughts
+
+Learning how to set goals for myself helped me go from a high school dropout to catching up on my diploma,
+completing a Bachelor + Master of Science in Computer Science with exceptional results and travel 
+the world.
+
+You can do the same, but it will take a great amount of [discipline](/blog/mastering-discipline-consistency-and-focus-part-1),
+[consistency](/blog/mastering-discipline-consistency-and-focus-part-2) and 
+[focus](/blog/mastering-discipline-consistency-and-focus-part-3).
+
+If you put in the work, you can make it happen 💪
