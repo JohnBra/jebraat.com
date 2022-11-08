@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://jebraat.com/blog/a-guide-on-how-to-set-personal-goals",
+            "content_html": "Personal goals are one of the fundamental requirements for any high achieving person. Here is my guide on how to set and achieve them.",
+            "url": "https://jebraat.com/blog/a-guide-on-how-to-set-personal-goals",
+            "title": "A Guide on How to Set Personal Goals",
+            "summary": "Personal goals are one of the fundamental requirements for any high achieving person. Here is my guide on how to set and achieve them.",
+            "date_modified": "2022-11-03T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
             "id": "https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system",
             "content_html": "I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.",
             "url": "https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system",

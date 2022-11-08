@@ -8,25 +8,76 @@ featured: true
 summary: Personal goals are one of the fundamental requirements for any high achieving person. Here is my guide on how to set and achieve them.
 ---
 
-I made a few attempts to share my my experiences on a blog before this one
+I have had a few attempts to share my my experiences on a blog and YouTube
+before I started this blog. I kept thinking _"What if nobody reads this?"_ 
+or _"There are so many people who are much more experienced than me"_.
 
-Been a math tutor, tutor DB systems, systems programming
+Even though I have fairly extensive experience teaching and mentoring others, for example
+as a math tutor during high school, tutoring several subjects and mentoring first semester 
+students during my time in university, I always had an inkling of _"What qualifies me to 
+talk about this"_.
 
-Not expert enough (master of science)
+Luckily I could overcome this by changing my mindset towards sharing knowledge.
 
-## Fear of rejection
+## Perfectionism and fear of rejection
 
-Impostor syndrome
+For the longest time, [perfectionism](/blog/dealing-with-the-perfectionism-trap-as-a-developer#what-is-perfectionism)
+has been something I struggled with. I strongly believe in providing the best service, 
+product and info I can. I know many of you are very similar in this regard.
 
-## What to talk about
+However, this can be  detrimental when we are trying to share something that doesn't 
+_feel ready_ or _good enough_. Sharing something imperfect opens us up to riducule. This 
+often leads us to not share our creations and knowledge at all. Reflecting on it, it 
+often cames down to fear of rejection.
 
-Experiences with a specific situation
-How you dealt with challenges
-How you learned a specific thing
-Advice (what works for you)
+Thoughts like _"What if someone tells me it's dumb/useless/not helpful"_ and _"What if 
+I missed a bit of information"_ kept me from sharing knowledge I found helpful, and 
+products I thought could improve someones life.
+
+Impostor syndrome also plays into this. Especially with knowledge based things to share.
+
+Realizing **"perfect"** is an illusion - whether in regards to products or our knowledge 
+about a specific topic - helped me overcome inhibitions towards sharing.
+
+I have written an article about [how to deal with the perfectionism trap as a developer](/blog/dealing-with-the-perfectionism-trap-as-a-developer).
+Check it out if this is something you struggle with as well 🙂
+
+
+## What and how to share
+
+A small lifehack to getting over the idea something isn't good enough to share is sharing
+your experience. 
+
+Yes, maybe you didn't find the optimal solution to a problem, or maybe your knowledge has a 
+few gaps _(everyone's knowledge does by the way)_... but sharing your experience is something 
+nobody can argue with.
+
+It's insight into your process and learnings however flawed they may be. At the end of the day
+sharing will provide an opportunity to improve with feedback.
+
+Here are a few things you could share:
+- Experiences with a specific situation
+- How you dealt with challenges
+- How you learned a specific thing or skill
+- What works for you when doing a specific thing (advice)
+
+How/where to share:
+- Write a blog post
+- Tweet about a learning
+- Make a YouTube video about how you dealt with a situation
+- Create TikToks
+- Share insights in forums such as Reddit or Indie Hackers
+- _...your platform of choice_ 
 
 ## Closing thoughts
 
-Nobody is perfect
-Not everybody will learn from what you have to say, but there will definitely be 
-a few people who will.
+The realization nobody is perfect, including you, made it easier for me to share my learnings.
+
+I know not everybody will learn from what I have to share. But I also know there are many who
+are just a few steps behind me in their learning journey. These are the friends and people I 
+want to share my knowledge with.
+
+Sharing and writing down my learnings has a great sideeffect. Doing this, I actively reflect 
+on my experiences, which gives me new insights and ideas.
+
+I hope this article can inspire you to do the same 💪
