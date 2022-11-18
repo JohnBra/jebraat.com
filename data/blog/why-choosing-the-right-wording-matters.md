@@ -16,5 +16,8 @@ People who hear "I will try" and don't realize what it really means are fooling 
 
 People who really and truly achieve goals never say "I will try."
 
+I might,
+
+Maybe I will
 
 Instead, they always say "I will do" something-or, better yet, "I must do" whatever the task is.
