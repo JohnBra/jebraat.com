@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://jebraat.com/blog/you-dont-need-to-be-an-expert-to-share-your-learnings",
+            "content_html": "For the longest time I thought I should be an expert to share my knowledge. Here are my thoughts and advice on how to change this mindset.",
+            "url": "https://jebraat.com/blog/you-dont-need-to-be-an-expert-to-share-your-learnings",
+            "title": "You Don't Need To Be an Expert To Share Your Learnings",
+            "summary": "For the longest time I thought I should be an expert to share my knowledge. Here are my thoughts and advice on how to change this mindset.",
+            "date_modified": "2022-11-08T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
             "id": "https://jebraat.com/blog/a-guide-on-how-to-set-personal-goals",
             "content_html": "Personal goals are one of the fundamental requirements for any high achieving person. Here is my guide on how to set and achieve them.",
             "url": "https://jebraat.com/blog/a-guide-on-how-to-set-personal-goals",

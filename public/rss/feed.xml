@@ -4,7 +4,7 @@
         <title>John Braat's Blog</title>
         <link>https://jebraat.com</link>
         <description>My learnings, thoughts on software, programming, tech, and my personal life.</description>
-        <lastBuildDate>Mon, 07 Nov 2022 20:18:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Nov 2022 22:18:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://jebraat.com</link>
         </image>
         <copyright>© 2022 Spryse Limited™. All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[You Don't Need To Be an Expert To Share Your Learnings]]></title>
+            <link>https://jebraat.com/blog/you-dont-need-to-be-an-expert-to-share-your-learnings</link>
+            <guid>https://jebraat.com/blog/you-dont-need-to-be-an-expert-to-share-your-learnings</guid>
+            <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[For the longest time I thought I should be an expert to share my knowledge. Here are my thoughts and advice on how to change this mindset.]]></description>
+            <content:encoded><![CDATA[For the longest time I thought I should be an expert to share my knowledge. Here are my thoughts and advice on how to change this mindset.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
         <item>
             <title><![CDATA[A Guide on How to Set Personal Goals]]></title>
             <link>https://jebraat.com/blog/a-guide-on-how-to-set-personal-goals</link>
