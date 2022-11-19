@@ -8,6 +8,12 @@ featured: true
 summary: Learn how to quickly build a share to socials feature. Including LinkedIn, Twitter, Reddit, HackerNews and Facebook on web and native share on mobile.
 ---
 
+Growing up I was told to "try my best". This is something I have heard many
+parents tell their children.
+
+> Always try your best
+
+Naturally, when people 
 I will try 
 People who say "I will try" have given themselves permission to fail.  No matter what happens, they can always claim that they "tried."
 
