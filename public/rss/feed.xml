@@ -4,7 +4,7 @@
         <title>John Braat's Blog</title>
         <link>https://jebraat.com</link>
         <description>My learnings, thoughts on software, programming, tech, and my personal life.</description>
-        <lastBuildDate>Sat, 19 Nov 2022 22:18:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Nov 2022 21:17:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://jebraat.com</link>
         </image>
         <copyright>© 2022 Spryse Limited™. All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[There Is No Try, Only Do]]></title>
+            <link>https://jebraat.com/blog/there-is-no-try-only-do</link>
+            <guid>https://jebraat.com/blog/there-is-no-try-only-do</guid>
+            <pubDate>Sun, 20 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[When setting out to do achieve a goal, choosing the right wording is vital for success. Here is why you should erase try from your vocabulary.]]></description>
+            <content:encoded><![CDATA[When setting out to do achieve a goal, choosing the right wording is vital for success. Here is why you should erase try from your vocabulary.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
         <item>
             <title><![CDATA[You Don't Need To Be an Expert To Share Your Learnings]]></title>
             <link>https://jebraat.com/blog/you-dont-need-to-be-an-expert-to-share-your-learnings</link>
