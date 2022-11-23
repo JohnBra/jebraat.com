@@ -69,7 +69,7 @@ project. This is so they won't be included in the final build.
 - `src/pages/panel`
 - `src/pages/background`
 
-Then we will remove the according config from the `vite.config.ts`. It should look like this afterwards:
+Then we will modify the `vite.config.ts` to look like the following:
 ```ts:vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
