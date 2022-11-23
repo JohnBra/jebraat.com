@@ -1,11 +1,11 @@
 ---
-title: How to Build a Chrome Extension in 4 Minutes
+title: How to Build a Chrome Extension in 5 Minutes
 date: '2022-11-21'
 lastmod: '2022-11-21'
 tags: ['react', 'tech', 'typescript', 'tailwindcss']
 draft: true
 featured: true
-summary: Personal goals are one of the fundamental requirements for any high achieving person. Here is my guide on how to set and achieve them.
+summary: Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.
 ---
 
 I have been building a Chrome extension for a while now.
