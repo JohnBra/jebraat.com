@@ -1,5 +1,5 @@
 ---
-title: How to Build a Chrome Extension in 5 Minutes
+title: Build a React TailwindCSS Chrome Extension in 5 Minutes
 date: '2022-11-21'
 lastmod: '2022-11-21'
 tags: ['react', 'tech', 'typescript', 'tailwindcss']
@@ -8,20 +8,21 @@ featured: true
 summary: Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.
 ---
 
-I have been building a Chrome extension for a while now.
+I have been building Chrome extensions for a while now.
 
-Supatabs is a an extension to reduce tab clutter and improve your computer's performance.
-By reducing the amount of open tabs you can save up to 95% of your RAM.
+Most notably Supatabs available in the Chrome Web Store. Supatabs is a an extension 
+to reduce tab clutter and improve your computer's performance. By reducing the 
+amount of open tabs you can save up to 95% of your RAM.
 
 In this article I want to show you how you can build a production ready extension in only
-4 minutes.
+5 minutes.
 
-## Starting from a template
+## Start with a template
 
 One of the byproducts of Supatabs is an extension template I built.
 
 The template is setup and ready to go with Manifest V3, React, TailwindCSS and TypeScript.
-Instead of webpack I used vite. In my opinion it's easier to maintain.
+Instead of webpack I used vite for bundling. In my opinion it's easier to maintain.
 
 Follow these steps to set up your new chrome extension:
 
@@ -56,18 +57,21 @@ updated thanks to `nodemon`. This means you don't have to do step 4 more than on
 ## Implement some functionality
 
 To get a feel for how extension development works, we will implement a simple button in the extension 
-popup to open a new tab.
+popup to open a specific url in new tab or focus it if it already exists in your tabstrip.
 
-As we won't need most of the different Chrome extension pages, we will remove the irrelevant pages from the 
-project. This is so they won't be included in the final build.
+### Prepare
+
+As we won't need most of the different Chrome extension pages in the template, we will remove the 
+irrelevant source files from the project and modify our config. This is so they won't be included in the 
+final build.
 
 **Stop the development server** and then delete the following directories including content:
-- `src/pages/content/`
-- `src/pages/devtools`
-- `src/pages/newtab`
-- `src/pages/options`
-- `src/pages/panel`
-- `src/pages/background`
+- `src/pages/content/*`
+- `src/pages/devtools/*`
+- `src/pages/newtab/*`
+- `src/pages/options/*`
+- `src/pages/panel/*`
+- `src/pages/background/*`
 
 Then we will modify the `vite.config.ts` to look like the following:
 ```ts:vite.config.ts
@@ -75,7 +79,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import makeManifest from './utils/plugins/make-manifest';
-import copyContentStyle from './utils/plugins/copy-content-style';
 
 const root = resolve(__dirname, 'src');
 const pagesDir = resolve(root, 'pages');
@@ -91,7 +94,7 @@ export default defineConfig({
       "@pages": pagesDir,
     },
   },
-  plugins: [react(), makeManifest(), copyContentStyle()],
+  plugins: [react(), makeManifest()],
   publicDir,
   build: {
     outDir,
@@ -109,7 +112,8 @@ export default defineConfig({
 
 ```
 
-Now we need to cleanup `src/manifest.ts` accordingly:
+Now we need to modify `src/manifest.ts` accordingly. We will remove unnecessary
+config params and add `chrome.tabs` permission to query active tabs.
 
 ```ts:src/manifest.ts
 import pkg from '../package.json';
@@ -124,6 +128,7 @@ const manifest: ManifestType = {
     default_popup: 'src/pages/popup/index.html',
     default_icon: 'icon-34.png',
   },
+  permissions: [ 'tabs' ],  // <-- this how you add permissions
   icons: {
     "128": 'icon-128.png',
   },
@@ -139,13 +144,60 @@ export default manifest;
 
 ```
 
+### Implement
 
-## Publishing
+Once we are done with the preparation, we can restart the dev server with `yarn dev`.
 
-To publish stop the dev server
+We will now add the button to open a tab with a specific URL or focus it if it already 
+exists. The implementation will be in React with TypeScript. We will apply styles with
+TailwindCSS.
 
-Yarn build 
+```tsx:src/pages/popup/Popup.tsx
+import React from 'react';
 
-Zip the build folder
+export default function Popup(): JSX.Element {
 
-Upload your package
+  /**
+   * A simple function to query the chrome.tabs api for an url
+   * If a tab with the matching url was found we focus it 
+   * Otherwise create the tab and focus 
+   *
+   * chrome.tabs docs here: https://developer.chrome.com/docs/extensions/reference/tabs/
+   */
+  const createOrFocus = async () => {
+    const [res] = await chrome.tabs.query({ url: 'https://www.google.com/' });
+    if (res?.id) {
+      await chrome.tabs.update(res.id, { active: true });
+    } else {
+      chrome.tabs.create({ url: 'https://google.com' });
+    }
+  }
+
+  // Some react code styled with TailwindCSS
+  return (
+    <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-white text-center h-full p-3 bg-gray-800">
+      <button
+        className="font-bold text-lg px-4 py-1.5 border border-white rounded-lg hover:bg-gray-600"
+        onClick={() => createOrFocus()}
+      >
+        Open or focus tab
+      </button>
+
+    </div>
+  );
+}
+```
+
+I won't go into the implementational details, as this is fairly simple react
+with a button.
+
+This showcases how similar extension development can be to normal web development.
+
+## Publish
+
+To publish stop the dev server and run `yarn build`
+
+Now you can zip the `dist` folder and [upload your package to the Chrome Web Store](https://developer.chrome.com/docs/webstore/publish/).
+
+That's it. You just built a Chrome extension with React, TypeScript and TailwindCSS 
+under 5 minutes.
