@@ -24,25 +24,24 @@ I find Maslow's hierarchy to be an accurate description of human needs.
   className="h-auto w-full"
 />
 
-Maslow's hierarchy of needs is a psychological theory proposed by Abraham Maslow in his 
-1943 paper "A Theory of Human Motivation". 
+Maslow's hierarchy of needs is a theory that explains why people do the things they do. 
+As you can see in the image above, it is a pyramid with different levels.
 
-The theory is often depicted as a pyramid like in the image above. The most basic needs 
-are at the bottom and the more complex needs at the top. 
+Starting with the most important needs at the bottom and moving up to less important needs.
+The five levels are physiological needs, safety needs, love and belonging, esteem, and 
+self-actualization. 
 
-According to Maslow, people are motivated by their needs, and must fulfill each need in order 
-to move on to the next level. 
+People must fulfill each need in order to move on to the next level.
 
-The five levels of needs, in order from bottom to top, are  physiological, safety, love 
-and belonging, esteem, and self-actualization.
+To drive the point home...
 
-Now, compare my situation to someone born into war zones of the middle east, or impoverished areas
+Compare my situation to someone born into war zones of the middle east, or impoverished areas
 of Africa.
 
 They will first and foremost work towards fulfilling basic needs such as food and security. Only 
-after these are secured we can work on the higher order needs.
+after these are secured they can strive towards the higher order needs.
 
-In my opinion it's vital to be aware of this to find appreciation for where we are.
+In my opinion it's vital to be aware of this, so we can find appreciation for where we are.
 
 ## Being grateful
 
@@ -52,15 +51,21 @@ I never worried about war or having to starve.
 
 Yet, I wasn't rich. Without going into too much detail, my family is far from perfect.
 
-Developing an appreciation for all the things provided out of the box was a very important
-step for me coming to terms with "having less".
+Developing an appreciation for all the things provided out of the box even though my situation
+was far from perfect was a very important step for me. 
 
-hedonic treadmill
+It helped me develop a deep appreciation for what I have, rather than looking at what I don't have.
 
-minimalism
+## Relationships, wealth and self-actualization
 
 work & money
 
 joy
 
-closing thoughts
+## The hedonic treadmill & minimalism
+
+hedonic treadmill
+
+minimalism
+
+## Closing thoughts
