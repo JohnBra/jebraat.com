@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jebraat.com</id>
     <title>John Braat's Blog</title>
-    <updated>2022-11-22T21:17:38.311Z</updated>
+    <updated>2022-12-12T08:51:59.540Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Jonathan Braat</name>
@@ -15,6 +15,60 @@
     <logo>https://jebraat.com/static/img/social-banner.png</logo>
     <icon>https://jebraat.com/static/icons/favicon-32x32.png</icon>
     <rights>© 2022 Spryse Limited™. All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[My Thoughts on Hapiness And Wealth]]></title>
+        <id>https://jebraat.com/blog/my-thoughts-on-happiness-and-money</id>
+        <link href="https://jebraat.com/blog/my-thoughts-on-happiness-and-money"/>
+        <updated>2022-12-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[What makes a happy life? This is a question I have been pondering for a while. Here are my thoughts on how to live a fulfilled life.]]></summary>
+        <content type="html"><![CDATA[What makes a happy life? This is a question I have been pondering for a while. Here are my thoughts on how to live a fulfilled life.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kill Your Onces]]></title>
+        <id>https://jebraat.com/blog/kill-your-onces</id>
+        <link href="https://jebraat.com/blog/kill-your-onces"/>
+        <updated>2022-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We often push our dreams to the backburner and use excuses like lack of experience or knowledge to keep from achieving them. Here is why you shouldn't.]]></summary>
+        <content type="html"><![CDATA[We often push our dreams to the backburner and use excuses like lack of experience or knowledge to keep from achieving them. Here is why you shouldn't.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Build a React TailwindCSS Chrome Extension in 5 Minutes]]></title>
+        <id>https://jebraat.com/blog/build-a-react-tailwindcss-chrome-extension-in-5-minutes</id>
+        <link href="https://jebraat.com/blog/build-a-react-tailwindcss-chrome-extension-in-5-minutes"/>
+        <updated>2022-11-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.]]></summary>
+        <content type="html"><![CDATA[Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.]]></content>
+        <author>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </author>
+        <contributor>
+            <name>Jonathan Braat</name>
+            <email>me@jebraat.com</email>
+            <uri>https://twitter.com/jebraat</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[There Is No Try, Only Do]]></title>
         <id>https://jebraat.com/blog/there-is-no-try-only-do</id>

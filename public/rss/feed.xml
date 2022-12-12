@@ -4,7 +4,7 @@
         <title>John Braat's Blog</title>
         <link>https://jebraat.com</link>
         <description>My learnings, thoughts on software, programming, tech, and my personal life.</description>
-        <lastBuildDate>Tue, 22 Nov 2022 21:17:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Dec 2022 08:51:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,33 @@
             <link>https://jebraat.com</link>
         </image>
         <copyright>© 2022 Spryse Limited™. All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[My Thoughts on Hapiness And Wealth]]></title>
+            <link>https://jebraat.com/blog/my-thoughts-on-happiness-and-money</link>
+            <guid>https://jebraat.com/blog/my-thoughts-on-happiness-and-money</guid>
+            <pubDate>Tue, 06 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[What makes a happy life? This is a question I have been pondering for a while. Here are my thoughts on how to live a fulfilled life.]]></description>
+            <content:encoded><![CDATA[What makes a happy life? This is a question I have been pondering for a while. Here are my thoughts on how to live a fulfilled life.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
+        <item>
+            <title><![CDATA[Kill Your Onces]]></title>
+            <link>https://jebraat.com/blog/kill-your-onces</link>
+            <guid>https://jebraat.com/blog/kill-your-onces</guid>
+            <pubDate>Sun, 04 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[We often push our dreams to the backburner and use excuses like lack of experience or knowledge to keep from achieving them. Here is why you shouldn't.]]></description>
+            <content:encoded><![CDATA[We often push our dreams to the backburner and use excuses like lack of experience or knowledge to keep from achieving them. Here is why you shouldn't.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
+        <item>
+            <title><![CDATA[Build a React TailwindCSS Chrome Extension in 5 Minutes]]></title>
+            <link>https://jebraat.com/blog/build-a-react-tailwindcss-chrome-extension-in-5-minutes</link>
+            <guid>https://jebraat.com/blog/build-a-react-tailwindcss-chrome-extension-in-5-minutes</guid>
+            <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.]]></description>
+            <content:encoded><![CDATA[Learn how to build a Google Chrome web extension with React, TypeScript and TailwindCSS in less than 5 minutes. Includes a free template.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
         <item>
             <title><![CDATA[There Is No Try, Only Do]]></title>
             <link>https://jebraat.com/blog/there-is-no-try-only-do</link>
