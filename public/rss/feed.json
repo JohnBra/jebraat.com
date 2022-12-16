@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking",
+            "content_html": "If you asked yourself whether you should quit your job and go all in on Indie Hacking, you should read this. These are my lessons.",
+            "url": "https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking",
+            "title": "Should You Go All In On Indie Hacking?",
+            "summary": "If you asked yourself whether you should quit your job and go all in on Indie Hacking, you should read this. These are my lessons.",
+            "date_modified": "2022-12-14T00:00:00.000Z",
+            "author": {
+                "name": "Jonathan Braat",
+                "url": "https://twitter.com/jebraat"
+            }
+        },
+        {
             "id": "https://jebraat.com/blog/my-thoughts-on-happiness-and-money",
             "content_html": "What makes a happy life? This is a question I have been pondering for a while. Here are my thoughts on how to live a fulfilled life.",
             "url": "https://jebraat.com/blog/my-thoughts-on-happiness-and-money",

@@ -13,6 +13,21 @@ type Props = {
 }
 
 export default function Subscribe({ className }: Props) {
+  return (
+    <div className={classNames('flex justify-center', className)}>
+      <iframe 
+        src="https://theinspiredindiepreneur.substack.com/embed"
+        width="480"
+        height="320" 
+        style={{ border: "1px solid #EEE", background: "white"}}
+        frameBorder="0" 
+        scrolling="no"
+      />
+    </div>
+  )
+}
+
+export function Sub({ className }: Props) {
   const [form, setForm] = useState<FormState>({ state: Form.Initial })
   const ref = useRef<HTMLInputElement>(null)
 

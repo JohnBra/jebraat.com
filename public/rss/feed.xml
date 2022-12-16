@@ -4,7 +4,7 @@
         <title>John Braat's Blog</title>
         <link>https://jebraat.com</link>
         <description>My learnings, thoughts on software, programming, tech, and my personal life.</description>
-        <lastBuildDate>Thu, 15 Dec 2022 10:03:33 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Dec 2022 09:21:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://jebraat.com</link>
         </image>
         <copyright>© 2022 Spryse Limited™. All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[Should You Go All In On Indie Hacking?]]></title>
+            <link>https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking</link>
+            <guid>https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking</guid>
+            <pubDate>Wed, 14 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[If you asked yourself whether you should quit your job and go all in on Indie Hacking, you should read this. These are my lessons.]]></description>
+            <content:encoded><![CDATA[If you asked yourself whether you should quit your job and go all in on Indie Hacking, you should read this. These are my lessons.]]></content:encoded>
+            <author>me@jebraat.com (Jonathan Braat)</author>
+        </item>
         <item>
             <title><![CDATA[My Thoughts on Hapiness And Wealth]]></title>
             <link>https://jebraat.com/blog/my-thoughts-on-happiness-and-money</link>
