@@ -9,7 +9,7 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <nav className="flex items-center justify-between pt-10 pb-16">
+    <nav className="flex items-center justify-between pt-6 pb-16">
       <div className="flex items-center">
         <div className="hidden sm:block">
           {navLinks.map((link) => (

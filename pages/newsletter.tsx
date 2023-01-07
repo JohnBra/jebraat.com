@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/SEO'
+import Subscribe from '@/components/Subscribe'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Newsletter() {
@@ -9,7 +10,7 @@ export default function Newsletter() {
         description="Inspiring you to make your first dollar online. Every Sunday every other week you get 1 actionable tip to launch, grow and monetize your Indie business in less than 5 minutes."
       />
       <div>
-        hello
+        <Subscribe />
       </div>
     </>
   )
