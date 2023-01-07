@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 
 export const navLinks = [
   { href: '/', prefetch: undefined, name: 'Home' },
+  { href: '/newsletter', prefetch: false, name: 'Newsletter' },
   { href: '/blog', prefetch: false, name: 'Blog' },
   { href: '/projects', prefetch: false, name: 'Projects' },
   //{ href: '/books', prefetch: false, name: 'Books' },

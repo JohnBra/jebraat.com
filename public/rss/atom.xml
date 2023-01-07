@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jebraat.com</id>
     <title>John Braat's Blog</title>
-    <updated>2022-12-16T09:21:40.046Z</updated>
+    <updated>2023-01-07T04:56:09.852Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Jonathan Braat</name>
@@ -14,7 +14,7 @@
     <subtitle>My learnings, thoughts on software, programming, tech, and my personal life.</subtitle>
     <logo>https://jebraat.com/static/img/social-banner.png</logo>
     <icon>https://jebraat.com/static/icons/favicon-32x32.png</icon>
-    <rights>© 2022 Spryse Limited™. All rights reserved.</rights>
+    <rights>© 2023 Spryse Limited™. All rights reserved.</rights>
     <entry>
         <title type="html"><![CDATA[Should You Go All In On Indie Hacking?]]></title>
         <id>https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking</id>
