@@ -19,6 +19,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/newsletter',
+        destination: 'https://theinspiredindiepreneur.substack.com',
+        permanent: false
+      }
+    ]
+  }
 }
 
 // https://nextjs.org/docs/advanced-features/security-headers
