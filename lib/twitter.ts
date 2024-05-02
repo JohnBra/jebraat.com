@@ -2,7 +2,7 @@ export async function getTweets(ids: string[]) {
   if (ids.length === 0) {
     return []
   }
-
+  
   const queryParams = new URLSearchParams({
     ids: ids.join(','),
     expansions:
@@ -24,6 +24,7 @@ export async function getTweets(ids: string[]) {
   )
 
   const tweets = await response.json()
+  console.log("tweets", tweets)
 
   const getAuthorInfo = (author_id: string) => {
     return tweets.includes.users.find((user: any) => user.id === author_id)

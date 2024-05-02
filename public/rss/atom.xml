@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jebraat.com</id>
     <title>John Braat's Blog</title>
-    <updated>2023-01-07T04:56:09.852Z</updated>
+    <updated>2024-05-02T21:06:21.555Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Jonathan Braat</name>
@@ -14,7 +14,7 @@
     <subtitle>My learnings, thoughts on software, programming, tech, and my personal life.</subtitle>
     <logo>https://jebraat.com/static/img/social-banner.png</logo>
     <icon>https://jebraat.com/static/icons/favicon-32x32.png</icon>
-    <rights>© 2023 Spryse Limited™. All rights reserved.</rights>
+    <rights>© 2024 Spryse Limited™. All rights reserved.</rights>
     <entry>
         <title type="html"><![CDATA[Should You Go All In On Indie Hacking?]]></title>
         <id>https://jebraat.com/blog/should-you-go-all-in-on-indie-hacking</id>
@@ -34,7 +34,7 @@
         </contributor>
     </entry>
     <entry>
-        <title type="html"><![CDATA[My Thoughts on Hapiness And Wealth]]></title>
+        <title type="html"><![CDATA[My Thoughts on Happiness And Wealth]]></title>
         <id>https://jebraat.com/blog/my-thoughts-on-happiness-and-money</id>
         <link href="https://jebraat.com/blog/my-thoughts-on-happiness-and-money"/>
         <updated>2022-12-06T00:00:00.000Z</updated>
@@ -146,8 +146,8 @@
         <id>https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system</id>
         <link href="https://jebraat.com/blog/how-i-manage-my-time-with-the-gtd-system"/>
         <updated>2022-10-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></summary>
-        <content type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></content>
+        <summary type="html"><![CDATA[We often get caught up in daily responsibilities and forget what we want to do. Learn how I externalize my brain with GTD to never forget anything.]]></summary>
+        <content type="html"><![CDATA[We often get caught up in daily responsibilities and forget what we want to do. Learn how I externalize my brain with GTD to never forget anything.]]></content>
         <author>
             <name>Jonathan Braat</name>
             <email>me@jebraat.com</email>
@@ -256,24 +256,6 @@
         <updated>2022-09-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.]]></summary>
         <content type="html"><![CDATA[This is part 1 of a 3 part series on self-discipline, consistency and focus. How can you become more disciplined? Here is what worked for me.]]></content>
-        <author>
-            <name>Jonathan Braat</name>
-            <email>me@jebraat.com</email>
-            <uri>https://twitter.com/jebraat</uri>
-        </author>
-        <contributor>
-            <name>Jonathan Braat</name>
-            <email>me@jebraat.com</email>
-            <uri>https://twitter.com/jebraat</uri>
-        </contributor>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Read This BEFORE Seeking Out a Business Mentor]]></title>
-        <id>https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor</id>
-        <link href="https://jebraat.com/blog/read-this-before-seeking-out-a-business-mentor"/>
-        <updated>2022-09-09T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></summary>
-        <content type="html"><![CDATA[I have been mentored by a successful SaaS business owner. Here is where I went wrong and my lessons to keep in mind before taking up someone else's time.]]></content>
         <author>
             <name>Jonathan Braat</name>
             <email>me@jebraat.com</email>
