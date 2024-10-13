@@ -112,33 +112,6 @@ export default function Page({ featuredPosts }: Props) {
           </div>
         </section>
 
-        <section className="mt-14">
-          <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
-            Videos
-          </h3>
-          <p className="mb-6 font-mono text-neutral-600 dark:text-neutral-400">
-            I make videos about tech behind SaaS and personal development
-            topics. If you prefer watching over reading then this is the perfect
-            place to start.
-          </p>
-          <VideoCard
-            className="border-t"
-            index={1}
-            title="How Elon Musk Leverages Time With Multitasking"
-            href="https://www.youtube.com/watch?v=dYl25SRJ02w"
-            length="6:04"
-          />
-          <div className="flex items-center py-8 text-neutral-500">
-            <CustomLink
-              href="https://www.youtube.com/channel/UCSYoM12jgDhSN57CMCqr-ZA"
-              prefetch={false}
-              className="transition-all ease-in-out hover:text-neutral-800 dark:hover:text-neutral-300"
-            >
-              All videos &rarr;
-            </CustomLink>
-          </div>
-        </section>
-
         <section className="my-14">
           <Subscribe />
         </section>
