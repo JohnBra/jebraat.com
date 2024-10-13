@@ -12,7 +12,6 @@ import { socialLinks } from '@/lib/constants'
 import SocialIcon from '@/components/SocialIcon'
 import EmailMeButton from '@/components/EmailMeButton'
 import Subscribe from '@/components/Subscribe'
-import VideoCard from '@/components/VideoCard'
 
 type Props = {
   featuredPosts: GrayMatter[]
