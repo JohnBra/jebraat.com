@@ -2,7 +2,7 @@
   "name": "jebraat.com",
   "version": "0.1.0",
   "private": true,
-   "engines": {
+  "engines": {
     "node": "^20 || ^22"
   },
   "scripts": {
@@ -23,7 +23,7 @@
     "gray-matter": "^4.0.3",
     "is-mobile": "^3.1.1",
     "mdast-util-to-string": "^3.1.0",
-    "next": "12.2.2",
+    "next": "^12.3.7",
     "next-mdx-remote": "^4.0.3",
     "next-themes": "^0.2.0",
     "react": "^18.3.1",
