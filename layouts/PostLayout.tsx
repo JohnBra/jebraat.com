@@ -4,9 +4,7 @@ import Image from 'next/future/image'
 import dayjs from 'dayjs'
 import useSWR from 'swr'
 import isMobile from 'is-mobile'
-import CopyToClipboard from 'react-copy-to-clipboard'
-import { CheckIcon } from '@heroicons/react/24/solid'
-import { ClipboardDocumentIcon, EyeIcon, ShareIcon } from '@heroicons/react/24/outline'
+import { EyeIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { PostSEO } from '@/components/SEO'
 import ShareToSocialLink from '@/components/ShareToSocialLink'
 import ShareViaButton from '@/components/ShareViaButton'
@@ -20,7 +18,6 @@ import fetcher from '@/lib/fetcher'
 import share from '@/lib/share'
 import CustomLink from '@/components/Link'
 import ArticleList from '@/components/ArticleList'
-import { kebabCase } from '@/lib/utils'
 
 type Props = {
   frontMatter: GrayMatter
@@ -158,23 +155,6 @@ export default function PostLayout({
         setOpen={(val) => onSetShareModalState(val)}
       >
         <div className="flex flex-col">
-          <CopyToClipboard
-            text={url}
-            onCopy={() => {
-              setCopiedToClipboard(true)
-              onShare()
-            }}
-          >
-            <button className="flex items-center justify-between p-2 text-left font-bold hover:text-primary-600">
-              <span>Copy link</span>
-              <ClipboardDocumentIcon className="h-5 w-5" />
-            </button>
-          </CopyToClipboard>
-          {copiedToClipboard && (
-            <div className="flex items-center justify-center rounded-md bg-green-100 py-1 font-semibold text-green-900 dark:bg-teal-700 dark:text-emerald-100">
-              Copied to Clipboard <CheckIcon className="ml-2 h-5 w-5" />
-            </div>
-          )}
           {isMobile() && (
             <ShareViaButton
               shareData={{ url, text: summary }}
