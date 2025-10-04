@@ -25,7 +25,7 @@ const projectsMetadata: ProjectMetadata[] = [
     summary:
       'Time zone conversion and meeting planning at a glance on any device.',
     image: '/static/img/projects/chronoshift_cover.webp',
-    href: 'https://chronoshift.io',
+    href: 'https://chronoshift.spryse.com',
   },
   {
     title: 'My Personal Website',
